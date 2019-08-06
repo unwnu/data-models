@@ -1,0 +1,213 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Schema for an Open Contracting Release for Pre-Award Catalogue request",
+  "type": "object",
+  "properties": {
+    "ocid": {
+      "description": "A globally unique identifier for this Contracting Process",
+      "type": "string"
+    },
+    "id": {
+      "description": "An identifier for this particular release of information",
+      "type": "string"
+    },
+    "date": {
+      "description": "The date this information is released, it may well be the same as the parent publishedDate, it must not be later than the publishedDate from the parent package. It is used to determine merge order.",
+      "type": "string",
+      "format": "date-time"
+    },
+    "tag": {
+      "description": "A value from the codelist that identifies the nature of the release being made",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "request",
+          "requestAmendment",
+          "preAwardCatalogue",
+          "preAwardCatalogueAmendment"
+        ]
+      }
+    },
+    "initiationType": {
+      "description": "String specifying the type of initiation process used for this request, taken from the  codelist",
+      "type": "string",
+      "enum": [
+        "preAwardCatalogueRequest"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "description": "A overall title for this contracting process or release."
+    },
+    "description": {
+      "type": "string",
+      "description": "An overall description for this contracting process or release"
+    },
+    "parties": {
+      "description": "Information on the parties (organisations, economic operators and other participants) who are involved in the contracting process and their roles.",
+      "type": "array",
+      "items": {
+        "$ref": "https://standard.open-contracting.org/schema/1__1__4/versioned-release-validation-schema.json/#/definitions/Organization"
+      },
+      "uniqueItems": true
+    },
+    "tender": {
+      "description": "The substance of the request and allowed activities",
+      "$ref": "#/definitions/Tender"
+    }
+  },
+  "definitions": {
+    "Tender": {
+      "type":"object",
+      "properties":{
+        "id": {
+          "title": "Tender ID",
+          "description": "An identifier for this tender process. This may be the same as the ocid, or may be drawn from an internally held identifier for this tender.",
+          "type": "string"
+        },
+        "title": {
+          "title": "Tender Title",
+          "description": "Tender title",
+          "type": "string"
+        },
+        "description": {
+          "title": "Tender description",
+          "description": "Tender description",
+          "type": "string"
+        },
+        "status": {
+          "title": "Tender status",
+          "description": "The current status of the tender based on the [tenderStatus codelist](http://standard.open-contracting.org/1.1-dev/en/schema/codelists/#tender-status)",
+          "type": "string",
+          "enum": [
+            "planned",
+            "active",
+            "cancelled",
+            "unsuccessful",
+            "complete"
+          ]
+        },
+        "procurementMethodModalities": {
+          "title": "Procurement method modalities",
+          "description": "The modalities of the procurement method.",
+          "type": "array",
+          "items":{
+            "type": "string",
+            "enum": [
+              "requiresElectronicCatalogue"
+            ]
+          }
+        },
+        "items": {
+          "title": "Items to be procured",
+          "description": "The goods and services to be purchased",
+          "type": "array",
+          "items": {
+            "$ref": "https://standard.open-contracting.org/schema/1__1__4/versioned-release-validation-schema.json#/definitions/Item"
+          }
+        },
+        "procurementMethod": {
+          "title": "Procurement method",
+          "description": "Specify tendering method against the codelist",
+          "type": "string",
+          "enum": [
+            "open",
+            "selective",
+            "limited"
+          ]
+        },
+        "procurementMethodDetails": {
+          "title": "Procurement method details",
+          "description": "Additional detail on the procurement method used",
+          "type": "string",
+          "enum": [
+            "preAwardCatalogueRequest"
+          ]
+        },
+        "mainProcurementCategory": {
+          "title": "Procurement category",
+          "description": "The primary category describing the object of this contracting process from codelist",
+          "type": "string",
+          "enum": [
+            "goods",
+            "services"
+          ]
+        },
+        "submissionMethod": {
+          "title": "Submission method",
+          "description": "Specify the method by which bids must be submitted, in person, written, or electronic auction. Using the [submission method codelist](http://standard.open-contracting.org/1.1-dev/en/schema/codelists/#submission-method)",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "electronicSubmission",
+              "electronicCatalogue"
+            ]
+          }
+        },
+        "procuringEntity": {
+          "title": "Procuring entity",
+          "description": "The entity managing the procurement",
+          "$ref": "https://standard.open-contracting.org/schema/1__1__4/versioned-release-validation-schema.json#/definitions/OrganizationReference"
+        },
+        "documents": {
+          "title": "Documents",
+          "description": "All documents and attachments related to the tender",
+          "type": "array",
+          "items": {
+            "$ref": "https://standard.open-contracting.org/schema/1__1__4/versioned-release-validation-schema.json#/definitions/Document"
+          }
+        },
+        "classification": {
+          "title": "Classification",
+          "description": "The primary classification for the tender usisng CPV Codelist",
+          "$ref": "https://standard.open-contracting.org/schema/1__1__4/versioned-release-validation-schema.json#/definitions/Classification"
+        },
+        "lots": {
+          "title": "Lots",
+          "description": "Details of each lot to be provided here. ",
+          "type": "array",
+          "items": {
+            "$ref": "https://standard.open-contracting.org/schema/1__1__4/versioned-release-validation-schema.json#/definitions/Lot"
+          }
+        },
+        "targets": {
+          "type": "array",
+          "title": "Targets",
+          "description": "Any target expected for the quantitive metrics of each lot of this contracting process.",
+          "items": {
+            "$ref": "https://raw.githubusercontent.com/open-contracting-extensions/ocds_metrics_extension/master/release-schema.json#/definitions/Metric"
+          },
+          "uniqueItems": true
+        },
+        "criteria": {
+          "title": "Criteria",
+          "description": "A list of criteria on which offered items will be judged. Mainly based on 'targets'",
+          "type": "array",
+          "items": {
+            "$ref": "https://raw.githubusercontent.com/open-contracting-extensions/ocds_requirements_extension/master/release-schema.json#/definitions/Criterion"
+          }
+        },
+        "tenderPeriod": {
+          "title": "Tender period",
+          "description": "The period when the request is open for submissions",
+          "$ref": "https://standard.open-contracting.org/schema/1__1__4/versioned-release-validation-schema.json#/definitions/Period"
+        },
+        "enquiryPeriod": {
+          "title": "Enquiry period",
+          "description": "The period during which invited tenderers may submit questions",
+          "$ref": "https://standard.open-contracting.org/schema/1__1__4/versioned-release-validation-schema.json#/definitions/Period"
+        },
+        "enquiries": {
+          "title": "Enquiries",
+          "description": "Questions sent to the procuring entity, and the answers given",
+          "type": "array",
+          "items": {
+            "$ref": "https://raw.githubusercontent.com/open-contracting-extensions/ocds_enquiry_extension/master/release-schema.json#/definitions/Enquiry"
+          }
+        }
+      }
+    }
+  }
+}
