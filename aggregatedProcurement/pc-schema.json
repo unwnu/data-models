@@ -4,14 +4,14 @@
   "type": "object",
   "properties": {
     "parties": {
-      "description": "Information on the economic operator who submits this catalogue",
+      "description": "Information on the economic operators who submit the catalogue",
       "type": "array",
       "items": {
         "$ref": "https://standard.open-contracting.org/schema/1__1__4/versioned-release-validation-schema.json/#/definitions/Organization"
       }
     },
     "bids": {
-      "description": "The bid section is used to publish summary statistics, and where applicable, individual bid information.",
+      "description": "The set of bids (in case of pre-award catalogue - single bid from unique tenderer, reflecting the scope of proposed items together with all the details and conditions",
       "$ref": "#/definitions/Bids"
     }
   },
