@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Schema for an Open Contracting Release for Pre-Award Catalogue",
+  "type": "object",
+  "properties": {
+    "parties": {
+      "description": "Information on the economic operator who submits this catalogue",
+      "type": "array",
+      "items": {
+        "$ref": "https://standard.open-contracting.org/schema/1__1__4/versioned-release-validation-schema.json/#/definitions/Organization"
+      }
+    },
+    "bids": {
+      "description": "The bid section is used to publish summary statistics, and where applicable, individual bid information.",
+      "$ref": "#/definitions/Bids"
+    }
+  },
+  "definitions": {
+    "Bids": {
+      "title": "Bids",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "details": {
+          "title": "Bid details",
+          "description": "The set of bids (in case of pre-award catalogue - single bid from unique tenderer, reflecting the scope of proposed items together with all the details and conditions",
+          "type": "array",
+          "items": {
+            "$ref": "https://standard.open-contracting.org/schema/1__1__4/versioned-release-validation-schema.json/#/definitions/Bid"
+          }
+        }
+      }
+    }
+  }
+}
