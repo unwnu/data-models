@@ -20,22 +20,22 @@
       "confluenceHint": ""
     },
     "tag": {
-      "description": "A value from the [Codelists#PCR tags] codelist that identifies the nature of the release being made",
+      "description": "A value from the codelist that identifies the nature of the release being made",
       "type": "array",
       "items": {
         "type": "string"
       },
       "codelist": "https://raw.githubusercontent.com/procuriosity/data-models/master/aggregatedProcurement/codelists/pcr-tags.csv",
-      "confluenceHint": ""
+      "confluenceHint": "[Codelists#PCR tags]"
     },
     "initiationType": {
-      "description": "String specifying the type of initiation process used for this request, taken from the [PCR initiation types] codelist",
+      "description": "String specifying the type of initiation process used for this request, taken from the  codelist",
       "type": "string",
       "enum": [
         "preAwardCatalogueRequest"
       ],
       "codelist": "https://raw.githubusercontent.com/procuriosity/data-models/master/aggregatedProcurement/codelists/pcr-initiationTypes.csv",
-      "confluenceHint": ""
+      "confluenceHint": "[Codelists#PCR initiation types]"
     },
     "title": {
       "type": "string",
@@ -59,7 +59,7 @@
     "tender": {
       "description": "The substance of the request and allowed activities",
       "$ref": "#/definitions/Tender",
-      "confluenceHint": "[PCR data-model#Tender]"
+      "confluenceHint": ""
     }
   },
   "definitions": {
@@ -86,14 +86,14 @@
         },
         "status": {
           "title": "Tender status",
-          "description": "The current status of the tender based on the [PCR statuses] codeslist",
+          "description": "The current status of the tender based on the codeslist",
           "type": "string",
           "codelist": "https://raw.githubusercontent.com/procuriosity/data-models/master/aggregatedProcurement/codelists/pcr-statuses.csv",
-          "confluenceHint": ""
+          "confluenceHint": "[Codelists#PCR statuses]"
         },
         "procurementMethodModalities": {
           "title": "Procurement method modalities",
-          "description": "The modalities of the procurement method taken from [PCR modalities].",
+          "description": "The modalities of the procurement method taken from the codelist.",
           "type": "array",
           "items": {
             "type": "string",
@@ -102,7 +102,7 @@
             ]
           },
           "codelist": "https://raw.githubusercontent.com/procuriosity/data-models/master/aggregatedProcurement/codelists/pcr-modalities.csv",
-          "confluenceHint": ""
+          "confluenceHint": "[Codelists#Modalities]"
         },
         "items": {
           "title": "Items to be procured",
@@ -110,12 +110,12 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/Item",
-            "confluenceHint": "Item"
+            "confluenceHint": "[Item]"
           }
         },
         "procurementMethod": {
           "title": "Procurement method",
-          "description": "Specify tendering method against the [PCR methods] codelist",
+          "description": "Specify tendering method against the codelist",
           "type": "string",
           "enum": [
             "open",
@@ -123,7 +123,7 @@
             "limited"
           ],
           "codelist": "https://raw.githubusercontent.com/procuriosity/data-models/master/aggregatedProcurement/codelists/pcr-methods.csv",
-          "confluenceHint": ""
+          "confluenceHint": "[Codelists#Procurement methods]"
         },
         "procurementMethodDetails": {
           "title": "Procurement method details",
@@ -132,7 +132,7 @@
           "enum": [
             "preAwardCatalogueRequest"
           ],
-          "confluenceHint": ""
+          "confluenceHint": "[Codelists#Procurement method details]"
         },
         "mainProcurementCategory": {
           "title": "Procurement category",
@@ -142,7 +142,7 @@
             "goods",
             "services"
           ],
-          "confluenceHint": ""
+          "confluenceHint": "[Codelists#Procurement categories]"
         },
         "submissionMethod": {
           "title": "Submission method",
@@ -155,13 +155,13 @@
               "electronicCatalogue"
             ]
           },
-          "confluenceHint": ""
+          "confluenceHint": "[Codelists#Submission methods]"
         },
         "procuringEntity": {
           "title": "Procuring entity",
           "description": "The entity managing the procurement",
           "$ref": "#/definitions/OrganizationReference",
-          "confluenceHint": "OrganizationReference"
+          "confluenceHint": "[OrganizationReference]"
         },
         "documents": {
           "title": "Documents",
@@ -169,14 +169,14 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/Document",
-            "confluenceHint": "Document"
+            "confluenceHint": "[Document]"
           }
         },
         "classification": {
           "title": "Classification",
           "description": "The primary classification for the tender usisng CPV Codelist",
           "$ref": "#/definitions/Classification",
-          "confluenceHint": "Classification"
+          "confluenceHint": "[Classification]"
         },
         "lots": {
           "title": "Lots",
@@ -184,7 +184,7 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/Lot",
-            "confluenceHint": "Lot"
+            "confluenceHint": "[Lot]"
           }
         },
         "targets": {
@@ -193,7 +193,7 @@
           "description": "Any target expected for the quantitive metrics of each lot of this contracting process.",
           "items": {
             "$ref": "#/definitions/Metric",
-            "confluenceHint": "Metric"
+            "confluenceHint": "[Metric]"
           },
           "uniqueItems": true
         },
@@ -203,20 +203,20 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/Criterion",
-            "confluenceHint": "Criterion"
+            "confluenceHint": "[Criterion]"
           }
         },
         "tenderPeriod": {
           "title": "Tender period",
           "description": "The period when the request is open for submissions",
           "$ref": "#/definitions/Period",
-          "confluenceHint": "Period"
+          "confluenceHint": "[Period]"
         },
         "enquiryPeriod": {
           "title": "Enquiry period",
           "description": "The period during which invited tenderers may submit questions",
           "$ref": "#/definitions/Period",
-          "confluenceHint": "Period"
+          "confluenceHint": "[Period]"
         },
         "enquiries": {
           "title": "Enquiries",
@@ -224,7 +224,7 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/Enquiry",
-            "confluenceHint": "Enquiry"
+            "confluenceHint": "[Enquiry]"
           }
         }
       }
