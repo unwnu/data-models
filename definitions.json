@@ -1996,14 +1996,17 @@
         "value": {
           "title": "Value",
           "description": "The total value of the bid.",
-          "$ref": "Value"
+          "$ref": "#/definitions/Value",
+          "confluenceHint":"Value"
         },
         "documents": {
           "title": "Documents",
           "description": "All documents and attachments related to the bid and its evaluation.",
           "type": "array",
+          "confluenceHint":""
           "items": {
-            "$ref": "#/definitions/Document"
+            "$ref": "#/definitions/Document",
+            "confluenceHint":"Document"
           },
           "uniqueItems": true
         },
