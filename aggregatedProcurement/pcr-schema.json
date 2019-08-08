@@ -46,25 +46,12 @@
       "type": "string",
       "description": "An overall description for this contracting process or release",
       "confluenceHint": ""
-    },
-    "parties": {
-      "description": "Information on the parties (organisations, economic operators and other participants) who are involved in the contracting process and their roles.",
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/Organization",
-        "confluenceHint": "[Organization]"
-      },
-      "uniqueItems": true
-    },
-    "tender": {
-      "description": "The substance of the request and allowed activities",
-      "$ref": "#/definitions/Tender",
-      "confluenceHint": ""
     }
   },
   "definitions": {
     "Tender": {
       "type": "object",
+      "description":"The substance of the request and allowed activities",
       "properties": {
         "id": {
           "title": "Tender ID",
@@ -228,6 +215,15 @@
           }
         }
       }
+    },
+    "Parties": {
+      "description": "Information on the parties (organisations, economic operators and other participants) who are involved in the contracting process and their roles.",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Organization",
+        "confluenceHint": "[Organization]"
+      },
+      "uniqueItems": true
     }
   }
 }
