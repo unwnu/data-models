@@ -1996,7 +1996,7 @@
         "value": {
           "title": "Value",
           "description": "The total value of the bid.",
-          "$ref": "#/definitions/Value"
+          "$ref": "Value"
         },
         "documents": {
           "title": "Documents",
