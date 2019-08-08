@@ -1,0 +1,88 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Schema for an Open Contracting Release under Procuriosity implementation",
+  "type": "object",
+  "properties": {
+    "ocid": {
+      "description": "A globally unique identifier for this Contracting Process",
+      "type": "string",
+      "confluenceHint":""
+    },
+    "id": {
+      "description": "An identifier for this particular release of information",
+      "type": "string",
+      "confluenceHint":""
+    },
+    "date": {
+      "description": "The date this information is released, it may well be the same as the parent publishedDate, it must not be later than the publishedDate from the parent package. It is used to determine merge order.",
+      "type": "string",
+      "format": "date-time",
+      "confluenceHint":""
+    },
+    "tag": {
+      "description": "A value from the [Codelists#Release tags]  codelist that identifies the nature of the release being made",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "codelist": "http://standard.open-contracting.org/1.1-dev/en/schema/codelists/#release-tag",
+      "openCodelist": false,
+      "confluenceHint":"[Codelists#Release tags]"
+    },
+    "initiationType": {
+      "description": "String specifying the type of initiation process used for this contract, taken from the [Codelists#Initiation types] codelist. Currently only tender is supported.",
+      "type": "string",
+      "codelist": "http://standard.open-contracting.org/1.1-dev/en/schema/codelists/#initiation-type",
+      "openCodelist": false,
+      "confluenceHint":"[Codelists#Initiation types]"
+    },
+    "title": {
+      "type": "string",
+      "description": "A overall title for this contracting process or release.",
+      "confluenceHint":""
+    },
+    "description": {
+      "type": "string",
+      "description": "An overall description for this contracting process or release. This should not replace provision of a detailed breakdown of the objects of the contracting process in the planning, tender, award or contracts section.",
+      "confluenceHint":""
+    },
+    "language": {
+      "description": "Specifies the default language of the data",
+      "type": "string",
+      "codeslit": "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes",
+      "confluenceHint":""
+    },
+    "relatedProcesses": {
+      "description": "If this process follows on from one or more prior process, represented under a separate open contracting identifier (ocid) then details of the related process can be provided here. This is commonly used to relate mini-competitions to their parent frameworks, full tenders to a pre-qualification phase, or individual tenders to a broad planning process.",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/RelatedProcess",
+        "confluenceHint":"[RelatedProcess]"
+      },
+      "uniqueItems": true
+    },
+    "buyerInternalReferenceId": {
+      "description": "The buyer internal reference identifier is an EU specific field. It uniquely identifies a procurement process within the Buyer's internal system.",
+      "type": "string",
+      "confluenceHint":""
+    },
+    "hasPreviousNotice": {
+      "description": "A True or False field to indicate whether this release represents a TED notice that is connected to a previous notice, either TED or national. Required by EU.",
+      "type": "boolean",
+      "confluenceHint":""
+    },
+    "purposeOfNotice": {
+      "description": "Details about the purpose of this notice release - used to determine the fields in the notice that are required to be completed. Required by EU.",
+      "$ref": "#/definitions/PurposeofNotice",
+      "confluenceHint":"[PurposeofNotice]"
+    },
+    "relatedNotice": {
+      "description": "Information that connects a notice with a related notice for the contracting process.",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/RelatedNotice",
+        "confluenceHint":"[RelatedNotice]"
+      }
+    }
+  }
+}
