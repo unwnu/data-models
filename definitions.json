@@ -2003,7 +2003,7 @@
           "title": "Documents",
           "description": "All documents and attachments related to the bid and its evaluation.",
           "type": "array",
-          "confluenceHint":""
+          "confluenceHint":"",
           "items": {
             "$ref": "#/definitions/Document",
             "confluenceHint":"Document"
