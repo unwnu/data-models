@@ -46,6 +46,15 @@
       "type": "string",
       "description": "An overall description for this contracting process or release",
       "confluenceHint": ""
+    },
+    "parties": {
+      "description": "Information on the parties (organisations, economic operators and other participants) who are involved in the contracting process and their roles.",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Organization",
+        "confluenceHint": "[Organization]"
+      },
+      "uniqueItems": true
     }
   },
   "definitions": {
@@ -215,15 +224,6 @@
           }
         }
       }
-    },
-    "Parties": {
-      "description": "Information on the parties (organisations, economic operators and other participants) who are involved in the contracting process and their roles.",
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/Organization",
-        "confluenceHint": "[Organization]"
-      },
-      "uniqueItems": true
     }
   }
 }
