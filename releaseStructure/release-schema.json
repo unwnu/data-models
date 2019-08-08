@@ -2,86 +2,180 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "Schema for an Open Contracting Release under Procuriosity implementation",
   "type": "object",
+  "@context": {
+    "@datamodel": "pcr"
+  },
   "properties": {
     "ocid": {
-      "description": "A globally unique identifier for this Contracting Process",
+      "description":{
+        "pcr": "A globally unique identifier for this Contracting Process",
+        "general": "A globally unique identifier for this Contracting Process"
+      }, 
       "type": "string",
-      "confluenceHint":""
+      "confluenceHint": {
+        "pcr": "",
+        "general": ""
+      }
     },
     "id": {
-      "description": "An identifier for this particular release of information",
+      "description":{
+        "pcr": "An identifier for this particular release of information",
+        "general": "An identifier for this particular release of information"
+      },
       "type": "string",
-      "confluenceHint":""
+      "confluenceHint": {
+        "pcr": "",
+        "general": ""
+      }
     },
     "date": {
-      "description": "The date this information is released, it may well be the same as the parent publishedDate, it must not be later than the publishedDate from the parent package. It is used to determine merge order.",
+      "description":{
+        "pcr": "The date this information is released, it may well be the same as the parent publishedDate, it must not be later than the publishedDate from the parent package. It is used to determine merge order.",
+        "general": "The date this information is released, it may well be the same as the parent publishedDate, it must not be later than the publishedDate from the parent package. It is used to determine merge order."
+      },
       "type": "string",
       "format": "date-time",
-      "confluenceHint":""
+      "confluenceHint": {
+        "pcr": "",
+        "general": ""
+      }
     },
     "tag": {
-      "description": "A value from the [Codelists#Release tags]  codelist that identifies the nature of the release being made",
+      "description":{
+        "pcr": "A value from the codelist that identifies the nature of the release being made",
+        "general": "A value from the codelist that identifies the nature of the release being made"
+      },
       "type": "array",
       "items": {
         "type": "string"
       },
       "codelist": "http://standard.open-contracting.org/1.1-dev/en/schema/codelists/#release-tag",
       "openCodelist": false,
-      "confluenceHint":"[Codelists#Release tags]"
+      "confluenceHint": {
+        "pcr": "[Codelists#PCR release tags]",
+        "general": "[Codelists#Release tags]"
+      }
     },
     "initiationType": {
-      "description": "String specifying the type of initiation process used for this contract, taken from the [Codelists#Initiation types] codelist. Currently only tender is supported.",
+      "description":{
+        "pcr": "String specifying the type of initiation process used for this release, taken from the  codelist",
+        "general": "String specifying the type of initiation process used for this release, taken from the  codelist"
+      },
       "type": "string",
       "codelist": "http://standard.open-contracting.org/1.1-dev/en/schema/codelists/#initiation-type",
       "openCodelist": false,
-      "confluenceHint":"[Codelists#Initiation types]"
+      "confluenceHint": {
+        "pcr": "[Codelists#PCR Initiation types]",
+        "general": "[Codelists#Initiation types]"
+      }
     },
     "title": {
       "type": "string",
-      "description": "A overall title for this contracting process or release.",
-      "confluenceHint":""
+      "description":{
+        "pcr": "A overall title for this contracting process or release.",
+        "general": "A overall title for this contracting process or release."
+      },
+      "confluenceHint": {
+        "pcr": "",
+        "general": ""
+      }
     },
     "description": {
       "type": "string",
-      "description": "An overall description for this contracting process or release. This should not replace provision of a detailed breakdown of the objects of the contracting process in the planning, tender, award or contracts section.",
-      "confluenceHint":""
+      "description":{
+        "pcr": "An overall description for this contracting process or release. This should not replace provision of a detailed breakdown of the objects of the contracting process in the planning, tender, award or contracts section.",
+        "general": "An overall description for this contracting process or release. This should not replace provision of a detailed breakdown of the objects of the contracting process in the planning, tender, award or contracts section."
+      },
+      "confluenceHint": {
+        "pcr": "",
+        "general": ""
+      }
     },
     "language": {
-      "description": "Specifies the default language of the data",
+      "description":{
+        "pcr": "Specifies the default language of the data",
+        "general": "Specifies the default language of the data"
+      },
       "type": "string",
       "codeslit": "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes",
-      "confluenceHint":""
+      "confluenceHint": {
+        "pcr": "",
+        "general": ""
+      }
     },
     "relatedProcesses": {
-      "description": "If this process follows on from one or more prior process, represented under a separate open contracting identifier (ocid) then details of the related process can be provided here. This is commonly used to relate mini-competitions to their parent frameworks, full tenders to a pre-qualification phase, or individual tenders to a broad planning process.",
+      "description":{
+        "pcr": " this process follows on from one or more prior process, represented under a separate ocid then details of the related process can be provided here.",
+        "general": " this process follows on from one or more prior process, represented under a separate ocid then details of the related process can be provided here."
+      },
       "type": "array",
       "items": {
-        "$ref": "#/definitions/RelatedProcess",
-        "confluenceHint":"[RelatedProcess]"
+        "$ref": "https://raw.githubusercontent.com/procuriosity/data-models/master/definitions.json#/definitions/RelatedProcess"
       },
-      "uniqueItems": true
+      "confluenceHint": {
+        "pcr": "[RelatedProcess]",
+        "general": "[RelatedProcess]"
+      }
     },
     "buyerInternalReferenceId": {
-      "description": "The buyer internal reference identifier is an EU specific field. It uniquely identifies a procurement process within the Buyer's internal system.",
+      "description":{
+        "pcr": "The buyer internal reference identifier is an EU specific field.",
+        "general": "The buyer internal reference identifier is an EU specific field."
+      },
       "type": "string",
-      "confluenceHint":""
+      "confluenceHint": {
+        "pcr": "",
+        "general": ""
+      }
     },
     "hasPreviousNotice": {
-      "description": "A True or False field to indicate whether this release represents a TED notice that is connected to a previous notice, either TED or national. Required by EU.",
+      "description":{
+        "pcr": "A field to indicate whether this release represents a TED notice that is connected to a previous notice, either TED or national. Required by EU.",
+        "general": "A field to indicate whether this release represents a TED notice that is connected to a previous notice, either TED or national. Required by EU."
+      },
       "type": "boolean",
-      "confluenceHint":""
+      "confluenceHint": {
+        "pcr": "",
+        "general": ""
+      }
     },
     "purposeOfNotice": {
-      "description": "Details about the purpose of this notice release - used to determine the fields in the notice that are required to be completed. Required by EU.",
-      "$ref": "#/definitions/PurposeofNotice",
-      "confluenceHint":"[PurposeofNotice]"
+      "description":{
+        "pcr": "Details about the purpose of this notice release - used to determine the fields in the notice that are required to be completed. Required by EU.",
+        "general": "Details about the purpose of this notice release - used to determine the fields in the notice that are required to be completed. Required by EU."
+      },
+      "$ref": "https://raw.githubusercontent.com/procuriosity/data-models/master/definitions.json#/definitions/PurposeofNotice",
+      "confluenceHint": {
+        "pcr": "[PurposeofNotice]",
+        "general": "[PurposeofNotice]"
+      }
     },
     "relatedNotice": {
-      "description": "Information that connects a notice with a related notice for the contracting process.",
+      "description":{
+        "pcr": "Information that connects a notice with a related notice for the contracting process.",
+        "general": "Information that connects a notice with a related notice for the contracting process."
+      },
       "type": "array",
       "items": {
-        "$ref": "#/definitions/RelatedNotice",
-        "confluenceHint":"[RelatedNotice]"
+        "$ref": "https://raw.githubusercontent.com/procuriosity/data-models/master/definitions.json#/definitions/RelatedNotice"
+      },
+      "confluenceHint": {
+        "pcr": "[RelatedNotice]",
+        "general": "[RelatedNotice]"
+      }
+    },
+    "parties": {
+      "description":{
+        "pcr": "Information on the parties (organisations, economic operators and other participants) who are involved in the contracting process and their roles.",
+        "general": "Information on the parties (organisations, economic operators and other participants) who are involved in the contracting process and their roles."
+      },
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/procuriosity/data-models/master/definitions.json#/definitions/Organization"
+      },
+      "confluenceHint": {
+        "pcr": "[Organization]",
+        "general": "[Organization]"
       }
     }
   }
