@@ -20,7 +20,7 @@
       "confluenceHint": ""
     },
     "tag": {
-      "description": "A value from the [PCR codelists#tags] codelist that identifies the nature of the release being made",
+      "description": "A value from the [Codelists#PCR tags] codelist that identifies the nature of the release being made",
       "type": "array",
       "items": {
         "type": "string"
