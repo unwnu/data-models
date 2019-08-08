@@ -59,7 +59,7 @@
     "tender": {
       "description": "The substance of the request and allowed activities",
       "$ref": "#/definitions/Tender",
-      "confluenceHint": "#Tender"
+      "confluenceHint": "PCR data-model#Tender"
     }
   },
   "definitions": {
