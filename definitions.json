@@ -899,11 +899,11 @@
                 "large"
               ]
             },
-            "classifications":{
-              "decription":"",
-              "type":"array",
-              "items":{
-                "$ref": "#/definitions/Classification"  
+            "classifications": {
+              "decription": "",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Classification"
               }
             },
             "typeOfBuyer": {
@@ -924,7 +924,7 @@
             },
             "typeOfSupplier": {
               "descriptiopn": "Specifing whether this Entity is 'personel' or 'company'",
-              "type":"object",
+              "type": "object",
               "$ref": "#/definitions/Classification"
             },
             "mainGeneralActivity": {
@@ -975,10 +975,10 @@
                 "null"
               ]
             },
-            "bankAccounts":{
-              "description":"",
-              "type":"array",
-              "items":{
+            "bankAccounts": {
+              "description": "",
+              "type": "array",
+              "items": {
                 "$ref": "#/definitions/BankAccount"
               }
             },
@@ -1036,9 +1036,9 @@
       }
     },
     "Permit": {
-      "description":"",
-      "type":"object",
-      "properties":{
+      "description": "",
+      "type": "object",
+      "properties": {
         "scheme": {
           "description": "Identifier that uniquely pick out a legal registry consists needed details",
           "type": "string",
@@ -1065,7 +1065,7 @@
         }
       }
     },
-    "PermitDetails":{
+    "PermitDetails": {
       "description": "Details about permit/license",
       "type": "object",
       "properties": {
@@ -1143,10 +1143,10 @@
     "BusinessFunction": {
       "properties": {
         "type": {
-          "description":"",
-          "type":"string",
-          "opencodelist":true,
-          "enum":[
+          "description": "",
+          "type": "string",
+          "opencodelist": true,
+          "enum": [
             "contractingAuthority",
             "contactPoint",
             "technicalEvaluator",
@@ -1158,8 +1158,8 @@
           ]
         },
         "jobTitle": {
-          "description":"Classification and human-readeble description of persones' position",
-          "type":"object",
+          "description": "Classification and human-readeble description of persones' position",
+          "type": "object",
           "$ref": "#/definitions/Classification"
         },
         "period": {
@@ -1570,7 +1570,7 @@
             "string",
             "null"
           ],
-          "enum":[
+          "enum": [
             "contract",
             "market",
             "application"
@@ -1675,16 +1675,16 @@
           "description": "The country name. For example, United States."
         },
         "addressDetails": {
-          "description":"",
-          "type":"object",
+          "description": "",
+          "type": "object",
           "$ref": "#/definitions/AddressDetails"
         }
       }
     },
-    "AddressDetails":{
-      "description":"",
-      "type":"object",
-      "properties":{
+    "AddressDetails": {
+      "description": "",
+      "type": "object",
+      "properties": {
         "countryDetails": {
           "descirption": "Country code according to 'iso-alpha2' classifier",
           "type": "object",
@@ -1715,9 +1715,9 @@
       "type": "object",
       "description": "A person, contact point or department to contact in relation to this contracting process.",
       "properties": {
-        "id":{
-          "desciption":"The legal identifier of this person according to local identification scheme used as a cross-reference to the full description ob the person, including contacts and business function, described in the 'persones' section",
-          "type":"string"
+        "id": {
+          "desciption": "The legal identifier of this person according to local identification scheme used as a cross-reference to the full description ob the person, including contacts and business function, described in the 'persones' section",
+          "type": "string"
         },
         "name": {
           "title": "Name",
@@ -1765,7 +1765,7 @@
     "Value": {
       "title": "Value",
       "type": "object",
-      "description":"Financial value description",
+      "description": "Financial value description",
       "properties": {
         "amount": {
           "title": "Amount",
@@ -1794,9 +1794,9 @@
             "$ref": "#/definitions/ExchangeRate"
           }
         },
-        "valueAddedTaxIncluded":{
-          "title":"A true/false field to indicate whether the value tax was included",
-          "type":"boolean"
+        "valueAddedTaxIncluded": {
+          "title": "A true/false field to indicate whether the value tax was included",
+          "type": "boolean"
         }
       }
     },
@@ -1873,11 +1873,11 @@
             "null"
           ]
         },
-        "scheme":{
-          "title":"Scheme",
-          "description":"The identification scheme used by this cross-reference from the related process scheme codelist codelist. When cross-referencing information also published using OCDS, an Open Contracting ID (ocid) should be used.",
-          "type":"string",
-          "enum":[
+        "scheme": {
+          "title": "Scheme",
+          "description": "The identification scheme used by this cross-reference from the related process scheme codelist codelist. When cross-referencing information also published using OCDS, an Open Contracting ID (ocid) should be used.",
+          "type": "string",
+          "enum": [
             "ocid",
             "ppid"
           ]
@@ -1962,7 +1962,8 @@
           "description": "A local identifier for this bid",
           "type": [
             "string"
-          ]
+          ],
+          "confluenceHint": ""
         },
         "date": {
           "title": "Date",
@@ -1971,7 +1972,8 @@
             "string",
             "null"
           ],
-          "format": "date-time"
+          "format": "date-time",
+          "confluenceHint": ""
         },
         "status": {
           "title": "Status",
@@ -1980,7 +1982,8 @@
             "string",
             "null"
           ],
-          "TODO": "EMBED CODELIST"
+          "TODO": "EMBED CODELIST",
+          "confluenceHint": ""
         },
         "tenderers": {
           "title": "Tenderer",
@@ -1990,23 +1993,23 @@
             "null"
           ],
           "items": {
-            "$ref": "#/definitions/OrganizationReference"
+            "$ref": "#/definitions/OrganizationReference",
+            "confluenceHint": "OrganizationReference"
           }
         },
         "value": {
           "title": "Value",
           "description": "The total value of the bid.",
           "$ref": "#/definitions/Value",
-          "confluenceHint":"Value"
+          "confluenceHint": "Value"
         },
         "documents": {
           "title": "Documents",
           "description": "All documents and attachments related to the bid and its evaluation.",
           "type": "array",
-          "confluenceHint":"",
           "items": {
             "$ref": "#/definitions/Document",
-            "confluenceHint":"Document"
+            "confluenceHint": "Document"
           },
           "uniqueItems": true
         },
@@ -2022,7 +2025,8 @@
               "null"
             ]
           },
-          "NOTE": "Compare againt lotValues approach in open procument API - http://api-docs.openprocurement.org/en/latest/lots.html"
+          "NOTE": "Compare againt lotValues approach in open procument API - http://api-docs.openprocurement.org/en/latest/lots.html",
+          "confluenceHint": ""
         },
         "requirementResponses": {
           "TODO": "ADD REQUIREMENT RESPONSE SECTION TO REQUIREMENTS EXTENSION",
@@ -2032,7 +2036,8 @@
             "idRef": "id"
           },
           "items": {
-            "$ref": "#/definitions/RequirementResponse"
+            "$ref": "#/definitions/RequirementResponse",
+            "confluenceHint": "RequirementResponse"
           },
           "unqiueItems": true
         }
