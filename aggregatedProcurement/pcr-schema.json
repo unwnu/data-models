@@ -6,132 +6,124 @@
     "ocid": {
       "description": "A globally unique identifier for this Contracting Process",
       "type": "string",
-      "confluenceHint":""
+      "confluenceHint": ""
     },
     "id": {
       "description": "An identifier for this particular release of information",
       "type": "string",
-      "confluenceHint":""
+      "confluenceHint": ""
     },
     "date": {
       "description": "The date this information is released, it may well be the same as the parent publishedDate, it must not be later than the publishedDate from the parent package. It is used to determine merge order.",
       "type": "string",
       "format": "date-time",
-      "confluenceHint":""
+      "confluenceHint": ""
     },
     "tag": {
-      "description": "A value from the codelist that identifies the nature of the release being made",
+      "description": "A value from the [PCR codelists#tags] codelist that identifies the nature of the release being made",
       "type": "array",
       "items": {
-        "type": "string",
-        "enum": [
-          "request",
-          "requestAmendment",
-          "preAwardCatalogue",
-          "preAwardCatalogueAmendment"
-        ]
+        "type": "string"
       },
-      "confluenceHint":""
+      "codelist": "https://raw.githubusercontent.com/procuriosity/data-models/master/aggregatedProcurement/codelists/pcr-tags.csv",
+      "confluenceHint": ""
     },
     "initiationType": {
-      "description": "String specifying the type of initiation process used for this request, taken from the  codelist",
+      "description": "String specifying the type of initiation process used for this request, taken from the [PCR initiation types] codelist",
       "type": "string",
       "enum": [
         "preAwardCatalogueRequest"
       ],
-      "confluenceHint":""
+      "codelist": "https://raw.githubusercontent.com/procuriosity/data-models/master/aggregatedProcurement/codelists/pcr-initiationTypes.csv",
+      "confluenceHint": ""
     },
     "title": {
       "type": "string",
       "description": "A overall title for this contracting process or release.",
-      "confluenceHint":""
+      "confluenceHint": ""
     },
     "description": {
       "type": "string",
       "description": "An overall description for this contracting process or release",
-      "confluenceHint":""
+      "confluenceHint": ""
     },
     "parties": {
       "description": "Information on the parties (organisations, economic operators and other participants) who are involved in the contracting process and their roles.",
       "type": "array",
       "items": {
-        "$ref": "https://standard.open-contracting.org/schema/1__1__4/versioned-release-validation-schema.json/#/definitions/Organization",
-        "confluenceHint":"Organization"
+        "$ref": "#/definitions/Organization",
+        "confluenceHint": "Organization"
       },
       "uniqueItems": true
     },
     "tender": {
       "description": "The substance of the request and allowed activities",
       "$ref": "#/definitions/Tender",
-      "confluenceHint":"#Tender"
+      "confluenceHint": "[#Tender]"
     }
   },
   "definitions": {
     "Tender": {
-      "type":"object",
-      "properties":{
+      "type": "object",
+      "properties": {
         "id": {
           "title": "Tender ID",
           "description": "An identifier for this tender process. This may be the same as the ocid, or may be drawn from an internally held identifier for this tender.",
           "type": "string",
-          "confluenceHint":""
+          "confluenceHint": ""
         },
         "title": {
           "title": "Tender Title",
           "description": "Tender title",
           "type": "string",
-          "confluenceHint":""
+          "confluenceHint": ""
         },
         "description": {
           "title": "Tender description",
           "description": "Tender description",
           "type": "string",
-          "confluenceHint":""
+          "confluenceHint": ""
         },
         "status": {
           "title": "Tender status",
-          "description": "The current status of the tender based on the [tenderStatus codelist](http://standard.open-contracting.org/1.1-dev/en/schema/codelists/#tender-status)",
+          "description": "The current status of the tender based on the [PCR statuses] codeslist",
           "type": "string",
-          "enum": [
-            "planned",
-            "active",
-            "cancelled",
-            "unsuccessful",
-            "complete"
-          ],
-          "confluenceHint":""
+          "codelist": "https://raw.githubusercontent.com/procuriosity/data-models/master/aggregatedProcurement/codelists/pcr-statuses.csv",
+          "confluenceHint": ""
         },
         "procurementMethodModalities": {
           "title": "Procurement method modalities",
-          "description": "The modalities of the procurement method.",
+          "description": "The modalities of the procurement method taken from [PCR modalities].",
           "type": "array",
-          "items":{
+          "items": {
             "type": "string",
             "enum": [
               "requiresElectronicCatalogue"
             ]
           },
-          "confluenceHint":""
+          "codelist": "https://raw.githubusercontent.com/procuriosity/data-models/master/aggregatedProcurement/codelists/pcr-modalities.csv",
+          "confluenceHint": ""
         },
         "items": {
           "title": "Items to be procured",
           "description": "The goods and services to be purchased",
           "type": "array",
           "items": {
-            "$ref": "https://standard.open-contracting.org/schema/1__1__4/versioned-release-validation-schema.json#/definitions/Item",
-          "confluenceHint":"Item"
+            "$ref": "#/definitions/Item",
+            "confluenceHint": "Item"
           }
         },
         "procurementMethod": {
           "title": "Procurement method",
-          "description": "Specify tendering method against the codelist",
+          "description": "Specify tendering method against the [PCR methods] codelist",
           "type": "string",
           "enum": [
             "open",
             "selective",
             "limited"
           ],
-          "confluenceHint":""
+          "codelist": "https://raw.githubusercontent.com/procuriosity/data-models/master/aggregatedProcurement/codelists/pcr-methods.csv",
+          "confluenceHint": ""
         },
         "procurementMethodDetails": {
           "title": "Procurement method details",
@@ -140,7 +132,7 @@
           "enum": [
             "preAwardCatalogueRequest"
           ],
-          "confluenceHint":""
+          "confluenceHint": ""
         },
         "mainProcurementCategory": {
           "title": "Procurement category",
@@ -150,11 +142,11 @@
             "goods",
             "services"
           ],
-          "confluenceHint":""
+          "confluenceHint": ""
         },
         "submissionMethod": {
           "title": "Submission method",
-          "description": "Specify the method by which bids must be submitted, in person, written, or electronic auction. Using the [submission method codelist](http://standard.open-contracting.org/1.1-dev/en/schema/codelists/#submission-method)",
+          "description": "The method by which bids must be submitted, in person, written, or electronic auction. Using the [submission method codelist](http://standard.open-contracting.org/1.1-dev/en/schema/codelists/#submission-method)",
           "type": "array",
           "items": {
             "type": "string",
@@ -163,36 +155,36 @@
               "electronicCatalogue"
             ]
           },
-          "confluenceHint":""
+          "confluenceHint": ""
         },
         "procuringEntity": {
           "title": "Procuring entity",
           "description": "The entity managing the procurement",
-          "$ref": "https://standard.open-contracting.org/schema/1__1__4/versioned-release-validation-schema.json#/definitions/OrganizationReference",
-          "confluenceHint":"OrganizationReference"
+          "$ref": "#/definitions/OrganizationReference",
+          "confluenceHint": "OrganizationReference"
         },
         "documents": {
           "title": "Documents",
           "description": "All documents and attachments related to the tender",
           "type": "array",
           "items": {
-            "$ref": "https://standard.open-contracting.org/schema/1__1__4/versioned-release-validation-schema.json#/definitions/Document",
-          "confluenceHint":"Document"
+            "$ref": "#/definitions/Document",
+            "confluenceHint": "Document"
           }
         },
         "classification": {
           "title": "Classification",
           "description": "The primary classification for the tender usisng CPV Codelist",
-          "$ref": "https://standard.open-contracting.org/schema/1__1__4/versioned-release-validation-schema.json#/definitions/Classification",
-          "confluenceHint":"Classification"
+          "$ref": "#/definitions/Classification",
+          "confluenceHint": "Classification"
         },
         "lots": {
           "title": "Lots",
           "description": "Details of each lot to be provided here. ",
           "type": "array",
           "items": {
-            "$ref": "https://standard.open-contracting.org/schema/1__1__4/versioned-release-validation-schema.json#/definitions/Lot",
-          "confluenceHint":"Lot"
+            "$ref": "#/definitions/Lot",
+            "confluenceHint": "Lot"
           }
         },
         "targets": {
@@ -200,8 +192,8 @@
           "title": "Targets",
           "description": "Any target expected for the quantitive metrics of each lot of this contracting process.",
           "items": {
-            "$ref": "https://raw.githubusercontent.com/open-contracting-extensions/ocds_metrics_extension/master/release-schema.json#/definitions/Metric",
-          "confluenceHint":"Metric"
+            "$ref": "#/definitions/Metric",
+            "confluenceHint": "Metric"
           },
           "uniqueItems": true
         },
@@ -210,29 +202,29 @@
           "description": "A list of criteria on which offered items will be judged. Mainly based on 'targets'",
           "type": "array",
           "items": {
-            "$ref": "https://raw.githubusercontent.com/open-contracting-extensions/ocds_requirements_extension/master/release-schema.json#/definitions/Criterion",
-          "confluenceHint":"Criterion"
+            "$ref": "#/definitions/Criterion",
+            "confluenceHint": "Criterion"
           }
         },
         "tenderPeriod": {
           "title": "Tender period",
           "description": "The period when the request is open for submissions",
-          "$ref": "https://standard.open-contracting.org/schema/1__1__4/versioned-release-validation-schema.json#/definitions/Period",
-          "confluenceHint":"Period"
+          "$ref": "#/definitions/Period",
+          "confluenceHint": "Period"
         },
         "enquiryPeriod": {
           "title": "Enquiry period",
           "description": "The period during which invited tenderers may submit questions",
-          "$ref": "https://standard.open-contracting.org/schema/1__1__4/versioned-release-validation-schema.json#/definitions/Period",
-          "confluenceHint":"Period"
+          "$ref": "#/definitions/Period",
+          "confluenceHint": "Period"
         },
         "enquiries": {
           "title": "Enquiries",
           "description": "Questions sent to the procuring entity, and the answers given",
           "type": "array",
           "items": {
-            "$ref": "https://raw.githubusercontent.com/open-contracting-extensions/ocds_enquiry_extension/master/release-schema.json#/definitions/Enquiry",
-          "confluenceHint":"Enquiry"
+            "$ref": "#/definitions/Enquiry",
+            "confluenceHint": "Enquiry"
           }
         }
       }
