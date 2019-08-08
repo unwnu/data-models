@@ -1765,7 +1765,7 @@
     "Value": {
       "title": "Value",
       "type": "object",
-      "description":"Financial value description"
+      "description":"Financial value description",
       "properties": {
         "amount": {
           "title": "Amount",
