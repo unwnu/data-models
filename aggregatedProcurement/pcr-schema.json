@@ -52,14 +52,14 @@
       "type": "array",
       "items": {
         "$ref": "#/definitions/Organization",
-        "confluenceHint": "Organization"
+        "confluenceHint": "[Organization]"
       },
       "uniqueItems": true
     },
     "tender": {
       "description": "The substance of the request and allowed activities",
       "$ref": "#/definitions/Tender",
-      "confluenceHint": "PCR data-model#Tender"
+      "confluenceHint": "[#Tender]"
     }
   },
   "definitions": {
