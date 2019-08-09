@@ -124,7 +124,7 @@
       "items": {
         "$ref": "https://raw.githubusercontent.com/procuriosity/data-models/master/definitions.json#/definitions/RelatedProcess"
       },
-      "docHint":"RelatedProcess"
+      "docHint":"[RelatedProcess]"
     },
     "parties": {
       "description":"Information on the parties (organisations, economic operators and other participants) who are involved in the contracting process and their roles.",
@@ -132,7 +132,7 @@
       "items": {
         "$ref": "https://raw.githubusercontent.com/procuriosity/data-models/master/definitions.json#/definitions/Organization"
       },
-      "docHint":"Organization"
+      "docHint":"[Organization]"
     }
   }
 }
