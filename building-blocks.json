@@ -198,10 +198,73 @@
       "type": "object",
       "applicable": {
         "pcr": [
-          "id"
+          "id",
+          "title",
+          "description",
+          "status",
+          "procurementMethodModalities",
+          "items",
+          "value",
+          "procurementMethod",
+          "procurementMethodDetails",
+          "procurementMethodRationale",
+          "mainProcurementCategory",
+          "submissionMethod",
+          "submissionMethodDetails",
+          "tenderPeriod",
+          "enquiryPeriod",
+          "hasEnquiries",
+          "tenderers",
+          "procuringEntity",
+          "documents",
+          "milestones",
+          "amendments",
+          "lots",
+          "lotDetails",
+          "lotGroups",
+          "criteria",
+          "classification",
+          "targets"
         ],
         "general": [
-          "id"
+          "id",
+          "title",
+          "description",
+          "status",
+          "procurementMethodModalities",
+          "items",
+          "value",
+          "procurementMethod",
+          "procurementMethodDetails",
+          "procurementMethodRationale",
+          "mainProcurementCategory",
+          "additionalProcurementCategories",
+          "awardCriteria",
+          "awardCriteriaDetails",
+          "submissionMethod",
+          "submissionMethodDetails",
+          "tenderPeriod",
+          "enquiryPeriod",
+          "hasEnquiries",
+          "eligibilityCriteria",
+          "awardPeriod",
+          "contractPeriod",
+          "numberOfTenderers",
+          "tenderers",
+          "procuringEntity",
+          "documents",
+          "milestones",
+          "amendments",
+          "lots",
+          "lotDetails",
+          "lotGroups",
+          "participationFees",
+          "criteria",
+          "acceleratedProcedure",
+          "classification",
+          "reviewPeriod",
+          "standstillPeriod",
+          "targets"
         ],
         "ssp":[],
         "dap":[],
@@ -209,7 +272,7 @@
         "pqq":[],
         "fe":[]
       },
-      "required": {
+      "mandatory": {
         "pcr": [
           "id"
         ],
@@ -699,6 +762,35 @@
             "fe":""
           }
         },
+        "enquiries": {
+          "title": "Enquiries",
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/definitions/Enquiry"
+          },
+          "uniqueItems": true,
+          "description": {
+            "pcr": "Questions sent to the procuring entity, and the answers given",
+            "general": "Questions sent to the procuring entity, and the answers given",
+            "ssp":"",
+            "dap":"",
+            "rp":"",
+            "pqq":"",
+            "fe":""
+          },
+          "confluenceHint": {
+            "pcr": "[Enquiry]",
+            "general": "[Enquiry]",
+            "ssp":"[Enquiry]",
+            "dap":"",
+            "rp":"[Enquiry]",
+            "pqq":"[Enquiry]",
+            "fe":"[Enquiry]"
+          }
+        },
         "eligibilityCriteria": {
           "title": "Eligibility criteria",
           "type": [
@@ -1045,7 +1137,7 @@
           "title": "Accelerated Procedure",
           "$ref": "#/definitions/AcceleratedProcedure",
           "description": {
-            "pcr": "A list of criteria on which offered items will be judged. Mainly based on 'targets'",
+            "pcr": "*Out of use* since there is no sence to accelerate this initiation type",
             "general": "Details about whether an accelerated procurement is being used and the justification for doing so",
             "ssp":"",
             "dap":"",
@@ -1127,6 +1219,32 @@
             "fe": "",
             "pcr": "[Period]",
             "general": "[Period]"
+          }
+        },
+        "targets": {
+          "type": "array",
+          "title": "Targets",
+          "items": {
+            "$ref": "#/definitions/Metric"
+          },
+          "uniqueItems": true,
+          "description": {
+            "ssp": "",
+            "dap": "",
+            "rp": "",
+            "pqq": "",
+            "fe": "",
+            "pcr": "Any target metrics for this results of this contracting process.",
+            "general": "Any target metrics for this results of this contracting process."
+          },
+          "confluenceHint": {
+            "ssp": "",
+            "dap": "",
+            "rp": "",
+            "pqq": "",
+            "fe": "",
+            "pcr": "[Metric]",
+            "general": "[Metric]"
           }
         }
       }
@@ -1277,20 +1395,6 @@
           "title": "Status details",
           "description": "Additional details of an award status.",
           "type": "string"
-        }
-      },
-      "patternProperties": {
-        "^(title_(((([A-Za-z]{2,3}(-([A-Za-z]{3}(-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(-([A-Za-z]{4}))?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-([0-9A-WY-Za-wy-z](-[A-Za-z0-9]{2,8})+))*(-(x(-[A-Za-z0-9]{1,8})+))?)|(x(-[A-Za-z0-9]{1,8})+)))$": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "^(description_(((([A-Za-z]{2,3}(-([A-Za-z]{3}(-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(-([A-Za-z]{4}))?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-([0-9A-WY-Za-wy-z](-[A-Za-z0-9]{2,8})+))*(-(x(-[A-Za-z0-9]{1,8})+))?)|(x(-[A-Za-z0-9]{1,8})+)))$": {
-          "type": [
-            "string",
-            "null"
-          ]
         }
       }
     },
@@ -1478,20 +1582,6 @@
           "description": "Contracts within a framework agreement or a dynamic purchasing system are being awarded. Required by the EU",
           "type": [
             "boolean",
-            "null"
-          ]
-        }
-      },
-      "patternProperties": {
-        "^(title_(((([A-Za-z]{2,3}(-([A-Za-z]{3}(-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(-([A-Za-z]{4}))?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-([0-9A-WY-Za-wy-z](-[A-Za-z0-9]{2,8})+))*(-(x(-[A-Za-z0-9]{1,8})+))?)|(x(-[A-Za-z0-9]{1,8})+)))$": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "^(description_(((([A-Za-z]{2,3}(-([A-Za-z]{3}(-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(-([A-Za-z]{4}))?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-([0-9A-WY-Za-wy-z](-[A-Za-z0-9]{2,8})+))*(-(x(-[A-Za-z0-9]{1,8})+))?)|(x(-[A-Za-z0-9]{1,8})+)))$": {
-          "type": [
-            "string",
             "null"
           ]
         }
