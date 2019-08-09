@@ -5,66 +5,59 @@
   "doc":{
     "application":{
       "pcr":{
-        "ocid":{
-          "description":"",
-          "docHint":"",
-          "mandatory":true,
-          "owner":"System"
-        },
-        "id":{
-          "description":"",
-          "docHint":"",
-          "mandatory":true,
-          "owner":"System"
-        },
-        "date":{
-          "description":"",
-          "docHint":"",
-          "mandatory":true,
-          "owner":"System"
-        },
-        "tag":{
-          "description":"",
-          "docHint":"[Codelists#PCR release tags]",
-          "mandatory":true,
-          "owner":"System"
-        },
-        "initiationType":{
-          "description":"",
-          "docHint":"[Codelists#PCR Initiation types]",
-          "mandatory":true,
-          "owner":"System"
-        },
-        "title":{
-          "description":"",
-          "docHint":"",
-          "mandatory":true,
-          "owner":"System"
-        },
-        "descrition":{
-          "description":"",
-          "docHint":"",
-          "mandatory":true,
-          "owner":"System"
-        },
-        "language":{
-          "description":"",
-          "docHint":"",
-          "mandatory":true,
-          "owner":"System"
-        },
-        "relatedProcesses":{
-          "description":"",
-          "docHint":"",
-          "mandatory":true,
-          "owner":"System"
-        },
-        "parties":{
-          "description":"",
-          "docHint":"[Organization]",
-          "mandatory":true,
-          "owner":"System"
-        } 
+        "descrition":"From OCDS point of view, PCR - is a stand-alone ocds-record where all the date presented within [Release]",
+        "properties":{
+          "ocid":{
+            "description":"",
+            "mandatory":true,
+            "owner":"System"
+          },
+          "id":{
+            "description":"",
+            "mandatory":true,
+            "owner":"System"
+          },
+          "date":{
+            "description":"",
+            "mandatory":true,
+            "owner":"System"
+          },
+          "tag":{
+            "description":"Appliceble codelist is [Codelists#PCR release tags]",
+            "mandatory":true,
+            "owner":"System"
+          },
+          "initiationType":{
+            "description":"Appliceble codelist is [Codelists#PCR Initiation types]",
+            "mandatory":true,
+            "owner":"System"
+          },
+          "title":{
+            "description":"",
+            "mandatory":true,
+            "owner":"System"
+          },
+          "descrition":{
+            "description":"",
+            "mandatory":true,
+            "owner":"System"
+          },
+          "language":{
+            "description":"",
+            "mandatory":true,
+            "owner":"System"
+          },
+          "relatedProcesses":{
+            "description":"",
+            "mandatory":true,
+            "owner":"System"
+          },
+          "parties":{
+            "description":"",
+            "mandatory":true,
+            "owner":"System"
+          } 
+        }
       }
     }
   },
