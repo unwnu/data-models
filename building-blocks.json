@@ -266,7 +266,32 @@
           "standstillPeriod",
           "targets"
         ],
-        "ssp":[],
+        "ssp":{
+          "id":{
+            "description": "An identifier for this tender process. This may be the same as the ocid, or may be drawn from an internally held identifier for this tender.",
+            "confluenceHint":"",
+            "mandatory":false,
+            "nature":"auto-generated"
+          },
+          "title":{
+            "description": "Tender title",
+            "confluenceHint":"",
+            "mandatory":true,
+            "nature":"By owner"
+          },
+          "description":{
+            "description": "Tender title",
+            "confluenceHint":"[Codelists#PCR statuses]",
+            "mandatory":false,
+            "nature":"By owner"
+          },
+          "status":{
+            "description": "The current status of the PCR based on the codelist",
+            "confluenceHint":"",
+            "mandatory":true,
+            "nature":"By system"
+          }
+        },
         "dap":[],
         "rp":[],
         "pqq":[],
