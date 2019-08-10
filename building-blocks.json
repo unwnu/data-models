@@ -438,109 +438,97 @@
             "description":"",
             "properties":{
               "id":{
-                "description":"",
-                "mandatory":"",
-                "owner":""
+                "description":"ID for this release",
+                "mandatory":true,
+                "owner":"System"
               },
               "internalId": {
-                "description":"",
-                "mandatory":"",
-                "owner":""
+                "description":"Internal identifier for this PCR according to Procuring Entity classification",
+                "mandatory":false,
+                "owner":"Procuring Entity"
               },
               "title":{
-                "description":"",
-                "mandatory":"",
-                "owner":""
+                "description":"Title for this PCR",
+                "mandatory":true,
+                "owner":"Procuring Entity"
               },
               "descrition":{
-                "description":"",
-                "mandatory":"",
-                "owner":""
+                "description":"Free-text relevant description for this PCR",
+                "mandatory":false,
+                "owner":"Procuring Entity"
               },
               "status":{
-                "mandatory":"",
-                "owner":"",
-                "description":"[Codelists#PCR statuses]"
+                "mandatory":true,
+                "owner":"System",
+                "description":"Status of PCR from [Codelists#PCR statuses] according to state-chart diagram"
               },
               "procurementMethodModalities":{
-                "description":"",
-                "mandatory":"",
-                "owner":""
+                "description":"The set of modalities for this PCR",
+                "mandatory":true,
+                "defaulValue":"requiresElectronicCatalogue",
+                "owner":"System"
               },
               "items":{
-                "description":"",
-                "mandatory":"",
-                "owner":""
+                "description":"The precise items (goods/services) indicated and exepcted by Procuring Entity under this PCR",
+                "mandatory":false,
+                "owner":"Procuring Entity"
               },
               "value":{
-                "description":"",
-                "mandatory":"",
-                "owner":""
+                "description":"The estimated value for this PCR indicated by Procuring Entity",
+                "mandatory":false,
+                "owner":"Procuring Entity"
               },
               "procurementMethod":{
-                "description":"",
-                "mandatory":"",
-                "owner":""
+                "description":"Procurement method specified by default",
+                "defaultValue":"selective",
+                "mandatory":true,
+                "owner":"System"
               },
               "procurementMethodDetails":{
-                "description":"",
-                "mandatory":"",
-                "owner":""
+                "description":"The machine-readable name of the initiated process",
+                "mandatory":true,
+                "defaultValue":"preAwardCatalogueRequest",
+                "owner":"System"
               },
               "procurementMethodRationale":{
-                "description":"",
-                "mandatory":"",
-                "owner":""
+                "description":"Free-text justification of applied procurement method by Procuring Entity",
+                "mandatory":false,
+                "owner":"Procuring Entity"
               },
               "mainProcurementCategory":{
-                "description":"",
-                "mandatory":"",
-                "owner":""
-              },
-              "submissionMethod":{
-                "description":"",
-                "mandatory":"",
-                "owner":""
-              },
-              "submissionMethodDetails":{
-                "description":"",
-                "mandatory":"",
-                "owner":""
+                "description":"Main procurement category indicated according to the classification of the subject of procurement",
+                "mandatory":true,
+                "owner":"System"
               },
               "tenderPeriod":{
-                "description":"",
-                "mandatory":"",
-                "owner":""
+                "description":"The period for submission of the pre-award catalogues by invited suppliers",
+                "mandatory":true,
+                "owner":"Procuring Entity"
               },
               "enquiryPeriod":{
-                "description":"",
-                "mandatory":"",
-                "owner":""
+                "description":"The period for enquiries from invited suppliers",
+                "mandatory":false,
+                "owner":"Procuring Entity"
               },
               "hasEnquiries":{
-                "description":"",
-                "mandatory":"",
-                "owner":""
+                "description":"Indicator whether any clarification requests were received",
+                "mandatory":false,
+                "owner":"System"
               },
               "enquiries":{
-                "description":"",
-                "mandatory":"",
-                "owner":""
-              },
-              "tenderers":{
-                "description":"",
-                "mandatory":"",
-                "owner":""
+                "description":"Set of enquiries received together with clarifications from PE (if any)",
+                "mandatory":false,
+                "owner":"System"
               },
               "procuringEntity":{
-                "description":"",
-                "mandatory":"",
-                "owner":""
+                "description":"Reference to the entity resonsible for this PCR",
+                "mandatory":true,
+                "owner":"Procuring Entity"
               },
               "documents":{
-                "description":"",
-                "mandatory":"",
-                "owner":""
+                "description":"Any documents attached to this PCR by PE",
+                "mandatory":false,
+                "owner":"Procuring Entity"
               },
               "milestones":{
                 "description":"",
@@ -548,9 +536,9 @@
                 "owner":""
               },
               "amendments":{
-                "description":"",
-                "mandatory":"",
-                "owner":""
+                "description":"Set of the amendments generated based on changes for this PCR initiated by PE",
+                "mandatory":false,
+                "owner":"System"
               },
               "lots":{
                 "description":"",
