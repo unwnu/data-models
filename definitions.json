@@ -1106,7 +1106,7 @@
           "type": [
             "string"
           ],
-          "description": "The ID used for cross-referencing to this party from other sections of the release. This field may be built with the following structure {identifier.scheme}-{identifier.id}(-{department-identifier}).",
+          "description": "The ID used for cross-referencing to this party from other sections of the release.",
           "title": "Entity ID"
         },
         "identifier": {
