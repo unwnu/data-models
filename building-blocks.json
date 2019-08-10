@@ -540,11 +540,6 @@
                 "mandatory":false,
                 "owner":"System"
               },
-              "lots":{
-                "description":"Varieties defined by Procuring Entity for this node. Together with related targets - profiles of goods.",
-                "mandatory":true,
-                "owner":"Procuring Entity"
-              },
               "lotDetails":{
                 "description":"",
                 "mandatory":false,
@@ -560,13 +555,38 @@
                 "mandatory":false,
                 "owner":"Procuring Entity"
               },
-              "criteria":{
-                "description":"",
+              "classification":{
+                "description":"Classification of group of goods requested by this PCR. Usually it is a certain group detailed up to 6th CPV digit - node",
                 "mandatory":true,
                 "owner":"Procuring Entity"
               },
-              "classification":{
-                "description":"Classification of group of goods requested by this PCR. Usually it is a certain group detailed up to 6th CPV digit - node",
+              "coveredBy":{
+                "description":"",
+                "mandatory":"",
+                "owner":""
+              },
+              "conversions":{
+                "description":"Where Procuring Entity wants to apply any scoring model under this PCR - conversions need to be described here",
+                "mandatory":false,
+                "owner":"Procuring Entity"
+              }
+            }
+          },
+          "nodes":{
+            "description":"Nodes are certain groups of goods described by Procuring Entity under particular category, classified with 6th digit of CPV ",
+            "properties":{
+              "lots":{
+                "description":"Certain groups of goods described by Procuring Entity under particular category, classified with 6th digit of CPV",
+                "mandatory":true,
+                "owner":"Procuring Entity"
+              }
+            }  
+          },
+          "profiles":{
+            "description":"Profiles are varieties defined by Procuring Entity for this node together with related targets and criteria.",
+            "properties":{
+              "lots":{
+                "description":"Varieties defined by Procuring Entity for this node. Together with related targets - profiles of goods.",
                 "mandatory":true,
                 "owner":"Procuring Entity"
               },
@@ -575,15 +595,10 @@
                 "mandatory":true,
                 "owner":"Procuring Entity"
               },
-              "conversions":{
-                "description":"Where Procuring Entity wants to apply any scoring model under this PCR - conversions need to be described here",
-                "mandatory":false,
-                "owner":"Procuring Entity"
-              },
-              "coveredBy":{
+              "criteria":{
                 "description":"",
-                "mandatory":"",
-                "owner":""
+                "mandatory":true,
+                "owner":"Procuring Entity"
               }
             }
           },
