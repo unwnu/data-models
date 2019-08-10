@@ -64,68 +64,57 @@
   "properties": {
     "ocid": {
       "description":"A globally unique identifier for this Contracting Process", 
-      "type": "string",
-      "docHint":""
+      "type": "string"
     },
     "id": {
       "description":"An identifier for this particular release of information",
-      "type": "string",
-      "docHint":""
+      "type": "string"
     },
     "date": {
       "description": "The date this information is released, it may well be the same as the parent publishedDate, it must not be later than the publishedDate from the parent package. It is used to determine merge order.",
       "type": "string",
-      "format": "date-time",
-      "docHint":""
+      "format": "date-time"
     },
     "tag": {
-      "description":"A value from the codelist that identifies the nature of the release being made",
+      "description":"A value from the [Codelists#Release tags] that identifies the nature of the release being made",
       "type": "array",
       "items": {
         "type": "string"
       },
       "codelist": "http://standard.open-contracting.org/1.1-dev/en/schema/codelists/#release-tag",
-      "openCodelist": false,
-      "docHint":"[Codelists#Release tags]"
+      "openCodelist": false
     },
     "initiationType": {
-      "description":"String specifying the type of initiation process used for this release, taken from the  codelist",
+      "description":"String specifying the type of initiation process used for this release, taken from the  [Codelists#Initiation types]",
       "type": "string",
       "codelist": "http://standard.open-contracting.org/1.1-dev/en/schema/codelists/#initiation-type",
-      "openCodelist": false,
-      "docHint":"[Codelists#Initiation types]"
+      "openCodelist": false
     },
     "title": {
       "type": "string",
-      "description":"A overall title for this contracting process or release.",
-      "docHint":""
+      "description":"A overall title for this contracting process or release."
     },
     "description": {
       "type": "string",
-      "description":"An overall description for this contracting process or release. This should not replace provision of a detailed breakdown of the objects of the contracting process in the planning, tender, award or contracts section.",
-      "docHint":""
+      "description":"An overall description for this contracting process or release. This should not replace provision of a detailed breakdown of the objects of the contracting process in the planning, tender, award or contracts section."
     },
     "language": {
-      "description":"Specifies the default language of the data",
-      "type": "string",
-      "codeslit": "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes",
-      "docHint":""
+      "description":"Specifies the default language of the data with [https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes]",
+      "type": "string"
     },
     "relatedProcesses": {
-      "description":"Where this process follows on from one or more prior process, represented under a separate ocid then details of such process(es) can be provided here as an array of [RelatedProcess].",
+      "description":"Where this process follows on from one or more prior process, represented under a separate ocid then details of the related process can be provided here as an array of the [RelatedProcess]",
       "type": "array",
       "items": {
         "$ref": "https://raw.githubusercontent.com/procuriosity/data-models/master/definitions.json#/definitions/RelatedProcess"
-      },
-      "docHint":"[RelatedProcess]"
+      }
     },
     "parties": {
-      "description":"Information on the parties (organisations, economic operators and other participants) who are involved in the contracting process and their roles.",
+      "description":"Information on the parties (organisations, economic operators and other participants) who are involved in the contracting process and their roles as an array of [Organization]",
       "type": "array",
       "items": {
         "$ref": "https://raw.githubusercontent.com/procuriosity/data-models/master/definitions.json#/definitions/Organization"
-      },
-      "docHint":"[Organization]"
+      }
     }
   }
 }
