@@ -112,7 +112,7 @@
       "docHint":""
     },
     "relatedProcesses": {
-      "description":" this process follows on from one or more prior process, represented under a separate ocid then details of the related process can be provided here.",
+      "description":" this process follows on from one or more prior process, represented under a separate ocid then details of the related process can be provided here.<br />See [RelatedProcess]",
       "type": "array",
       "items": {
         "$ref": "https://raw.githubusercontent.com/procuriosity/data-models/master/definitions.json#/definitions/RelatedProcess"
