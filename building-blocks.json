@@ -204,7 +204,7 @@
       "type": "object",
       "doc":{
         "application":{
-          "pcr":{
+          "ppq":{
             "description":"",
             "properties":{
               "id":{
@@ -327,11 +327,6 @@
                 "mandatory":"",
                 "owner":""
               },
-              "numberOfTenderers":{
-                "description":"",
-                "mandatory":"",
-                "owner":""
-              },
               "tenderers":{
                 "description":"",
                 "mandatory":"",
@@ -439,7 +434,7 @@
               }
             }
           },
-          "pqq":{
+          "pcr":{
             "description":"",
             "properties":{
               "id":{
