@@ -541,49 +541,44 @@
                 "owner":"System"
               },
               "lots":{
-                "description":"",
-                "mandatory":"",
-                "owner":""
+                "description":"Varieties defined by Procuring Entity for this node. Together with related targets - profiles of goods.",
+                "mandatory":true,
+                "owner":"Procuring Entity"
               },
               "lotDetails":{
                 "description":"",
-                "mandatory":"",
-                "owner":""
+                "mandatory":false,
+                "owner":"Procuring Entity"
               },
               "lotGroups":{
                 "description":"",
-                "mandatory":"",
-                "owner":""
+                "mandatory":false,
+                "owner":"Procuring Entity"
               },
               "participationFees":{
                 "description":"",
-                "mandatory":"",
-                "owner":""
+                "mandatory":false,
+                "owner":"Procuring Entity"
               },
               "criteria":{
                 "description":"",
-                "mandatory":"",
-                "owner":""
+                "mandatory":true,
+                "owner":"Procuring Entity"
               },
               "classification":{
-                "description":"",
-                "mandatory":"",
-                "owner":""
-              },
-              "submissionLanguages":{
-                "description":"",
-                "mandatory":"",
-                "owner":""
+                "description":"Classification of group of goods requested by this PCR. Usually it is a certain group detailed up to 6th CPV digit - node",
+                "mandatory":true,
+                "owner":"Procuring Entity"
               },
               "targets":{
                 "description":"",
-                "mandatory":"",
-                "owner":""
+                "mandatory":true,
+                "owner":"Procuring Entity"
               },
               "conversions":{
-                "description":"",
-                "mandatory":"",
-                "owner":""
+                "description":"Where Procuring Entity wants to apply any scoring model under this PCR - conversions need to be described here",
+                "mandatory":false,
+                "owner":"Procuring Entity"
               },
               "coveredBy":{
                 "description":"",
@@ -1339,7 +1334,7 @@
         },
         "lotGroups": {
           "title": "Lot groups",
-          "description": "ere the buyer reserves the right to combine lots, or wishes to specify the total value for a group of lots, a lot group is used to capture this information.",
+          "description": "Where the buyer reserves the right to combine lots, or wishes to specify the total value for a group of lots, a lot group is used to capture this information.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/LotGroup"
