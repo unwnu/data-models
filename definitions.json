@@ -1338,15 +1338,13 @@
           "type": "object",
           "$ref": "#/definitions/Identifier"
         },
-        "businessFunctions": [
-          {
-            "description": "A set of persones' [BusinessFunction]",
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/BusinessFunction"
-            }
+        "businessFunctions":  {
+          "description": "A set of persones [BusinessFunction]",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BusinessFunction"
           }
-        ]
+        }
       }
     },
     "BusinessFunction": {
