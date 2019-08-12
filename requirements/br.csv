@@ -5,3 +5,9 @@ prequalification,BR49-003,A qualification must provide the minimal information p
 prequalification,BR49-004,All qualifications may be encrypted upon submission. Encryption keys are provided by the contracting body
 prequalification,BR49-005,The economic operator shall receive an acknowledgement that his qualification has been received by the contracting body for the purpose of recipient non repudiation
 prequalification,BR49-006,The receipt notification of a qualification shall contain a cryptographic time stamp of the moment the Contracting body received the complete qualification
+preselection,BR34-001,All qualifications shall be linked to a procurement project in order for the contracting body to be able to evaluate them.
+preselection,BR34-002,A qualification must enable identifying the candidate as one economic operator or a set of economic operators and their roles
+preselection,BR34-003,A qualification must provide structured information to enable the Contracting body to automatically check the provided required evidences 
+preselection,BR34-004,All qualifications may be encrypted upon submission. Encryption keys are provided by the contracting body.
+preselection,BR34-005,The economic operator shall receive an acknowledgement that his qualification has been received by the contracting body for the purpose of recipient non repudiation
+preselection,BR34-006,The receipt notification of a qualification shall contain a cryptographic time stamp of the moment the Contracting body received the complete qualification.
