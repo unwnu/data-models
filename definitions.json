@@ -1106,7 +1106,7 @@
           "type": [
             "string"
           ],
-          "description": "The ID used for cross-referencing to this party from other sections of the release.",
+          "description": "The ID used for cross-referencing to this party from other sections of the release. This field may be built with the following structure {identifier.scheme}-{identifier.id}(-{department-identifier}).",
           "title": "Entity ID"
         },
         "identifier": {
@@ -1338,13 +1338,15 @@
           "type": "object",
           "$ref": "#/definitions/Identifier"
         },
-        "businessFunctions":  {
-          "description": "A set of persones [BusinessFunction]",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/BusinessFunction"
+        "businessFunctions": [
+          {
+            "description": "A set of persones' [BusinessFunction]",
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/BusinessFunction"
+            }
           }
-        }
+        ]
       }
     },
     "BusinessFunction": {
@@ -1599,7 +1601,7 @@
         "geometry": {
           "type":"object",
           "title": "Geometry",
-          "descrition":"[geometry] of this location",
+          "description":"[geometry] of this location",
           "$ref":"#/definitions/Geometry"
         },
         "gazetteer": {
@@ -1712,7 +1714,7 @@
       "properties": {
         "scheme": {
           "title": "Scheme",
-          "description": "Organization identifiers be drawn from an existing identification scheme. This field is used to indicate the scheme or codelist in which the identifier will be found. This value should be drawn from the [Organization Identification]",
+          "description": "Organization identifiers be drawn from an existing identification scheme. This field is used to indicate the scheme or codelist in which the identifier will be found. This value should be drawn from the Organization Identification",
           "type": [
             "string",
             "null"
@@ -1805,17 +1807,17 @@
       "type": "object",
       "properties": {
         "countryDetails": {
-          "descirption": "Country code [Classification] according to 'iso-alpha2' classifier",
+          "description": "Country code [Classification] according to 'iso-alpha2' classifier",
           "type": "object",
           "$ref": "#/definitions/Classification"
         },
         "regionDetails": {
-          "descirption": "Region code [Classification] according to 'iso-alpha2' classifier",
+          "description": "Region code [Classification] according to 'iso-alpha2' classifier",
           "type": "object",
           "$ref": "#/definitions/Classification"
         },
         "localityDetails": {
-          "descirption": "Locality code [Classification] according to either 'UN/LOCDE' or any applicable local classifier",
+          "description": "Locality code [Classification] according to either 'UN/LOCDE' or any applicable local classifier",
           "type": "object",
           "$ref": "#/definitions/Classification"
         },
@@ -1835,7 +1837,7 @@
       "description": "A person, contact point or department to contact in relation to this contracting process.",
       "properties": {
         "id": {
-          "desciption": "The legal identifier of this person according to local identification scheme used as a cross-reference to the full description ob the person, including contacts and business function, described in the 'persones' section",
+          "description": "The legal identifier of this person according to local identification scheme used as a cross-reference to the full description ob the person, including contacts and business function, described in the 'persones' section",
           "type": "string"
         },
         "name": {
@@ -1904,7 +1906,7 @@
         },
         "exchangeRates": {
           "title": "Exchange rates",
-          "description": "Used to specify any [Exchange rate] used, or to be used, to convert from amount to an alternative currency. To include alternative currency values within the data itself, add an 'amount_CODE' property alongside amount (e.g. amount_USD). See the extension documentation for more details.  ",
+          "description": "Used to specify any [ExchangeRate] used, or to be used, to convert from amount to an alternative currency. To include alternative currency values within the data itself, add an 'amount_CODE' property alongside amount (e.g. amount_USD). See the extension documentation for more details.  ",
           "type": [
             "array",
             "null"
