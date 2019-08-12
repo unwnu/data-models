@@ -796,7 +796,7 @@
                 "owner": "Procuring Entity"
               },
               "classification": {
-                "description": "Classification of group of goods requested by this PCR under current category. Usually it is a certain group detailed up to 6th CPV digit - code of one of nodes of establishment\nValidation rules\n$substringBefore(\"PCR.tender.classification.id\", \"0\") == $substringBefore(\"Establishment.tender.lots[*].classification.id\",  \"0\")",
+                "description": "Classification of group of goods requested by this PCR under current category. Usually it is a certain group detailed up to 6th CPV digit - code of one of nodes of establishment",
                 "mandatory": true,
                 "owner": "[Establishment#Nodes]",
                 "vr": [
