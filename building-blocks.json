@@ -812,7 +812,7 @@
                 "description": "Varieties defined by Procuring Entity for this node. Together with related targets - profiles of goods.",
                 "mandatory": true,
                 "owner": "Procuring Entity",
-                "class": "[Lot#PCR.Lot]"
+                "class": "[Lot.Profile]"
               },
               "targets": {
                 "description": "",
