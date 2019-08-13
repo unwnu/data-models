@@ -800,7 +800,7 @@
                 "mandatory": true,
                 "owner": "[Establishment#Nodes]",
                 "vr": [
-                  "<nowiki>$substringBefore(\"tender.classification.id\", \"0\") = \"$substringBefore(\"relatedProcesses[relationship: planning].url#tender.lots<nowiki>[*]</nowiki>.classification.id\",  \"0\")</nowiki>"
+                  "$substringBefore(\"tender.classification.id\", \"0\") = \"$substringBefore(\"relatedProcesses[relationship: planning].url#tender.lots[*].classification.id\",  \"0\")"
                 ]
               }
             }
