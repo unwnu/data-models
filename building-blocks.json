@@ -800,23 +800,8 @@
                 "mandatory": true,
                 "owner": "[Establishment#Nodes]",
                 "vr": [
-                  "$substringBefore(\"PCR.tender.classification.id\", \"0\") == $substringBefore(\"Establishment.tender.lots[*].classification.id\",  \"0\")"
+                  "$substringBefore(\"tender.classification.id\", \"0\") = \"$substringBefore(\"relatedProcesses[relationship:planning].url#tender.lots[*].classification.id\",  \"0\")"
                 ]
-              },
-              "coveredBy": {
-                "description": "",
-                "mandatory": "",
-                "owner": ""
-              },
-              "targets": {
-                "description": "",
-                "mandatory": true,
-                "owner": "System"
-              },
-              "criteria": {
-                "description": "",
-                "mandatory": true,
-                "owner": "System"
               }
             }
           },
