@@ -2162,7 +2162,7 @@
       "description": "A lot is a grouping of items within a tender that can be bid on or awarded together.",
       "type": "object",
       "doc":{
-        "inheritance":[{
+        "inheritance":{
           "profile":{
             "description":"",
             "properties":{
@@ -2193,7 +2193,7 @@
               }
             }
           }
-        }]
+        }
       },
       "properties": {
         "id": {
