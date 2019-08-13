@@ -2163,7 +2163,7 @@
       "type": "object",
       "doc":{
         "inheritance":{
-          "pcr":{
+          "profile":{
             "description":"",
             "properties":{
               "id":{
