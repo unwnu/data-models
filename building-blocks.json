@@ -780,6 +780,11 @@
                 "mandatory": false,
                 "owner": "System"
               },
+              "lots":{
+                "description": "",
+                "mandatory": false,
+                "owner": "Procuring Entity"
+              },
               "lotDetails": {
                 "description": "",
                 "mandatory": false,
