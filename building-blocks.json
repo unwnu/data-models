@@ -697,7 +697,7 @@
                 "mandatory": true,
                 "owner": "Procuring Entity"
               },
-              "descrition": {
+              "description": {
                 "description": "Free-text relevant description for this PCR",
                 "mandatory": false,
                 "owner": "Procuring Entity"
@@ -780,11 +780,6 @@
                 "mandatory": false,
                 "owner": "System"
               },
-              "lots":{
-                "description": "",
-                "mandatory": false,
-                "owner": "Procuring Entity"
-              },
               "lotDetails": {
                 "description": "",
                 "mandatory": false,
@@ -805,7 +800,7 @@
                 "mandatory": true,
                 "owner": "[Establishment#Nodes]",
                 "vr": [
-                  "$substringBefore(\"tender.classification.id\", \"0\") = \"$substringBefore(\"relatedProcesses[relationship: planning].url#tender.lots[*].classification.id\",  \"0\")"
+                  "$substringBefore(\"tender.classification.id\", \"0\") = \"$substringBefore(\"relatedProcesses[relationship: establishment].url#tender.lots[*].classification.id\",  \"0\")"
                 ]
               }
             }
@@ -816,12 +811,16 @@
               "lots": {
                 "description": "Varieties defined by Procuring Entity for this node. Together with related targets - profiles of goods.",
                 "mandatory": true,
-                "owner": "Procuring Entity"
+                "owner": "Procuring Entity",
+                "class": "[Lot#PCR.Lot]"
               },
               "targets": {
                 "description": "",
                 "mandatory": true,
-                "owner": "Procuring Entity"
+                "owner": "Procuring Entity",
+                "VR":[
+                  ""
+                ]
               },
               "criteria": {
                 "description": "",
