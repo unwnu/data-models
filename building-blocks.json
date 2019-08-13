@@ -705,7 +705,7 @@
               "status": {
                 "mandatory": true,
                 "owner": "System",
-                "description": "Status of PCR from [Codelists#PCR statuses] according to state-chart diagram"
+                "description": "Status of PCR from [Codelists#PCR statuses|codelist] according to state-chart diagram"
               },
               "procurementMethodModalities": {
                 "description": "The set of modalities for this PCR",
