@@ -210,7 +210,7 @@
               "id": {
                 "description": "",
                 "mandatory": "",
-                "source": ""
+                "source": "System"
               },
               "internalId": {
                 "description": "",
@@ -229,50 +229,51 @@
               },
               "status": {
                 "mandatory": "",
-                "source": "",
+                "source": "System",
                 "description": "[Codelists#FE statuses]"
               },
               "procurementMethodModalities": {
                 "description": "",
                 "mandatory": "",
                 "defaulValue": "frameworkAgreement",
-                "source": ""
+                "source": "System"
               },
               "procurementMethod": {
-                "description": "",
+                "description": "open/selective denepding on natur eof this initiation",
                 "mandatory": "",
-                "defaulValue": "selective",
-                "source": ""
+                "defaulValue": "",
+                "source": "System"
               },
               "procurementMethodDetails": {
                 "description": "",
                 "mandatory": "",
-                "source": ""
+                "defaultValue":"frameworkEstablishment",
+                "source": "System"
               },
               "procurementMethodRationale": {
                 "description": "",
                 "mandatory": "",
-                "source": ""
+                "source": "Procuring Entity"
               },
               "mainProcurementCategory": {
                 "description": "",
                 "mandatory": "",
-                "source": ""
+                "source": "System"
               },
               "additionalProcurementCategories": {
                 "description": "",
                 "mandatory": "",
-                "source": ""
+                "source": "System"
               },
               "awardCriteria": {
                 "description": "",
                 "mandatory": "",
-                "source": ""
+                "source": "Procuring Entity"
               },
               "awardCriteriaDetails": {
                 "description": "",
                 "mandatory": "",
-                "source": ""
+                "source": "Procuring Entity"
               },
               "submissionMethod": {
                 "description": "",
@@ -282,22 +283,22 @@
               "submissionMethodDetails": {
                 "description": "",
                 "mandatory": "",
-                "source": ""
+                "source": "Procuring Entity"
               },
               "eligibilityCriteria": {
                 "description": "",
                 "mandatory": "",
-                "source": ""
+                "source": "Procuring Entity"
               },
               "procuringEntity": {
                 "description": "",
                 "mandatory": "",
-                "source": ""
+                "source": "Procuring Entity"
               },
               "documents": {
                 "description": "",
                 "mandatory": "",
-                "source": ""
+                "source": "Procuring Entity"
               },
               "milestones": {
                 "description": "",
@@ -307,52 +308,47 @@
               "participationFees": {
                 "description": "",
                 "mandatory": "",
-                "source": ""
+                "source": "Procuring Entity"
               },
               "criteria": {
                 "description": "",
                 "mandatory": "",
-                "source": ""
+                "source": "Procuring Entity"
               },
               "classification": {
                 "description": "",
                 "mandatory": "",
-                "source": ""
+                "source": "Procuring Entity"
               },
               "submissionLanguages": {
                 "description": "",
                 "mandatory": "",
-                "source": ""
-              },
-              "targets": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
+                "source": "Procuring Entity"
               },
               "conversions": {
                 "description": "",
                 "mandatory": "",
-                "source": ""
+                "source": "Procuring Entity"
               },
               "coveredBy": {
                 "description": "",
                 "mandatory": "",
-                "source": ""
+                "source": "Procuring Entity"
               },
               "tenderPeriod":{
                 "description": "",
                 "mandatory": "",
-                "source": ""
+                "source": "Procuring Entity"
               },
               "awardPeriod":{
                 "description": "",
                 "mandatory": "",
-                "source": ""
+                "source": "Procuring Entity"
               },
               "enquiryPeriod":{
                 "description": "",
                 "mandatory": "",
-                "source": ""
+                "source": "Procuring Entity"
               }
             }
           },
@@ -371,6 +367,11 @@
                 "source": ""
               },
               "lotGroups": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "documents":{
                 "description": "",
                 "mandatory": "",
                 "source": ""
@@ -1837,3 +1838,4 @@
     }
   }
 }
+
