@@ -1028,7 +1028,7 @@
             "string",
             "null"
           ],
-          "codelist":"http://standard.open-contracting.org/1.1-dev/en/schema/codelists/#type-of-buyer"
+          "codelist": "http://standard.open-contracting.org/1.1-dev/en/schema/codelists/#type-of-buyer"
         },
         "typeOfSupplier": {
           "descriptiopn": "Specifing whether this Entity is 'personel' or 'company' as [Classification]",
@@ -1042,7 +1042,7 @@
             "string",
             "null"
           ],
-          "codelist":"http://standard.open-contracting.org/1.1-dev/en/schema/codelists/#main-general-activity"
+          "codelist": "http://standard.open-contracting.org/1.1-dev/en/schema/codelists/#main-general-activity"
         },
         "mainSectoralActivity": {
           "title": "Main Sectoral Activity",
@@ -1051,7 +1051,7 @@
             "string",
             "null"
           ],
-          "codelist":"http://standard.open-contracting.org/1.1-dev/en/schema/codelists/#main-sectoral-activity"
+          "codelist": "http://standard.open-contracting.org/1.1-dev/en/schema/codelists/#main-sectoral-activity"
         },
         "isACentralPurchasingBody": {
           "title": "Is the organization a central purchasing body?",
@@ -1124,17 +1124,17 @@
           "uniqueItems": true
         },
         "address": {
-          "desciption":"This may be the legally registered [Address] of the organization, or may be a correspondence address for this particular contracting process",
-          "type":"object",
+          "desciption": "This may be the legally registered [Address] of the organization, or may be a correspondence address for this particular contracting process",
+          "type": "object",
           "$ref": "#/definitions/Address"
         },
         "contactPoint": {
-          "description":"[Contact point] details that can be used for this party",
-          "type":"object",
+          "description": "[Contact point] details that can be used for this party",
+          "type": "object",
           "$ref": "#/definitions/ContactPoint"
         },
         "additionalContactPoints": {
-          "description":"Additional [Contact point] (or many of them) details that can be used for this party",
+          "description": "Additional [Contact point] (or many of them) details that can be used for this party",
           "type": "array",
           "items": {
             "$ref": "#/definitions/ContactPoint"
@@ -1230,95 +1230,95 @@
       "properties": {
         "issuedBy": {
           "description": "[OrganizationReference] on Entity who issued this permit/license",
-          "type":"object",
+          "type": "object",
           "$ref": "#/definitions/OrganizationReference"
         },
         "validityPeriod": {
           "description": "[Period] of validity of this permit/license. It could be any attributes of 'Period'",
-          "type":"object",
+          "type": "object",
           "$ref": "#/definitions/Period"
         },
         "issuedThought": {
           "description": "[EconomicActivityReference] to a activity (described in 'mainEconomicActivities') which is covered by this permit/license",
-          "type":"object",
+          "type": "object",
           "$ref": "#/definitions/EconomicActivityReference"
         }
       }
     },
     "EconomicActivityReference": {
-      "title":"",
-      "description":"",
-      "type":"object",
-      "properties":{
+      "title": "",
+      "description": "",
+      "type": "object",
+      "properties": {
         "id": {
-          "title":"",
-          "description":"",
-          "type":"string"
+          "title": "",
+          "description": "",
+          "type": "string"
         },
         "description": {
-          "title":"",
-          "description":"",
-          "type":"string"
+          "title": "",
+          "description": "",
+          "type": "string"
         }
       }
     },
     "BankAccount": {
-      "title":"",
-      "description":"",
-      "type":"object",
+      "title": "",
+      "description": "",
+      "type": "object",
       "properties": {
         "description": {
-          "title":"",
-          "description":"",
-          "type":"string"
+          "title": "",
+          "description": "",
+          "type": "string"
         },
         "bankName": {
-          "title":"",
-          "description":"",
-          "type":"string"
+          "title": "",
+          "description": "",
+          "type": "string"
         },
         "address": {
-          "title":"Legal [Address] of the Bank",
-          "description":"Legal [Address] of the Bank",
-          "type":"Object",
+          "title": "Legal [Address] of the Bank",
+          "description": "Legal [Address] of the Bank",
+          "type": "Object",
           "$ref": "#/definitions/Address"
         },
         "identifier": {
-          "title":"",
-          "description":"Primary [Identifier] of the Bank",
-          "type":"Object",
+          "title": "",
+          "description": "Primary [Identifier] of the Bank",
+          "type": "Object",
           "$ref": "#/definitions/Identifier"
         },
         "accountIdentification": {
-          "title":"",
-          "description":"Account number as [Classification]",
-          "type":"object",
+          "title": "",
+          "description": "Account number as [Classification]",
+          "type": "object",
           "$ref": "#/definitions/Classification"
         },
         "additionalAccountIndentifiers": {
-          "title":"",
-          "description":"Account additional requisites as an array of [Classification]",
-          "type":"array",
-          "items":{
+          "title": "",
+          "description": "Account additional requisites as an array of [Classification]",
+          "type": "array",
+          "items": {
             "$ref": "#/definitions/Classification"
           }
         }
       }
     },
     "Persone": {
-      "title":"",
-      "description":"",
-      "type":"object",
+      "title": "",
+      "description": "",
+      "type": "object",
       "properties": {
         "title": {
-          "title":"",
-          "description":"",
-          "type":"object"
+          "title": "",
+          "description": "",
+          "type": "object"
         },
         "name": {
-          "title":"",
-          "description":"",
-          "type":"object"
+          "title": "",
+          "description": "",
+          "type": "object"
         },
         "email": {
           "description": "The e-mail address of the contact point/person.",
@@ -1362,7 +1362,7 @@
           "$ref": "#/definitions/Classification"
         },
         "period": {
-          "description":"Actual [Period] of this business function",
+          "description": "Actual [Period] of this business function",
           "type": "object",
           "$ref": "#/definitions/Period"
         },
@@ -1377,19 +1377,19 @@
         }
       }
     },
-    "Unit":{
-      "title":"Unit",
-      "description":"A description of the unit in which the supplies, services or works are provided (e.g. hours, kilograms) and the unit-price. For comparability, an established list of units can be used.",
-      "type":"object",
-      "properties":{
+    "Unit": {
+      "title": "Unit",
+      "description": "A description of the unit in which the supplies, services or works are provided (e.g. hours, kilograms) and the unit-price. For comparability, an established list of units can be used.",
+      "type": "object",
+      "properties": {
         "name": {
-              "title": "Name",
-              "description": "Name of the unit",
-              "type": [
-                "string",
-                "null"
-              ]
-            },
+          "title": "Name",
+          "description": "Name of the unit",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
         "value": {
           "title": "Value",
           "description": "The monetary [Value] of a single unit.",
@@ -1509,7 +1509,7 @@
         }
       }
     },
-    "Geometry":{
+    "Geometry": {
       "type": [
         "object",
         "null"
@@ -1552,7 +1552,7 @@
         }
       }
     },
-    "Gazetter":{
+    "Gazetter": {
       "type": [
         "object",
         "null"
@@ -1599,10 +1599,10 @@
           ]
         },
         "geometry": {
-          "type":"object",
+          "type": "object",
           "title": "Geometry",
-          "description":"[geometry] of this location",
-          "$ref":"#/definitions/Geometry"
+          "description": "[geometry] of this location",
+          "$ref": "#/definitions/Geometry"
         },
         "gazetteer": {
           "type": "object",
@@ -2146,7 +2146,7 @@
           "TODO": "ADD REQUIREMENT RESPONSE SECTION TO REQUIREMENTS EXTENSION",
           "type": "array",
           "mergeStrategy": "arrayMergeById",
-          "description":"A set of [RequirementResponse] relevant to the requirements requested under Contract Notice",
+          "description": "A set of [RequirementResponse] relevant to the requirements requested under Contract Notice",
           "mergeOptions": {
             "idRef": "id"
           },
@@ -2161,72 +2161,74 @@
       "title": "Lots",
       "description": "A lot is a grouping of items within a tender that can be bid on or awarded together.",
       "type": "object",
-      "doc":{
-        "inheritance":{
-          "profile":{
-            "description":"",
-            "properties":{
-              "id":{
-                "description":"",
-                "mandatory":true,
-                "source":"System"
+      "doc": {
+        "inheritance": {
+          "profile": {
+            "description": "",
+            "properties": {
+              "id": {
+                "description": "",
+                "mandatory": true,
+                "source": "System"
               },
-              "internalId":{
-                "description":"",
-                "mandatory":false,
-                "source":"Procuring Entity"
+              "internalId": {
+                "description": "",
+                "mandatory": false,
+                "source": "Procuring Entity"
               },
-              "title":{
-                "description":"",
-                "mandatory":true,
-                "source":"Procuring Entity"
+              "title": {
+                "description": "",
+                "mandatory": true,
+                "source": "Procuring Entity"
               },
-              "description":{
-                "description":"",
-                "mandatory":false,
-                "source":"Procuring Entity"
+              "description": {
+                "description": "",
+                "mandatory": false,
+                "source": "Procuring Entity"
               },
-              "status":{
-                "description":"",
-                "mandatory":true,
-                "source":"System"
+              "status": {
+                "description": "",
+                "mandatory": true,
+                "source": "System"
               }
             }
           },
-          "node":{
-            "description":"",
-            "properties":{
-              "id":{
-                "description":"",
-                "mandatory":true,
-                "source":"System"
+          "node": {
+            "description": "",
+            "properties": {
+              "id": {
+                "description": "",
+                "mandatory": true,
+                "source": "System"
               },
-              "internalId":{
-                "description":"",
-                "mandatory":false,
-                "source":"Procuring Entity"
+              "internalId": {
+                "description": "",
+                "mandatory": false,
+                "source": "Procuring Entity"
               },
-              "title":{
-                "description":"",
-                "mandatory":true,
-                "source":"Procuring Entity"
+              "title": {
+                "description": "",
+                "mandatory": true,
+                "source": "Procuring Entity"
               },
-              "description":{
-                "description":"",
-                "mandatory":false,
-                "source":"Procuring Entity"
+              "description": {
+                "description": "",
+                "mandatory": false,
+                "source": "Procuring Entity"
               },
-              "status":{
-                "description":"",
-                "mandatory":true,
-                "source":"System"
+              "status": {
+                "description": "",
+                "mandatory": true,
+                "source": "System"
               },
-              "classification":{
-                "description":"",
-                "mandatory":true,
-                "source":"ProcuringEntity",
+              "classification": {
+                "description": "",
+                "mandatory": true,
+                "source": "ProcuringEntity",
                 "vr": [
-                  "$substringBefore(\"tender.classification.id\", \"0\") = \"$substringBefore(\"relatedProcesses[relationship: establishment].url#tender.lots[*].classification.id\",  \"0\")"
+                  "$substringBefore(\"tender.classification.id\", \"0\") = \"$substringBefore(\"relatedProcesses[relationship: establishment].url#tender.lots[*].classification.id\",  \"0\")",
+                  "2",
+                  "3"
                 ]
               }
             }
@@ -2400,7 +2402,7 @@
           }
         },
         "value": {
-          "description":"Fee [Value]",
+          "description": "Fee [Value]",
           "$ref": "#/definitions/Value"
         },
         "description": {
@@ -2786,7 +2788,7 @@
               "publicAgencyFees"
             ]
           },
-          "codelist":"http://standard.open-contracting.org/1.1-dev/en/schema/codelists/#value-type"
+          "codelist": "http://standard.open-contracting.org/1.1-dev/en/schema/codelists/#value-type"
         },
         "description": {
           "title": "description",
