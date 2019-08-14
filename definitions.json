@@ -4012,6 +4012,35 @@
     "Planning": {
       "description": "Information from the planning phase of the contracting process. Note that many other fields may be filled in a planning release, in the appropriate fields in other schema sections, these would likely be estimates at this stage e.g. totalValue in tender",
       "type": "object",
+      "doc":{
+        "inheritance":{
+          "fe":{
+            "description":"",
+            "properties":{
+              "budget":{
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "forecasts":{
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "rationale":{
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "documents":{
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              }
+            }
+          }
+        }
+      },
       "properties": {
         "implementation": {
           "title": "Implementation",
