@@ -384,11 +384,6 @@
                 "mandatory": true,
                 "source": "Procuring Entity",
                 "class":"[Lot.Node]"
-              },
-              "items": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
               }
             }
           },
