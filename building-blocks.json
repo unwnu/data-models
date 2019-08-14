@@ -230,11 +230,12 @@
               "status": {
                 "mandatory": "",
                 "source": "",
-                "description": "[Codelists#PCR statuses]"
+                "description": "[Codelists#FE statuses]"
               },
               "procurementMethodModalities": {
                 "description": "",
                 "mandatory": "",
+                "defaulValue": "frameworkAgreement",
                 "source": ""
               },
               "items": {
@@ -250,6 +251,7 @@
               "procurementMethod": {
                 "description": "",
                 "mandatory": "",
+                "defaulValue": "selective",
                 "source": ""
               },
               "procurementMethodDetails": {
@@ -292,47 +294,12 @@
                 "mandatory": "",
                 "source": ""
               },
-              "tenderPeriod": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "enquiryPeriod": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "hasEnquiries": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "enquiries": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
               "eligibilityCriteria": {
                 "description": "",
                 "mandatory": "",
                 "source": ""
               },
               "awardPeriod": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "contractPeriod": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "numberOfTenderers": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "tenderers": {
                 "description": "",
                 "mandatory": "",
                 "source": ""
@@ -407,27 +374,12 @@
                 "mandatory": "",
                 "source": ""
               },
-              "auctionPeriod": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "procurementMethodModalitiesDetails": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
               "conversions": {
                 "description": "",
                 "mandatory": "",
                 "source": ""
               },
               "complaints": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "recurrence": {
                 "description": "",
                 "mandatory": "",
                 "source": ""
