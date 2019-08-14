@@ -1623,7 +1623,7 @@
     "Classification": {
       "title": "Classification",
       "type": "object",
-      "doc":{
+      "doc": {
         "vr": {
           "node": "$substringBefore(\"tender.classification.id\", \"0\") = \"$substringBefore(\"relatedProcesses[relationship: establishment].url#tender.lots[*].classification.id\",  \"0\")"
         }
@@ -1971,31 +1971,31 @@
                 "description": "",
                 "mandatory": true,
                 "source": "System",
-                "defaultValue":""
+                "defaultValue": ""
               },
               "id": {
                 "description": "",
                 "mandatory": true,
                 "source": "System",
-                "defaultValue":""
+                "defaultValue": ""
               },
               "relationship": {
                 "description": "",
                 "mandatory": true,
                 "source": "System",
-                "defaultValue":"x_preQualification"
+                "defaultValue": "x_preQualification"
               },
-              "title":{
+              "title": {
                 "description": "",
                 "mandatory": false,
                 "source": "",
-                "defaultValue":""
+                "defaultValue": ""
               },
-              "schema":{
+              "schema": {
                 "description": "",
                 "mandatory": true,
                 "source": "System",
-                "defaultValue":"ocds"
+                "defaultValue": "ocds"
               }
             }
           }
@@ -2353,7 +2353,7 @@
           "description": "The address, NUTS code and further description of the place where the contract will be performed - [PlaceOfPerformance]",
           "$ref": "#/definitions/PlaceOfPerformance"
         },
-        "classification":{
+        "classification": {
           "title": "Place of Performance",
           "description": "The address, NUTS code and further description of the place where the contract will be performed - [PlaceOfPerformance]",
           "$ref": "#/definitions/Classification"
@@ -4209,7 +4209,7 @@
       "description": "Data regarding tender process - publicly inviting prospective contractors to submit bids for evaluation and selecting a winner or winners.",
       "type": "object",
       "doc": {
-        "application": {
+        "inheritance": {
           "fe": {
             "description": "",
             "properties": {
@@ -4253,7 +4253,7 @@
               "procurementMethodDetails": {
                 "description": "",
                 "mandatory": "",
-                "defaultValue":"frameworkEstablishment",
+                "defaultValue": "frameworkEstablishment",
                 "source": "System"
               },
               "procurementMethodRationale": {
@@ -4336,46 +4336,20 @@
                 "mandatory": "",
                 "source": "Procuring Entity"
               },
-              "tenderPeriod":{
+              "tenderPeriod": {
                 "description": "",
                 "mandatory": "",
                 "source": "Procuring Entity"
               },
-              "awardPeriod":{
+              "awardPeriod": {
                 "description": "",
                 "mandatory": "",
                 "source": "Procuring Entity"
               },
-              "enquiryPeriod":{
+              "enquiryPeriod": {
                 "description": "",
                 "mandatory": "",
                 "source": "Procuring Entity"
-              }
-            }
-          },
-          "nodes": {
-            "description": "Nodes are certain groups of goods described by Procuring Entity under particular category, classified with 6th digit of CPV ",
-            "properties": {
-              "lots": {
-                "description": "Certain groups of goods described by Procuring Entity under particular category, classified with 6th digit of CPV",
-                "mandatory": true,
-                "source": "Procuring Entity",
-                "class":"[Lot.Node]"
-              },
-              "lotDetails": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "lotGroups": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "documents":{
-                "description": "",
-                "mandatory": "",
-                "source": ""
               }
             }
           },
@@ -4670,7 +4644,7 @@
                 "mandatory": true,
                 "source": "Procuring Entity"
               },
-              "awardPeriod":{
+              "awardPeriod": {
                 "description": "",
                 "mandatory": true,
                 "source": "Procuring Entity"
@@ -4704,60 +4678,6 @@
                 "description": "Classification of group of goods requested by this PCR under current category. Usually it is a certain group detailed up to 6th CPV digit - code of one of nodes of establishment",
                 "mandatory": true,
                 "source": "[FE Data-model#Nodes]"
-              }
-            }
-          },
-          "profiles": {
-            "description": "Profiles are varieties defined by Procuring Entity for this node together with related targets and criteria.",
-            "properties": {
-              "lots": {
-                "description": "Varieties defined by Procuring Entity for this node. Together with related targets - profiles of goods.",
-                "mandatory": true,
-                "source": "Procuring Entity",
-                "class": "[Lot.Profile]"
-              },
-              "targets": {
-                "description": "",
-                "mandatory": true,
-                "source": "Procuring Entity",
-                "VR":[
-                  ""
-                ]
-              },
-              "criteria": {
-                "description": "",
-                "mandatory": true,
-                "source": "Procuring Entity"
-              },
-              "lotDetails": {
-                "description": "",
-                "mandatory": false,
-                "source": "Procuring Entity"
-              },
-              "lotGroups": {
-                "description": "",
-                "mandatory": false,
-                "source": "Procuring Entity"
-              }
-            }
-          },
-          "positions": {
-            "description": "",
-            "properties": {
-              "items": {
-                "description": "The precise items (goods/services) indicated and exepcted by Procuring Entity under this PCR",
-                "mandatory": false,
-                "source": "Procuring Entity"
-              },
-              "targets": {
-                "description": "",
-                "mandatory": true,
-                "source": "Procuring Entity"
-              },
-              "criteria": {
-                "description": "",
-                "mandatory": true,
-                "source": "Procuring Entity"
               }
             }
           },
@@ -4994,6 +4914,84 @@
                 "mandatory": "",
                 "source": ""
               }
+            }
+          },
+          "node":{
+            "lotDetails":{
+              "descrition":"",
+              "mandatory":"",
+              "source":"",
+              "class":""
+            },
+            "lotGroups":{
+              "descrition":"",
+              "mandatory":"",
+              "source":"",
+              "class":""
+            },
+            "lots":{
+              "descrition":"",
+              "mandatory":"",
+              "source":"",
+              "class":"[Lot.Node]"
+            },
+            "documents":{
+              "descrition":"",
+              "mandatory":"",
+              "source":"",
+              "class":""
+            } 
+          },
+          "position":{
+            "criteria":{
+              "descrition":"",
+              "mandatory":"",
+              "source":"",
+              "class":""
+            },
+            "targets":{
+              "descrition":"",
+              "mandatory":"",
+              "source":"",
+              "class":""
+            },
+            "items":{
+              "descrition":"",
+              "mandatory":"",
+              "source":"",
+              "class":""
+            }
+          },
+          "profile":{
+            "criteria":{
+              "descrition":"",
+              "mandatory":"",
+              "source":"",
+              "class":""
+            },
+            "lotDetails":{
+              "descrition":"",
+              "mandatory":"",
+              "source":"",
+              "class":""
+            },
+            "lotGroups":{
+              "descrition":"",
+              "mandatory":"",
+              "source":"",
+              "class":""
+            },
+            "lots":{
+              "descrition":"",
+              "mandatory":"",
+              "source":"",
+              "class":""
+            },
+            "targets":{
+              "descrition":"",
+              "mandatory":"",
+              "source":"",
+              "class":""
             }
           }
         }
