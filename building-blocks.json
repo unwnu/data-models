@@ -23,18 +23,6 @@
         "relatedProcesses":{
           "description":"",
           "class":"[Organization]"
-        },
-        "awards":{
-          "description":"",
-          "class":"[Award]"
-        },
-        "contracts":{
-          "description":"",
-          "class":"[Contract]"
-        },
-        "reviewProceedings":{
-          "description":"",
-          "class":"[ReviewProceedings]"
         }
       },
       "ppq":{
