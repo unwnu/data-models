@@ -11,7 +11,10 @@
         "bids":{}
       },
       "fe":{
-        "parties":{},
+        "parties":{
+          "description":"",
+          "class":"[Organization]"
+        },
         "planning":{
           "description":"",
           "class":"[Planning.FE]"
@@ -22,7 +25,7 @@
         },
         "relatedProcesses":{
           "description":"",
-          "class":"[Organization]"
+          "class":"[RelatedProcess]"
         }
       },
       "ppq":{
