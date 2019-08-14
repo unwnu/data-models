@@ -5,10 +5,22 @@
   "doc":{
     "application":{
       "pcr":{
-        "parties":{},
-        "tender":{},
-        "relatedProcesses":{},
-        "bids":{}
+        "parties":{
+          "description":"",
+          "class":"[Organization]"
+        },
+        "tender":{
+          "description":"The tender section of the FE-release includes details of the announcement that Procuring Entity intends to source some goods or services and to for these requests a pre-award catalogues from a number of suppliers, selected under separate prequalification round.",
+          "class":"[Tender.PCR]"
+        },
+        "relatedProcesses":{
+          "description":"",
+          "class":"[RelatedProcess]"
+        },
+        "bids":{
+          "description":"",
+          "class":"[Bids]"
+        }
       },
       "fe":{
         "parties":{
