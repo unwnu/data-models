@@ -314,16 +314,6 @@
                 "mandatory": "",
                 "source": ""
               },
-              "lotDetails": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "lotGroups": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
               "participationFees": {
                 "description": "",
                 "mandatory": "",
@@ -384,6 +374,16 @@
                 "mandatory": true,
                 "source": "Procuring Entity",
                 "class":"[Lot.Node]"
+              },
+              "lotDetails": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "lotGroups": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
               }
             }
           },
@@ -718,16 +718,6 @@
                 "mandatory": false,
                 "source": "System"
               },
-              "lotDetails": {
-                "description": "",
-                "mandatory": false,
-                "source": "Procuring Entity"
-              },
-              "lotGroups": {
-                "description": "",
-                "mandatory": false,
-                "source": "Procuring Entity"
-              },
               "participationFees": {
                 "description": "",
                 "mandatory": false,
@@ -760,6 +750,16 @@
               "criteria": {
                 "description": "",
                 "mandatory": true,
+                "source": "Procuring Entity"
+              },
+              "lotDetails": {
+                "description": "",
+                "mandatory": false,
+                "source": "Procuring Entity"
+              },
+              "lotGroups": {
+                "description": "",
+                "mandatory": false,
                 "source": "Procuring Entity"
               }
             }
