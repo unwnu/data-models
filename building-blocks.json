@@ -2,6 +2,58 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "Schema for an Open Contracting Release under Procuriosity implementation",
   "type": "object",
+  "doc":{
+    "application":{
+      "pcr":{
+        "parties":{},
+        "tender":{},
+        "relatedProcesses":{},
+        "bids":{}
+      },
+      "fe":{
+        "parties":{},
+        "planning":{
+          "description":"",
+          "class":"[Planning.FE]"
+        },
+        "tender":{
+          "description":"",
+          "class":"[Tender.FE]"
+        },
+        "relatedProcesses":{
+          "description":"",
+          "class":"[Organization]"
+        },
+        "awards":{
+          "description":"",
+          "class":"[Award]"
+        },
+        "contracts":{
+          "description":"",
+          "class":"[Contract]"
+        },
+        "reviewProceedings":{
+          "description":"",
+          "class":"[ReviewProceedings]"
+        }
+      },
+      "ppq":{
+        "tender":{},
+        "preQualification":{},
+        "bids":{},
+        "parties":{},
+        "relatedProcesses":{}
+      },
+      "po":{
+        "tender":{},
+        "bids":{},
+        "awards":{},
+        "parties":{},
+        "relatedProcesses":{}
+      },
+      "ssc":{}
+    }
+  },
   "properties":{
     "parties": {
       "description": "Information on the parties (organisations, economic operators and other participants) who are involved in the contracting process and their roles, e.g. buyer, procuring entity, supplier etc. Organization references elsewhere in the schema are used to refer back to this entries in this list.",
@@ -65,3 +117,4 @@
     }
   }
 }
+
