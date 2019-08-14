@@ -238,11 +238,6 @@
                 "defaulValue": "frameworkAgreement",
                 "source": ""
               },
-              "items": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
               "value": {
                 "description": "",
                 "mandatory": "",
@@ -389,6 +384,11 @@
                 "mandatory": true,
                 "source": "Procuring Entity",
                 "class":"[Lot.Node]"
+              },
+              "items": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
               }
             }
           },
