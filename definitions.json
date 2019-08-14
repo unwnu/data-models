@@ -2169,27 +2169,27 @@
               "id":{
                 "description":"",
                 "mandatory":true,
-                "owner":"System"
+                "source":"System"
               },
               "internalId":{
                 "description":"",
-                "mandatory":true,
-                "owner":"System"
+                "mandatory":false,
+                "source":"Procuring Entity"
               },
               "title":{
                 "description":"",
                 "mandatory":true,
-                "owner":"System"
+                "source":"Procuring Entity"
               },
               "description":{
                 "description":"",
-                "mandatory":true,
-                "owner":"System"
+                "mandatory":false,
+                "source":"Procuring Entity"
               },
               "status":{
                 "description":"",
                 "mandatory":true,
-                "owner":"System"
+                "source":"System"
               }
             }
           }
