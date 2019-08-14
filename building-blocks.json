@@ -397,7 +397,8 @@
               "lots": {
                 "description": "Certain groups of goods described by Procuring Entity under particular category, classified with 6th digit of CPV",
                 "mandatory": true,
-                "source": "Procuring Entity"
+                "source": "Procuring Entity",
+                "class":"Lot.Node"
               }
             }
           },
@@ -750,10 +751,7 @@
               "classification": {
                 "description": "Classification of group of goods requested by this PCR under current category. Usually it is a certain group detailed up to 6th CPV digit - code of one of nodes of establishment",
                 "mandatory": true,
-                "source": "[Establishment#Nodes]",
-                "vr": [
-                  "$substringBefore(\"tender.classification.id\", \"0\") = \"$substringBefore(\"relatedProcesses[relationship: establishment].url#tender.lots[*].classification.id\",  \"0\")"
-                ]
+                "source": "[FE Data-model#Nodes]"
               }
             }
           },
