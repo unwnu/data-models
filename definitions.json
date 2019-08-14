@@ -1963,64 +1963,39 @@
       "type": "object",
       "title": "Related Process",
       "doc": {
-        "inheritance": {
-          "profile": {
+        "application": {
+          "preQualification": {
             "description": "",
             "properties": {
+              "uri": {
+                "description": "",
+                "mandatory": true,
+                "source": "System",
+                "defaultValue":""
+              },
               "id": {
                 "description": "",
                 "mandatory": true,
-                "source": "System"
-              },
-              "internalId": {
-                "description": "",
-                "mandatory": false,
-                "source": "Procuring Entity"
-              },
-              "title": {
-                "description": "",
-                "mandatory": true,
-                "source": "Procuring Entity"
-              },
-              "description": {
-                "description": "",
-                "mandatory": false,
-                "source": "Procuring Entity"
-              },
-              "status": {
-                "description": "",
-                "mandatory": true,
-                "source": "System"
-              }
-            }
-          },
-          "node": {
-            "description": "",
-            "properties": {
-              "id": {
-                "description": "",
-                "mandatory": true,
-                "source": "System"
-              },
-              "url": {
-                "description": "",
-                "mandatory": false,
-                "source": "Procuring Entity"
+                "source": "System",
+                "defaultValue":""
               },
               "relationship": {
                 "description": "",
                 "mandatory": true,
-                "source": "Procuring Entity"
+                "source": "System",
+                "defaultValue":"x_preQualification"
               },
-              "scheme": {
+              "title":{
                 "description": "",
                 "mandatory": false,
-                "source": "Procuring Entity"
+                "source": "",
+                "defaultValue":""
               },
-              "title": {
+              "schema":{
                 "description": "",
                 "mandatory": true,
-                "source": "System"
+                "source": "System",
+                "defaultValue":"ocds"
               }
             }
           }
