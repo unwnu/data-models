@@ -58,7 +58,7 @@
             "source":"System"
           } 
         }
-      }
+      },
       "pcr":{
         "descrition":"From OCDS point of view, PCR - is a stand-alone ocds-record where all the date presented within [Release]",
         "properties":{
