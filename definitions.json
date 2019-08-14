@@ -1625,9 +1625,7 @@
       "type": "object",
       "doc":{
         "vr": {
-          "node":[
-            "$substringBefore(\"tender.classification.id\", \"0\") = \"$substringBefore(\"relatedProcesses[relationship: establishment].url#tender.lots[*].classification.id\",  \"0\")","some text"
-            ]
+          "node": "$substringBefore(\"tender.classification.id\", \"0\") = \"$substringBefore(\"relatedProcesses[relationship: establishment].url#tender.lots[*].classification.id\",  \"0\")"
         }
       },
       "properties": {
@@ -1896,9 +1894,7 @@
       "description": "Financial value description",
       "doc":{
         "vr": {
-          "node":[
-            "some text3"
-            ]
+          "node":"some text3"
         }
       },
       "properties": {
