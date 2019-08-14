@@ -238,11 +238,6 @@
                 "defaulValue": "frameworkAgreement",
                 "source": ""
               },
-              "value": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
               "procurementMethod": {
                 "description": "",
                 "mandatory": "",
@@ -309,11 +304,6 @@
                 "mandatory": "",
                 "source": ""
               },
-              "amendments": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
               "participationFees": {
                 "description": "",
                 "mandatory": "",
@@ -329,16 +319,6 @@
                 "mandatory": "",
                 "source": ""
               },
-              "reviewPeriod": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "standstillPeriod": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
               "submissionLanguages": {
                 "description": "",
                 "mandatory": "",
@@ -350,11 +330,6 @@
                 "source": ""
               },
               "conversions": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "complaints": {
                 "description": "",
                 "mandatory": "",
                 "source": ""
