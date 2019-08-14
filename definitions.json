@@ -4008,6 +4008,1816 @@
       "title": "Related Complaint",
       "description": "The id of the related complaint",
       "type": "string"
+    },
+    "Planning": {
+      "description": "Information from the planning phase of the contracting process. Note that many other fields may be filled in a planning release, in the appropriate fields in other schema sections, these would likely be estimates at this stage e.g. totalValue in tender",
+      "type": "object",
+      "properties": {
+        "implementation": {
+          "title": "Implementation",
+          "description": "Information related to the implementation of the contract in accordance with the obligations laid out therein.",
+          "$ref": "#/definitions/Implementation"
+        },
+        "budget": {
+          "$ref": "#/definitions/Budget"
+        },
+        "rationale": {
+          "title": "Rationale",
+          "description": "The rationale for the procurement provided in free text. More detail can be provided in an attached document.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "documents": {
+          "title": "Documents",
+          "description": "A list of documents related to the planning process.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Document"
+          }
+        },
+        "milestones": {
+          "title": "Planning milestones",
+          "description": "A list of milestones associated with the planning stage.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Milestone"
+          }
+        },
+        "forecasts": {
+          "type": "array",
+          "title": "Forecasts",
+          "description": "Any forecasts metrics for this results of this contracting process.",
+          "items": {
+            "$ref": "#/definitions/Metric"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "PreQualification": {
+      "title": "Pre-qualification",
+      "description": "Data regarding pre-qualification process - limiting the number of qualified bidders by reviewing each bidder's qualifications against a set of criteria.",
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "title": "Pre-qualification ID",
+          "description": "An identifier for this pre-qualification process. This may be the same as the ocid, or may be drawn from an internally held identifier for this process.",
+          "type": [
+            "string",
+            "integer"
+          ]
+        },
+        "title": {
+          "title": "Pre-qualification title",
+          "description": "Pre-qualification title",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "title": "Pre-qualification description",
+          "description": "Pre-qualification description",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "status": {
+          "title": "Pre-qualification status",
+          "description": "The current status of the pre-qualification based on the preQualificationStatus codelist.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "codelist": "preQualificationStatus.csv",
+          "openCodelist": false,
+          "enum": [
+            "planned",
+            "active",
+            "cancelled",
+            "unsuccessful",
+            "complete",
+            null
+          ]
+        },
+        "submissionMethod": {
+          "title": "Submission method",
+          "description": "Specify the method by which bids must be submitted, in person, written, or electronic auction. Using the [submission method codelist](http://standard.open-contracting.org/latest/en/schema/codelists/#submission-method)",
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "submissionMethodDetails": {
+          "title": "Submission method details",
+          "description": "Any detailed or further information on the submission method. This may include the address, e-mail address or online service to which bids should be submitted, and any special requirements to be followed for submissions.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "period": {
+          "title": "Pre-qualification period",
+          "description": "The period when the pre-qualification is open for submissions. The end date is the closing date for pre-qualification submissions.",
+          "$ref": "#/definitions/Period"
+        },
+        "enquiryPeriod": {
+          "title": "Enquiry period",
+          "description": "The period during which enquiries regarding the pre-qualification may be made and answered.",
+          "$ref": "#/definitions/Period"
+        },
+        "hasEnquiries": {
+          "title": "Has enquiries?",
+          "description": "A true/false field to indicate whether any enquiries were received during the pre-qualification process",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "eligibilityCriteria": {
+          "title": "Eligibility criteria",
+          "description": "A description of any eligibility criteria for bidders to participate in the pre-qualification.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "qualificationPeriod": {
+          "title": "Qualification period",
+          "description": "The date or period when candidates will are anticipated to be qualified or pre-selected (shortlisted).",
+          "$ref": "#/definitions/Period"
+        },
+        "numberOfTenderers": {
+          "title": "Number of tenderers",
+          "description": "The number of entities who submit a response to the pre-qualification.",
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "tenderers": {
+          "title": "Tenderers",
+          "description": "All entities who submit a response to the pre-qualification.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OrganizationReference"
+          },
+          "uniqueItems": true
+        },
+        "procuringEntity": {
+          "title": "Procuring entity",
+          "description": "The entity managing the procurement, which may be different from the buyer who is paying / using the items being procured.",
+          "$ref": "#/definitions/OrganizationReference"
+        },
+        "documents": {
+          "title": "Documents",
+          "description": "All documents and attachments related to the pre-qualification, including any notices. See the [documentType codelist](http://standard.open-contracting.org/latest/en/schema/codelists/#document-type) for details of potential documents to include.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Document"
+          }
+        },
+        "milestones": {
+          "title": "Milestones",
+          "description": "A list of milestones associated with the pre-qualification.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Milestone"
+          }
+        },
+        "amendments": {
+          "description": "An amendment is a formal change to the pre-qualification process, and generally involves the publication of a new RFQ notice/release. The rationale and a description of the changes made can be provided here.",
+          "type": "array",
+          "title": "Amendments",
+          "items": {
+            "$ref": "#/definitions/Amendment"
+          }
+        }
+      }
+    },
+    "Tender": {
+      "title": "Tender",
+      "description": "Data regarding tender process - publicly inviting prospective contractors to submit bids for evaluation and selecting a winner or winners.",
+      "type": "object",
+      "doc": {
+        "application": {
+          "fe": {
+            "description": "",
+            "properties": {
+              "id": {
+                "description": "",
+                "mandatory": "",
+                "source": "System"
+              },
+              "internalId": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "title": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "descrition": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "status": {
+                "mandatory": "",
+                "source": "System",
+                "description": "[Codelists#FE statuses]"
+              },
+              "procurementMethodModalities": {
+                "description": "",
+                "mandatory": "",
+                "defaulValue": "frameworkAgreement",
+                "source": "System"
+              },
+              "procurementMethod": {
+                "description": "open/selective depending on natur eof this initiation",
+                "mandatory": "",
+                "defaulValue": "",
+                "source": "System"
+              },
+              "procurementMethodDetails": {
+                "description": "",
+                "mandatory": "",
+                "defaultValue":"frameworkEstablishment",
+                "source": "System"
+              },
+              "procurementMethodRationale": {
+                "description": "",
+                "mandatory": "",
+                "source": "Procuring Entity"
+              },
+              "mainProcurementCategory": {
+                "description": "",
+                "mandatory": "",
+                "source": "System"
+              },
+              "awardCriteria": {
+                "description": "",
+                "mandatory": "",
+                "source": "Procuring Entity"
+              },
+              "awardCriteriaDetails": {
+                "description": "",
+                "mandatory": "",
+                "source": "Procuring Entity"
+              },
+              "submissionMethod": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "submissionMethodDetails": {
+                "description": "",
+                "mandatory": "",
+                "source": "Procuring Entity"
+              },
+              "eligibilityCriteria": {
+                "description": "",
+                "mandatory": "",
+                "source": "Procuring Entity"
+              },
+              "procuringEntity": {
+                "description": "",
+                "mandatory": "",
+                "source": "Procuring Entity"
+              },
+              "documents": {
+                "description": "",
+                "mandatory": "",
+                "source": "Procuring Entity"
+              },
+              "milestones": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "participationFees": {
+                "description": "",
+                "mandatory": "",
+                "source": "Procuring Entity"
+              },
+              "criteria": {
+                "description": "",
+                "mandatory": "",
+                "source": "Procuring Entity"
+              },
+              "classification": {
+                "description": "",
+                "mandatory": "",
+                "source": "Procuring Entity"
+              },
+              "submissionLanguages": {
+                "description": "",
+                "mandatory": "",
+                "source": "Procuring Entity"
+              },
+              "conversions": {
+                "description": "",
+                "mandatory": "",
+                "source": "Procuring Entity"
+              },
+              "coveredBy": {
+                "description": "",
+                "mandatory": "",
+                "source": "Procuring Entity"
+              },
+              "tenderPeriod":{
+                "description": "",
+                "mandatory": "",
+                "source": "Procuring Entity"
+              },
+              "awardPeriod":{
+                "description": "",
+                "mandatory": "",
+                "source": "Procuring Entity"
+              },
+              "enquiryPeriod":{
+                "description": "",
+                "mandatory": "",
+                "source": "Procuring Entity"
+              }
+            }
+          },
+          "nodes": {
+            "description": "Nodes are certain groups of goods described by Procuring Entity under particular category, classified with 6th digit of CPV ",
+            "properties": {
+              "lots": {
+                "description": "Certain groups of goods described by Procuring Entity under particular category, classified with 6th digit of CPV",
+                "mandatory": true,
+                "source": "Procuring Entity",
+                "class":"[Lot.Node]"
+              },
+              "lotDetails": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "lotGroups": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "documents":{
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              }
+            }
+          },
+          "ppq": {
+            "description": "",
+            "properties": {
+              "id": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "internalId": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "title": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "descrition": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "status": {
+                "mandatory": "",
+                "source": "",
+                "description": "[Codelists#PCR statuses]"
+              },
+              "procurementMethodModalities": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "items": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "value": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "procurementMethod": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "procurementMethodDetails": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "procurementMethodRationale": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "mainProcurementCategory": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "additionalProcurementCategories": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "awardCriteria": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "awardCriteriaDetails": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "submissionMethod": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "submissionMethodDetails": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "tenderPeriod": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "enquiryPeriod": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "hasEnquiries": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "enquiries": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "eligibilityCriteria": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "awardPeriod": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "contractPeriod": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "tenderers": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "procuringEntity": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "documents": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "milestones": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "amendments": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "lots": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "lotDetails": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "lotGroups": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "participationFees": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "criteria": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "classification": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "reviewPeriod": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "standstillPeriod": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "submissionLanguages": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "targets": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "auctionPeriod": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "procurementMethodModalitiesDetails": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "conversions": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "complaints": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "recurrence": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "coveredBy": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              }
+            }
+          },
+          "pcr": {
+            "description": "",
+            "properties": {
+              "id": {
+                "description": "ID for this release",
+                "mandatory": true,
+                "source": "System"
+              },
+              "internalId": {
+                "description": "Internal identifier for this PCR according to Procuring Entity classification",
+                "mandatory": false,
+                "source": "Procuring Entity"
+              },
+              "title": {
+                "description": "Title for this PCR",
+                "mandatory": true,
+                "source": "Procuring Entity"
+              },
+              "description": {
+                "description": "Free-text relevant description for this PCR",
+                "mandatory": false,
+                "source": "Procuring Entity"
+              },
+              "status": {
+                "mandatory": true,
+                "source": "System",
+                "description": "Status of PCR from [Codelists#PCR statuses|codelist] according to state-chart diagram"
+              },
+              "procurementMethodModalities": {
+                "description": "The set of modalities for this PCR",
+                "mandatory": true,
+                "defaulValue": "requiresElectronicCatalogue",
+                "source": "System"
+              },
+              "procurementMethod": {
+                "description": "Procurement method specified by default",
+                "defaultValue": "selective",
+                "mandatory": true,
+                "source": "System"
+              },
+              "procurementMethodDetails": {
+                "description": "The machine-readable name of the initiated process",
+                "mandatory": true,
+                "defaultValue": "preAwardCatalogue",
+                "source": "System"
+              },
+              "procurementMethodRationale": {
+                "description": "Free-text justification of applied procurement method by Procuring Entity",
+                "mandatory": false,
+                "source": "Procuring Entity"
+              },
+              "mainProcurementCategory": {
+                "description": "Main procurement category indicated according to the classification of the subject of procurement",
+                "mandatory": true,
+                "source": "System"
+              },
+              "tenderPeriod": {
+                "description": "The period for submission of the pre-award catalogues by invited suppliers",
+                "mandatory": true,
+                "source": "Procuring Entity"
+              },
+              "awardPeriod":{
+                "description": "",
+                "mandatory": true,
+                "source": "Procuring Entity"
+              },
+              "enquiryPeriod": {
+                "description": "The period for enquiries from invited suppliers",
+                "mandatory": false,
+                "source": "Procuring Entity"
+              },
+              "procuringEntity": {
+                "description": "Reference to the entity resonsible for this PCR",
+                "mandatory": true,
+                "source": "[Establishment]"
+              },
+              "documents": {
+                "description": "Any documents attached to this PCR by PE",
+                "mandatory": false,
+                "source": "Procuring Entity"
+              },
+              "milestones": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "participationFees": {
+                "description": "",
+                "mandatory": false,
+                "source": "Procuring Entity"
+              },
+              "classification": {
+                "description": "Classification of group of goods requested by this PCR under current category. Usually it is a certain group detailed up to 6th CPV digit - code of one of nodes of establishment",
+                "mandatory": true,
+                "source": "[FE Data-model#Nodes]"
+              }
+            }
+          },
+          "profiles": {
+            "description": "Profiles are varieties defined by Procuring Entity for this node together with related targets and criteria.",
+            "properties": {
+              "lots": {
+                "description": "Varieties defined by Procuring Entity for this node. Together with related targets - profiles of goods.",
+                "mandatory": true,
+                "source": "Procuring Entity",
+                "class": "[Lot.Profile]"
+              },
+              "targets": {
+                "description": "",
+                "mandatory": true,
+                "source": "Procuring Entity",
+                "VR":[
+                  ""
+                ]
+              },
+              "criteria": {
+                "description": "",
+                "mandatory": true,
+                "source": "Procuring Entity"
+              },
+              "lotDetails": {
+                "description": "",
+                "mandatory": false,
+                "source": "Procuring Entity"
+              },
+              "lotGroups": {
+                "description": "",
+                "mandatory": false,
+                "source": "Procuring Entity"
+              }
+            }
+          },
+          "positions": {
+            "description": "",
+            "properties": {
+              "items": {
+                "description": "The precise items (goods/services) indicated and exepcted by Procuring Entity under this PCR",
+                "mandatory": false,
+                "source": "Procuring Entity"
+              },
+              "targets": {
+                "description": "",
+                "mandatory": true,
+                "source": "Procuring Entity"
+              },
+              "criteria": {
+                "description": "",
+                "mandatory": true,
+                "source": "Procuring Entity"
+              }
+            }
+          },
+          "po": {
+            "description": "",
+            "properties": {
+              "id": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "internalId": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "title": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "descrition": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "status": {
+                "mandatory": "",
+                "source": "",
+                "description": "[Codelists#PCR statuses]"
+              },
+              "procurementMethodModalities": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "items": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "value": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "procurementMethod": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "procurementMethodDetails": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "procurementMethodRationale": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "mainProcurementCategory": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "additionalProcurementCategories": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "awardCriteria": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "awardCriteriaDetails": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "submissionMethod": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "submissionMethodDetails": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "tenderPeriod": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "enquiryPeriod": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "hasEnquiries": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "enquiries": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "eligibilityCriteria": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "awardPeriod": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "contractPeriod": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "numberOfTenderers": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "tenderers": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "procuringEntity": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "documents": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "milestones": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "amendments": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "lots": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "lotDetails": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "lotGroups": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "participationFees": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "criteria": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "classification": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "reviewPeriod": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "standstillPeriod": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "submissionLanguages": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "targets": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "auctionPeriod": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "procurementMethodModalitiesDetails": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "conversions": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "complaints": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "recurrence": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "coveredBy": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              }
+            }
+          }
+        }
+      },
+      "properties": {
+        "id": {
+          "title": "Tender ID",
+          "description": "An identifier for this tender process. This may be the same as the ocid, or may be drawn from an internally held identifier for this tender.",
+          "type": [
+            "string",
+            "integer"
+          ]
+        },
+        "internalId": {
+          "title": "",
+          "description": "",
+          "type": [
+            "string",
+            "integer"
+          ]
+        },
+        "title": {
+          "title": "Tender Title",
+          "description": "Tender title",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "title": "Tender description",
+          "description": "Tender description",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "status": {
+          "title": "Tender status",
+          "description": "The current status of the tender based on the [tenderStatus codelist](http://standard.open-contracting.org/1.1-dev/en/schema/codelists/#tender-status)",
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "planned",
+            "active",
+            "cancelled",
+            "unsuccessful",
+            "complete"
+          ],
+          "openCodelist": false
+        },
+        "procurementMethodModalities": {
+          "title": "Procurement method modalities",
+          "description": "The modalities of the procurement method.",
+          "type": "array",
+          "enum": [
+            "accelerated",
+            "electronicAuction",
+            "joint",
+            "negotiated",
+            "optionallyNegotiated",
+            "staged"
+          ],
+          "openCodelist": true
+        },
+        "items": {
+          "title": "Items to be procured",
+          "description": "The goods and services to be purchased, broken into line items wherever possible. Items should not be duplicated, but a quantity of 2 specified instead.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Item"
+          },
+          "uniqueItems": true
+        },
+        "value": {
+          "title": "Value",
+          "description": "The total upper estimated value of the procurement. A negative value indicates that the contracting process may involve payments from the supplier to the buyer (commonly used in concession contracts).",
+          "$ref": "#/definitions/Value"
+        },
+        "procurementMethod": {
+          "title": "Procurement method",
+          "description": "Specify tendering method against the [method codelist](http://standard.open-contracting.org/1.1-dev/en/schema/codelists/#method) as per [GPA definitions](http://www.wto.org/english/docs_e/legal_e/rev-gpr-94_01_e.htm) of Open, Selective, Limited",
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "open",
+            "selective",
+            "limited",
+            null
+          ],
+          "codelist": "method.csv",
+          "openCodelist": false
+        },
+        "procurementMethodDetails": {
+          "title": "Procurement method details",
+          "description": "Additional detail on the procurement method used. This field may be used to provide the local name of the particular procurement method used.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "procurementMethodRationale": {
+          "title": "Procurement method rationale",
+          "description": "Rationale of procurement method, especially in the case of Limited tendering.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mainProcurementCategory": {
+          "title": "Procurement category",
+          "description": "The primary category describing the object of this contracting process from the [procurementCategory](http://standard.open-contracting.org/1.1-dev/en/schema/codelists/#procurement-category) codelist (e.g. supplies, works, services, consultingServices or mixed).",
+          "type": [
+            "string",
+            "null"
+          ],
+          "codelist": "procurementCategory.csv",
+          "openCodelist": false
+        },
+        "additionalProcurementCategories": {
+          "title": "",
+          "description": "",
+          "type": "array",
+          "enum": [
+            "goods",
+            "works",
+            "services"
+          ]
+        },
+        "awardCriteria": {
+          "title": "Award criteria",
+          "description": "Specify the award criteria for the procurement, using the [award criteria codelist](http://standard.open-contracting.org/1.1-dev/en/schema/codelists/#award-criteria)",
+          "type": [
+            "string",
+            "null"
+          ],
+          "codelist": "awardCriteria.csv",
+          "openCodelist": true
+        },
+        "awardCriteriaDetails": {
+          "title": "Award criteria details",
+          "description": "Any detailed or further information on the award or selection criteria.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "submissionMethod": {
+          "title": "Submission method",
+          "description": "Specify the method by which bids must be submitted, in person, written, or electronic auction. Using the [submission method codelist](http://standard.open-contracting.org/1.1-dev/en/schema/codelists/#submission-method)",
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "codelist": "submissionMethod.csv",
+          "openCodelist": true
+        },
+        "submissionMethodDetails": {
+          "title": "Submission method details",
+          "description": "Any detailed or further information on the submission method. This may include the address, e-mail address or online service to which bids should be submitted, and any special requirements to be followed for submissions.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "tenderPeriod": {
+          "title": "Tender period",
+          "description": "The period when the tender is open for submissions. The end date is the closing date for tender submissions.",
+          "$ref": "#/definitions/Period"
+        },
+        "enquiryPeriod": {
+          "title": "Enquiry period",
+          "description": "The period during which potential bidders may submit questions and requests for clarification to the entity managing procurement. Details of how to submit enquiries should be provided in attached notices, or in submissionMethodDetails. Structured dates for when responses to questions will be made can be provided using tender milestones.",
+          "$ref": "#/definitions/Period"
+        },
+        "enquiries": {
+          "title": "Enquiries",
+          "type": [
+            "array",
+            "null"
+          ],
+          "description": "Questions sent to the procuring entity, and the answers given",
+          "items": {
+            "$ref": "#/definitions/Enquiry"
+          },
+          "uniqueItems": true
+        },
+        "hasEnquiries": {
+          "title": "Has enquiries?",
+          "description": "A true/false field to indicate whether any enquiries were received during the tender process. Structured information on enquiries that were received, and responses to them, can be provided using the enquiries extension.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "eligibilityCriteria": {
+          "title": "Eligibility criteria",
+          "description": "A description of any eligibility criteria for potential suppliers.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "awardPeriod": {
+          "title": "Evaluation and award period",
+          "description": "The period for adjudication and selection of the contract award. The end date should be the date on which an award is due to be finalised. The start date may be used to indicate the start of an evaluation period.",
+          "$ref": "#/definitions/Period"
+        },
+        "contractPeriod": {
+          "description": "The period over which the contract is estimated or required to be active. If the tender does not specify explicit dates, the duration field may be used.",
+          "title": "Contract period",
+          "$ref": "#/definitions/Period"
+        },
+        "numberOfTenderers": {
+          "title": "Number of tenderers",
+          "description": "The number of entities who submit a tender.",
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "tenderers": {
+          "title": "Tenderers",
+          "description": "All entities who submit a bid on a tender. More detailed information on bids and the bidding organisation can be provided using the optional bid extension.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OrganizationReference"
+          },
+          "uniqueItems": true
+        },
+        "procuringEntity": {
+          "title": "Procuring entity",
+          "description": "The entity managing the procurement, which may be different from the buyer who is paying / using the items being procured.",
+          "$ref": "#/definitions/OrganizationReference"
+        },
+        "documents": {
+          "title": "Documents",
+          "description": "All documents and attachments related to the tender, including any notices. See the [documentType codelist](http://standard.open-contracting.org/1.1-dev/en/schema/codelists/#document-type) for details of potential documents to include.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Document"
+          }
+        },
+        "milestones": {
+          "title": "Milestones",
+          "description": "A list of milestones associated with the tender.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Milestone"
+          }
+        },
+        "amendments": {
+          "description": "A tender amendment is a formal change to the tender, and generally involves the publication of a new tender notice/release. The rationale and a description of the changes made can be provided here.",
+          "type": "array",
+          "title": "Amendments",
+          "items": {
+            "$ref": "#/definitions/Amendment"
+          }
+        },
+        "lots": {
+          "title": "Lots",
+          "description": "A tender process may be divided into lots, where bidders can bid on one or more lots. Details of each lot can be provided here. Items, documents and other features can then reference the lot they are related to using relatedLot. Where no relatedLot identifier is given, the values should be interpreted as applicable to the whole tender. Properties of tender can be overridden for a given Lot through their inclusion in the Lot object.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Lot"
+          }
+        },
+        "lotDetails": {
+          "$ref": "#/definitions/LotDetails"
+        },
+        "lotGroups": {
+          "title": "Lot groups",
+          "description": "Where the buyer reserves the right to combine lots, or wishes to specify the total value for a group of lots, a lot group is used to capture this information.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LotGroup"
+          }
+        },
+        "participationFees": {
+          "title": "Participation fees",
+          "description": "Any fees applicable to bidders wishing to participate in the tender process. Fees may apply for access to bidding documents, for the submission of bids or there may be a win fee payable by the successful bidder.",
+          "type": "array",
+          "mergeStrategy": "ocdsVersion",
+          "items": {
+            "$ref": "#/definitions/ParticipationFee"
+          },
+          "uniqueItems": true
+        },
+        "criteria": {
+          "description": "A list of criteria on which either bidders or items will be judged, evaluated or assessed.",
+          "type": "array",
+          "mergeStrategy": "arrayMergeById",
+          "mergeOptions": {
+            "idRef": "id"
+          },
+          "items": {
+            "$ref": "#/definitions/Criterion"
+          }
+        },
+        "classification": {
+          "title": "Classification",
+          "description": "The primary classification for the tender. Required by the EU. Uses CPV Codelist See the [itemClassificationScheme](http://standard.open-contracting.org/1.1-dev/en/schema/codelists/#item-classification-scheme).",
+          "$ref": "#/definitions/Classification"
+        },
+        "reviewPeriod": {
+          "title": "Review period",
+          "description": "The period during which the decision of the procuring entity to award a contract can be challenged.",
+          "$ref": "#/definitions/Period"
+        },
+        "standstillPeriod": {
+          "title": "Standstill period",
+          "description": "The duration of the applicable standstill period following a challenge or appeal of decisions or actions taken by the procuring entity that are allegedly not in compliance with the provisions of the Law",
+          "$ref": "#/definitions/Period"
+        },
+        "submissionLanguages": {
+          "title": "Submission Languages",
+          "description": "Language(s) in which tenderers may submit, drawn from the [submissionLanguages codelist](http://standard.open-contracting.org/1.1-dev/en/schema/codelists/#submission-languages)",
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "enum": [
+            "bg",
+            "es",
+            "cs",
+            "da",
+            "de",
+            "et",
+            "el",
+            "en",
+            "fr",
+            "ga",
+            "hr",
+            "it",
+            "lv",
+            "lt",
+            "hu",
+            "mt",
+            "nl",
+            "pl",
+            "pt",
+            "ro",
+            "sk",
+            "sl",
+            "fi",
+            "sv",
+            null
+          ],
+          "codelist": "submissionLanguages.csv",
+          "openCodelist": false
+        },
+        "targets": {
+          "type": "array",
+          "title": "Targets",
+          "description": "Any target metrics for this results of this contracting process.",
+          "items": {
+            "$ref": "#/definitions/Metric"
+          },
+          "uniqueItems": true
+        },
+        "auctionPeriod": {
+          "title": "Auction period",
+          "description": "General auction period for the contracting process",
+          "$ref": "#/definitions/Period"
+        },
+        "procurementMethodModalitiesDetails": {
+          "title": "Procurement Method Modalities Details",
+          "description": "The prescribed presets of settings and adjustments for the differement procurement methods modalities applied under this contracting process",
+          "type": "object",
+          "properties": {
+            "electronicAuction": {
+              "title": "Electronic Auction Modalities",
+              "description": "The prescribed presets of settings and adjustments available for the electronic auction as one one of the procurement methods modalities applied under this contracting process",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/electronicAuctionModalities"
+              }
+            }
+          }
+        },
+        "conversions": {
+          "title": "Conversions",
+          "description": "A list of weightings for the used criteria or applicable options",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Conversion"
+          }
+        },
+        "complaints": {
+          "title": "Comlaints",
+          "description": "Any comlaints related to this tender",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RelatedComplaint"
+          }
+        },
+        "recurrence": {
+          "title": "Recurrence",
+          "description": "Information on the recurrence of the contracting process.",
+          "$ref": "#/definitions/Recurrence"
+        },
+        "coveredBy": {
+          "title": "Covered by",
+          "description": "The treaties, laws, regulations or other instruments that the contracting process is covered by.",
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "codelist": "coveredBy.csv",
+          "openCodelist": true,
+          "uniqueItems": true
+        }
+      }
+    },
+    "ReviewProceedings": {
+      "title": "Review Proceedings",
+      "description": "General information related to reviews under this contracting process together with collected complaints and reviews",
+      "type": "object",
+      "properties": {
+        "complaints": {
+          "title": "Complaints",
+          "description": "Complaints to the conditions and decisions",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Complaint"
+          }
+        },
+        "reviews": {
+          "title": "Reviews",
+          "description": "Review Procedures conducted due to complaints received",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Review"
+          }
+        }
+      }
+    },
+    "Award": {
+      "title": "Award",
+      "description": "An award for the given procurement. There may be more than one award per contracting process e.g. because the contract is split amongst different providers, or because it is a standing offer.",
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "title": "Award ID",
+          "description": "The identifier for this award. It must be unique and cannot change within the Open Contracting Process it is part of (defined by a single ocid). See the [identifier guidance](http://standard.open-contracting.org/1.1-dev/en/schema/identifiers/) for further details.",
+          "type": [
+            "string",
+            "integer"
+          ]
+        },
+        "internalId": {
+          "title": "",
+          "description": "",
+          "type": [
+            "string",
+            "integer"
+          ]
+        },
+        "title": {
+          "title": "Title",
+          "description": "Award title",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "title": "Description",
+          "description": "Award description",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "status": {
+          "title": "Award status",
+          "description": "The current status of the award drawn from the [awardStatus codelist](http://standard.open-contracting.org/1.1-dev/en/schema/codelists/#award-status)",
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "pending",
+            "active",
+            "cancelled",
+            "unsuccessful",
+            null
+          ],
+          "codelist": "awardStatus.csv",
+          "openCodelist": false
+        },
+        "date": {
+          "title": "Award date",
+          "description": "The date of the contract award. This is usually the date on which a decision to award was made.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "value": {
+          "title": "Value",
+          "description": "The total value of this award. In the case of a framework contract this may be the total estimated lifetime value, or maximum value, of the agreement. There may be more than one award per procurement. A negative value indicates that the award may involve payments from the supplier to the buyer (commonly used in concession contracts).",
+          "$ref": "#/definitions/Value"
+        },
+        "suppliers": {
+          "title": "Suppliers",
+          "description": "The suppliers awarded this award. If different suppliers have been awarded different items of values, these should be split into separate award blocks.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OrganizationReference"
+          },
+          "uniqueItems": true
+        },
+        "items": {
+          "title": "Items awarded",
+          "description": "The goods and services awarded in this award, broken into line items wherever possible. Items should not be duplicated, but the quantity specified instead.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/Item"
+          },
+          "uniqueItems": true
+        },
+        "contractPeriod": {
+          "title": "Contract period",
+          "description": "The period for which the contract has been awarded.",
+          "$ref": "#/definitions/Period"
+        },
+        "documents": {
+          "title": "Documents",
+          "description": "All documents and attachments related to the award, including any notices.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Document"
+          },
+          "uniqueItems": true
+        },
+        "amendments": {
+          "description": "An award amendment is a formal change to the details of the award, and generally involves the publication of a new award notice/release. The rationale and a description of the changes made can be provided here.",
+          "type": "array",
+          "title": "Amendments",
+          "items": {
+            "$ref": "#/definitions/Amendment"
+          }
+        },
+        "amendment": {
+          "title": "Amendment",
+          "description": "The use of individual amendment objects has been deprecated. From OCDS 1.1 information should be provided in the ammendments array.",
+          "$ref": "#/definitions/Amendment",
+          "deprecated": {
+            "description": "The single amendment object has been deprecated in favour of including amendments in an ammendments (plural) array.",
+            "deprecatedVersion": "1.1"
+          }
+        },
+        "relatedLots": {
+          "title": "Related lot(s)",
+          "description": "If this award relates to one or more specific lots, provide the identifier(s) of the related lot(s) here.",
+          "type": [
+            "array"
+          ],
+          "items": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "requirementResponses": {
+          "type": "array",
+          "mergeStrategy": "arrayMergeById",
+          "mergeOptions": {
+            "idRef": "id"
+          },
+          "items": {
+            "$ref": "#/definitions/RequirementResponse"
+          },
+          "unqiueItems": true
+        },
+        "complaints": {
+          "title": "Comlaints",
+          "description": "Any comlaints related to this award",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RelatedComplaint"
+          }
+        },
+        "statusDetails": {
+          "title": "Status details",
+          "description": "Additional details of an award status.",
+          "type": "string"
+        },
+        "agreedMetrics": {
+          "type": "array",
+          "title": "Agreed metrics",
+          "description": "Any target metrics set out as part of the contract award.",
+          "items": {
+            "$ref": "#/definitions/Metric"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "Contract": {
+      "type": "object",
+      "title": "Contract",
+      "description": "Information regarding the signed contract between the buyer and supplier(s).",
+      "required": [
+        "id",
+        "awardID"
+      ],
+      "properties": {
+        "id": {
+          "title": "Contract ID",
+          "description": "The identifier for this contract. It must be unique and cannot change within its Open Contracting Process (defined by a single ocid). See the [identifier guidance](http://standard.open-contracting.org/1.1-dev/en/schema/identifiers/) for further details.",
+          "type": [
+            "string",
+            "integer"
+          ]
+        },
+        "internalId": {
+          "title": "",
+          "description": "",
+          "type": [
+            "string",
+            "integer"
+          ]
+        },
+        "awardID": {
+          "title": "Award ID",
+          "description": "The award.id against which this contract is being issued.",
+          "type": [
+            "string",
+            "integer"
+          ]
+        },
+        "extendsContractID": {
+          "title": "Extends contract ID",
+          "description": "If this contract extends or amends a previously issued contract, then the contract.id value for the extended/amended contract can be provided here.",
+          "type": [
+            "string"
+          ]
+        },
+        "title": {
+          "title": "Contract title",
+          "description": "Contract title",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "title": "Contract description",
+          "description": "Contract description",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "status": {
+          "title": "Contract status",
+          "description": "The current status of the contract. Drawn from the [contractStatus codelist](http://standard.open-contracting.org/1.1-dev/en/schema/codelists/#contract-status)",
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "pending",
+            "active",
+            "cancelled",
+            "terminated",
+            null
+          ],
+          "codelist": "contractStatus.csv",
+          "openCodelist": false
+        },
+        "period": {
+          "title": "Period",
+          "description": "The start and end date for the contract.",
+          "$ref": "#/definitions/Period"
+        },
+        "value": {
+          "title": "Value",
+          "description": "The total value of this contract. A negative value indicates that the contract will involve payments from the supplier to the buyer (commonly used in concession contracts).",
+          "$ref": "#/definitions/Value"
+        },
+        "items": {
+          "title": "Items contracted",
+          "description": "The goods, services, and any intangible outcomes in this contract. Note: If the items are the same as the award do not repeat.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/Item"
+          },
+          "uniqueItems": true
+        },
+        "dateSigned": {
+          "title": "Date signed",
+          "description": "The date the contract was signed. In the case of multiple signatures, the date of the last signature.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "documents": {
+          "title": "Documents",
+          "description": "All documents and attachments related to the contract, including any notices.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Document"
+          },
+          "uniqueItems": true
+        },
+        "implementation": {
+          "title": "Implementation",
+          "description": "Information related to the implementation of the contract in accordance with the obligations laid out therein.",
+          "$ref": "#/definitions/Implementation"
+        },
+        "relatedProcesses": {
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/definitions/RelatedProcess"
+          },
+          "description": "If this process is followed by one or more contracting processes, represented under a separate open contracting identifier (ocid) then details of the related process can be provided here. This is commonly used to point to subcontracts, or to renewal and replacement processes for this contract.",
+          "title": "Related processes",
+          "type": "array"
+        },
+        "milestones": {
+          "title": "Contract milestones",
+          "description": "A list of milestones associated with the finalisation of this contract.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Milestone"
+          }
+        },
+        "amendments": {
+          "description": "A contract amendment is a formal change to, or extension of, a contract, and generally involves the publication of a new contract notice/release, or some other documents detailing the change. The rationale and a description of the changes made can be provided here.",
+          "type": "array",
+          "title": "Amendments",
+          "items": {
+            "$ref": "#/definitions/Amendment"
+          }
+        },
+        "amendment": {
+          "title": "Amendment",
+          "description": "The use of individual amendment objects has been deprecated. From OCDS 1.1 information should be provided in the ammendments array.",
+          "$ref": "#/definitions/Amendment",
+          "deprecated": {
+            "description": "The single amendment object has been deprecated in favour of including amendments in an ammendments (plural) array.",
+            "deprecatedVersion": "1.1"
+          }
+        },
+        "requirementResponses": {
+          "type": "array",
+          "mergeStrategy": "arrayMergeById",
+          "mergeOptions": {
+            "idRef": "id"
+          },
+          "items": {
+            "$ref": "#/definitions/RequirementResponse"
+          },
+          "unqiueItems": true
+        },
+        "countryOfOrigin": {
+          "title": "Country of Origin",
+          "description": "Country of origin of the product or service. Required by EU.",
+          "type": "string"
+        },
+        "lotVariant": {
+          "title": "Lot Variant",
+          "description": "The contract was awarded to a tenderer who submitted a variant for the following lot(s)",
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "uniqueItems": true
+          }
+        },
+        "valueBreakdown": {
+          "title": "Value Breakdown",
+          "description": "The breakdown of known and/or estimated values in this contract.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ValueBreakdown"
+          },
+          "uniqueItems": true
+        },
+        "isFrameworkOrDynamic": {
+          "title": "Is Framework Or Dynamic?",
+          "description": "Contracts within a framework agreement or a dynamic purchasing system are being awarded. Required by the EU",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "agreedMetrics": {
+          "type": "array",
+          "title": "Agreed metrics",
+          "description": "Any target metrics set out as part of the contract documents.",
+          "items": {
+            "$ref": "#/definitions/Metric"
+          },
+          "uniqueItems": true
+        }
+      }
     }
   }
 }
