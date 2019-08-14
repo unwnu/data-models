@@ -2192,6 +2192,36 @@
                 "source":"System"
               }
             }
+          },
+          "node":{
+            "description":"",
+            "properties":{
+              "id":{
+                "description":"",
+                "mandatory":true,
+                "source":"System"
+              },
+              "internalId":{
+                "description":"",
+                "mandatory":false,
+                "source":"Procuring Entity"
+              },
+              "title":{
+                "description":"",
+                "mandatory":true,
+                "source":"Procuring Entity"
+              },
+              "description":{
+                "description":"",
+                "mandatory":false,
+                "source":"Procuring Entity"
+              },
+              "status":{
+                "description":"",
+                "mandatory":true,
+                "source":"System"
+              }
+            }
           }
         }
       },
