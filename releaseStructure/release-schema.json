@@ -10,22 +10,22 @@
           "ocid":{
             "description":"",
             "mandatory":true,
-            "owner":"System"
+            "source":"System"
           },
           "id":{
             "description":"",
             "mandatory":true,
-            "owner":"System"
+            "source":"System"
           },
           "date":{
             "description":"",
             "mandatory":true,
-            "owner":"System"
+            "source":"System"
           },
           "tag":{
             "description":"Appliceble codelist is [Codelists#PCR release tags]",
             "mandatory":true,
-            "owner":"System"
+            "source":"System"
           },
           "initiationType":{
             "description":"Appliceble codelist is [Codelists#PCR Initiation types]",
@@ -35,27 +35,27 @@
           "title":{
             "description":"",
             "mandatory":true,
-            "owner":"System"
+            "source":"System"
           },
           "descrition":{
             "description":"",
             "mandatory":true,
-            "owner":"System"
+            "source":"System"
           },
           "language":{
             "description":"",
             "mandatory":true,
-            "owner":"System"
+            "source":"System"
           },
           "relatedProcesses":{
             "description":"",
             "mandatory":true,
-            "owner":"System"
+            "source":"System"
           },
           "parties":{
             "description":"",
             "mandatory":true,
-            "owner":"System"
+            "source":"System"
           } 
         }
       }
