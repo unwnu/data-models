@@ -4,6 +4,61 @@
   "type": "object",
   "doc":{
     "application":{
+      "fe":{
+        "descrition":"From OCDS point of view, PCR - is a stand-alone ocds-record where all the date presented within [Release]",
+        "properties":{
+          "ocid":{
+            "description":"",
+            "mandatory":true,
+            "source":"System"
+          },
+          "id":{
+            "description":"",
+            "mandatory":true,
+            "source":"System"
+          },
+          "date":{
+            "description":"",
+            "mandatory":true,
+            "source":"System"
+          },
+          "tag":{
+            "description":"Appliceble codelist is [Codelists#PCR release tags]",
+            "mandatory":true,
+            "source":"System"
+          },
+          "initiationType":{
+            "description":"Appliceble codelist is [Codelists#PCR Initiation types]",
+            "mandatory":true,
+            "source":"System"
+          },
+          "title":{
+            "description":"",
+            "mandatory":true,
+            "source":"System"
+          },
+          "descrition":{
+            "description":"",
+            "mandatory":true,
+            "source":"System"
+          },
+          "language":{
+            "description":"",
+            "mandatory":true,
+            "source":"System"
+          },
+          "relatedProcesses":{
+            "description":"",
+            "mandatory":true,
+            "source":"System"
+          },
+          "parties":{
+            "description":"",
+            "mandatory":true,
+            "source":"System"
+          } 
+        }
+      }
       "pcr":{
         "descrition":"From OCDS point of view, PCR - is a stand-alone ocds-record where all the date presented within [Release]",
         "properties":{
@@ -30,7 +85,7 @@
           "initiationType":{
             "description":"Appliceble codelist is [Codelists#PCR Initiation types]",
             "mandatory":true,
-            "owner":"System"
+            "source":"System"
           },
           "title":{
             "description":"",
