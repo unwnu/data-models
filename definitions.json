@@ -1892,11 +1892,6 @@
       "title": "Value",
       "type": "object",
       "description": "Financial value description",
-      "doc":{
-        "vr": {
-          "node":"some text3"
-        }
-      },
       "properties": {
         "amount": {
           "title": "Amount",
