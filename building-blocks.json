@@ -299,11 +299,6 @@
                 "mandatory": "",
                 "source": ""
               },
-              "awardPeriod": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
               "procuringEntity": {
                 "description": "",
                 "mandatory": "",
@@ -320,11 +315,6 @@
                 "source": ""
               },
               "amendments": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "lots": {
                 "description": "",
                 "mandatory": "",
                 "source": ""
@@ -398,7 +388,7 @@
                 "description": "Certain groups of goods described by Procuring Entity under particular category, classified with 6th digit of CPV",
                 "mandatory": true,
                 "source": "Procuring Entity",
-                "class":"Lot.Node"
+                "class":"[Lot.Node]"
               }
             }
           },
