@@ -210,232 +210,232 @@
               "id": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "internalId": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "title": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "descrition": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "status": {
                 "mandatory": "",
-                "owner": "",
+                "source": "",
                 "description": "[Codelists#PCR statuses]"
               },
               "procurementMethodModalities": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "items": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "value": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "procurementMethod": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "procurementMethodDetails": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "procurementMethodRationale": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "mainProcurementCategory": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "additionalProcurementCategories": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "awardCriteria": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "awardCriteriaDetails": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "submissionMethod": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "submissionMethodDetails": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "tenderPeriod": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "enquiryPeriod": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "hasEnquiries": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "enquiries": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "eligibilityCriteria": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "awardPeriod": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "contractPeriod": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "numberOfTenderers": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "tenderers": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "procuringEntity": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "documents": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "milestones": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "amendments": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "lots": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "lotDetails": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "lotGroups": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "participationFees": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "criteria": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "classification": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "reviewPeriod": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "standstillPeriod": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "submissionLanguages": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "targets": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "auctionPeriod": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "procurementMethodModalitiesDetails": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "conversions": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "complaints": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "recurrence": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "coveredBy": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               }
             }
           },
@@ -445,7 +445,7 @@
               "lots": {
                 "description": "Certain groups of goods described by Procuring Entity under particular category, classified with 6th digit of CPV",
                 "mandatory": true,
-                "owner": "Procuring Entity"
+                "source": "Procuring Entity"
               }
             }
           },
@@ -455,227 +455,227 @@
               "id": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "internalId": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "title": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "descrition": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "status": {
                 "mandatory": "",
-                "owner": "",
+                "source": "",
                 "description": "[Codelists#PCR statuses]"
               },
               "procurementMethodModalities": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "items": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "value": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "procurementMethod": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "procurementMethodDetails": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "procurementMethodRationale": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "mainProcurementCategory": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "additionalProcurementCategories": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "awardCriteria": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "awardCriteriaDetails": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "submissionMethod": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "submissionMethodDetails": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "tenderPeriod": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "enquiryPeriod": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "hasEnquiries": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "enquiries": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "eligibilityCriteria": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "awardPeriod": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "contractPeriod": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "tenderers": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "procuringEntity": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "documents": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "milestones": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "amendments": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "lots": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "lotDetails": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "lotGroups": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "participationFees": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "criteria": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "classification": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "reviewPeriod": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "standstillPeriod": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "submissionLanguages": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "targets": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "auctionPeriod": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "procurementMethodModalitiesDetails": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "conversions": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "complaints": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "recurrence": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "coveredBy": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               }
             }
           },
@@ -685,120 +685,120 @@
               "id": {
                 "description": "ID for this release",
                 "mandatory": true,
-                "owner": "System"
+                "source": "System"
               },
               "internalId": {
                 "description": "Internal identifier for this PCR according to Procuring Entity classification",
                 "mandatory": false,
-                "owner": "Procuring Entity"
+                "source": "Procuring Entity"
               },
               "title": {
                 "description": "Title for this PCR",
                 "mandatory": true,
-                "owner": "Procuring Entity"
+                "source": "Procuring Entity"
               },
               "description": {
                 "description": "Free-text relevant description for this PCR",
                 "mandatory": false,
-                "owner": "Procuring Entity"
+                "source": "Procuring Entity"
               },
               "status": {
                 "mandatory": true,
-                "owner": "System",
+                "source": "System",
                 "description": "Status of PCR from [Codelists#PCR statuses|codelist] according to state-chart diagram"
               },
               "procurementMethodModalities": {
                 "description": "The set of modalities for this PCR",
                 "mandatory": true,
                 "defaulValue": "requiresElectronicCatalogue",
-                "owner": "System"
+                "source": "System"
               },
               "value": {
                 "description": "The estimated value for this PCR indicated by Procuring Entity",
                 "mandatory": false,
-                "owner": "Procuring Entity"
+                "source": "Procuring Entity"
               },
               "procurementMethod": {
                 "description": "Procurement method specified by default",
                 "defaultValue": "selective",
                 "mandatory": true,
-                "owner": "System"
+                "source": "System"
               },
               "procurementMethodDetails": {
                 "description": "The machine-readable name of the initiated process",
                 "mandatory": true,
-                "defaultValue": "preAwardCatalogueRequest",
-                "owner": "System"
+                "defaultValue": "preAwardCatalogue",
+                "source": "System"
               },
               "procurementMethodRationale": {
                 "description": "Free-text justification of applied procurement method by Procuring Entity",
                 "mandatory": false,
-                "owner": "Procuring Entity"
+                "source": "Procuring Entity"
               },
               "mainProcurementCategory": {
                 "description": "Main procurement category indicated according to the classification of the subject of procurement",
                 "mandatory": true,
-                "owner": "System"
+                "source": "System"
               },
               "tenderPeriod": {
                 "description": "The period for submission of the pre-award catalogues by invited suppliers",
                 "mandatory": true,
-                "owner": "Procuring Entity"
+                "source": "Procuring Entity"
               },
               "enquiryPeriod": {
                 "description": "The period for enquiries from invited suppliers",
                 "mandatory": false,
-                "owner": "Procuring Entity"
+                "source": "Procuring Entity"
               },
               "hasEnquiries": {
                 "description": "Indicator whether any clarification requests were received",
                 "mandatory": false,
-                "owner": "System"
+                "source": "System"
               },
               "enquiries": {
                 "description": "Set of enquiries received together with clarifications from PE (if any)",
                 "mandatory": false,
-                "owner": "System"
+                "source": "System"
               },
               "procuringEntity": {
                 "description": "Reference to the entity resonsible for this PCR",
                 "mandatory": true,
-                "owner": "[Establishment]"
+                "source": "[Establishment]"
               },
               "documents": {
                 "description": "Any documents attached to this PCR by PE",
                 "mandatory": false,
-                "owner": "Procuring Entity"
+                "source": "Procuring Entity"
               },
               "milestones": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "amendments": {
                 "description": "Set of the amendments generated based on changes for this PCR initiated by PE",
                 "mandatory": false,
-                "owner": "System"
+                "source": "System"
               },
               "lotDetails": {
                 "description": "",
                 "mandatory": false,
-                "owner": "Procuring Entity"
+                "source": "Procuring Entity"
               },
               "lotGroups": {
                 "description": "",
                 "mandatory": false,
-                "owner": "Procuring Entity"
+                "source": "Procuring Entity"
               },
               "participationFees": {
                 "description": "",
                 "mandatory": false,
-                "owner": "Procuring Entity"
+                "source": "Procuring Entity"
               },
               "classification": {
                 "description": "Classification of group of goods requested by this PCR under current category. Usually it is a certain group detailed up to 6th CPV digit - code of one of nodes of establishment",
                 "mandatory": true,
-                "owner": "[Establishment#Nodes]",
+                "source": "[Establishment#Nodes]",
                 "vr": [
                   "$substringBefore(\"tender.classification.id\", \"0\") = \"$substringBefore(\"relatedProcesses[relationship: establishment].url#tender.lots[*].classification.id\",  \"0\")"
                 ]
@@ -811,13 +811,13 @@
               "lots": {
                 "description": "Varieties defined by Procuring Entity for this node. Together with related targets - profiles of goods.",
                 "mandatory": true,
-                "owner": "Procuring Entity",
+                "source": "Procuring Entity",
                 "class": "[Lot.Profile]"
               },
               "targets": {
                 "description": "",
                 "mandatory": true,
-                "owner": "Procuring Entity",
+                "source": "Procuring Entity",
                 "VR":[
                   ""
                 ]
@@ -825,7 +825,7 @@
               "criteria": {
                 "description": "",
                 "mandatory": true,
-                "owner": "Procuring Entity"
+                "source": "Procuring Entity"
               }
             }
           },
@@ -835,17 +835,17 @@
               "items": {
                 "description": "The precise items (goods/services) indicated and exepcted by Procuring Entity under this PCR",
                 "mandatory": false,
-                "owner": "Procuring Entity"
+                "source": "Procuring Entity"
               },
               "targets": {
                 "description": "",
                 "mandatory": true,
-                "owner": "Procuring Entity"
+                "source": "Procuring Entity"
               },
               "criteria": {
                 "description": "",
                 "mandatory": true,
-                "owner": "Procuring Entity"
+                "source": "Procuring Entity"
               }
             }
           },
@@ -855,232 +855,232 @@
               "id": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "internalId": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "title": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "descrition": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "status": {
                 "mandatory": "",
-                "owner": "",
+                "source": "",
                 "description": "[Codelists#PCR statuses]"
               },
               "procurementMethodModalities": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "items": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "value": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "procurementMethod": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "procurementMethodDetails": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "procurementMethodRationale": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "mainProcurementCategory": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "additionalProcurementCategories": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "awardCriteria": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "awardCriteriaDetails": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "submissionMethod": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "submissionMethodDetails": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "tenderPeriod": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "enquiryPeriod": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "hasEnquiries": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "enquiries": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "eligibilityCriteria": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "awardPeriod": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "contractPeriod": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "numberOfTenderers": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "tenderers": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "procuringEntity": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "documents": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "milestones": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "amendments": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "lots": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "lotDetails": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "lotGroups": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "participationFees": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "criteria": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "classification": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "reviewPeriod": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "standstillPeriod": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "submissionLanguages": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "targets": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "auctionPeriod": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "procurementMethodModalitiesDetails": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "conversions": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "complaints": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "recurrence": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               },
               "coveredBy": {
                 "description": "",
                 "mandatory": "",
-                "owner": ""
+                "source": ""
               }
             }
           }
@@ -1927,3 +1927,4 @@
     }
   }
 }
+
