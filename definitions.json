@@ -1623,6 +1623,13 @@
     "Classification": {
       "title": "Classification",
       "type": "object",
+      "doc":{
+        "vr": {
+          "node":[
+            "$substringBefore(\"tender.classification.id\", \"0\") = \"$substringBefore(\"relatedProcesses[relationship: establishment].url#tender.lots[*].classification.id\",  \"0\")","some text"
+            ]
+        }
+      },
       "properties": {
         "scheme": {
           "title": "Scheme",
@@ -1711,6 +1718,13 @@
     "Identifier": {
       "title": "Identifier",
       "type": "object",
+      "doc":{
+        "vr": {
+          "node":[
+            "$substringBefore(\"tender.classification.id\", \"0\") = \"$substringBefore(\"relatedProcesses[relationship: establishment].url#tender.lots[*].classification.id\",  \"0\")","some text"
+            ]
+        }
+      },
       "properties": {
         "scheme": {
           "title": "Scheme",
@@ -1957,6 +1971,70 @@
       "description": "A link to a related contracting process in OCDS and the type of relationship.",
       "type": "object",
       "title": "Related Process",
+      "doc": {
+        "inheritance": {
+          "profile": {
+            "description": "",
+            "properties": {
+              "id": {
+                "description": "",
+                "mandatory": true,
+                "source": "System"
+              },
+              "internalId": {
+                "description": "",
+                "mandatory": false,
+                "source": "Procuring Entity"
+              },
+              "title": {
+                "description": "",
+                "mandatory": true,
+                "source": "Procuring Entity"
+              },
+              "description": {
+                "description": "",
+                "mandatory": false,
+                "source": "Procuring Entity"
+              },
+              "status": {
+                "description": "",
+                "mandatory": true,
+                "source": "System"
+              }
+            }
+          },
+          "node": {
+            "description": "",
+            "properties": {
+              "id": {
+                "description": "",
+                "mandatory": true,
+                "source": "System"
+              },
+              "url": {
+                "description": "",
+                "mandatory": false,
+                "source": "Procuring Entity"
+              },
+              "relationship": {
+                "description": "",
+                "mandatory": true,
+                "source": "Procuring Entity"
+              },
+              "scheme": {
+                "description": "",
+                "mandatory": false,
+                "source": "Procuring Entity"
+              },
+              "title": {
+                "description": "",
+                "mandatory": true,
+                "source": "System"
+              }
+            }
+          }
+        }
+      },
       "properties": {
         "uri": {
           "format": "uri",
@@ -2224,12 +2302,7 @@
               "classification": {
                 "description": "",
                 "mandatory": true,
-                "source": "ProcuringEntity",
-                "vr": [
-                  "$substringBefore(\"tender.classification.id\", \"0\") = \"$substringBefore(\"relatedProcesses[relationship: establishment].url#tender.lots[*].classification.id\",  \"0\")",
-                  "2",
-                  "3"
-                ]
+                "source": "ProcuringEntity"
               }
             }
           }
