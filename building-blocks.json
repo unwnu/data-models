@@ -338,6 +338,21 @@
                 "description": "",
                 "mandatory": "",
                 "source": ""
+              },
+              "tenderPeriod":{
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "awardPeriod":{
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "enquiryPeriod":{
+                "description": "",
+                "mandatory": "",
+                "source": ""
               }
             }
           },
@@ -626,11 +641,6 @@
                 "defaulValue": "requiresElectronicCatalogue",
                 "source": "System"
               },
-              "value": {
-                "description": "The estimated value for this PCR indicated by Procuring Entity",
-                "mandatory": false,
-                "source": "Procuring Entity"
-              },
               "procurementMethod": {
                 "description": "Procurement method specified by default",
                 "defaultValue": "selective",
@@ -658,20 +668,15 @@
                 "mandatory": true,
                 "source": "Procuring Entity"
               },
+              "awardPeriod":{
+                "description": "",
+                "mandatory": true,
+                "source": "Procuring Entity"
+              },
               "enquiryPeriod": {
                 "description": "The period for enquiries from invited suppliers",
                 "mandatory": false,
                 "source": "Procuring Entity"
-              },
-              "hasEnquiries": {
-                "description": "Indicator whether any clarification requests were received",
-                "mandatory": false,
-                "source": "System"
-              },
-              "enquiries": {
-                "description": "Set of enquiries received together with clarifications from PE (if any)",
-                "mandatory": false,
-                "source": "System"
               },
               "procuringEntity": {
                 "description": "Reference to the entity resonsible for this PCR",
@@ -687,11 +692,6 @@
                 "description": "",
                 "mandatory": "",
                 "source": ""
-              },
-              "amendments": {
-                "description": "Set of the amendments generated based on changes for this PCR initiated by PE",
-                "mandatory": false,
-                "source": "System"
               },
               "participationFees": {
                 "description": "",
@@ -1837,4 +1837,3 @@
     }
   }
 }
-
