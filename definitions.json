@@ -2662,7 +2662,7 @@
         },
         "eligibleEvidences": {
           "title": "Eligible evidences",
-          "descrition": "Any [Evidance] that will be accepted as a proof of sasisfaction of sepcific requirement ",
+          "description": "Any [Evidance] that will be accepted as a proof of sasisfaction of sepcific requirement ",
           "type": "array",
           "items": {
             "$ref": "#/definition/Evidence"
@@ -3189,7 +3189,7 @@
           "properties": {
             "status": {
               "title": "status",
-              "descrition": "The result status of this electconic auction based on the auction critera",
+              "description": "The result status of this electconic auction based on the auction critera",
               "type": "string",
               "codelist": "codelists/auctionStatus.csv",
               "openCodelist": false,
@@ -3201,7 +3201,7 @@
             },
             "bids": {
               "title": "Bids",
-              "descrition": "The set of bids resulting this stage of the electronic auction",
+              "description": "The set of bids resulting this stage of the electronic auction",
               "type": "array",
               "items": {
                 "$ref": "#/definitions/Bid"
@@ -3479,7 +3479,7 @@
             },
             "disclosureCategory": {
               "title": "Disclosure rules",
-              "descrition": "Disclosure rules for the offers received within this stage of the electronic auction",
+              "description": "Disclosure rules for the offers received within this stage of the electronic auction",
               "type": "array",
               "codelist": "codelists/disclosureCategory.csv",
               "openCodelist": false,
@@ -3491,7 +3491,7 @@
             },
             "checkpoint": {
               "title": "Targets checkpoint",
-              "descrition": "The event when the achievement of the targets has to be checked for this stage of the electronic auction",
+              "description": "The event when the achievement of the targets has to be checked for this stage of the electronic auction",
               "type": "string",
               "codelist": "codelists/checkpoint.csv",
               "openCodelist": false,
@@ -3511,17 +3511,17 @@
       "properties": {
         "id": {
           "title": "Identifier",
-          "descrition": "Unique identifier for this evidence",
+          "description": "Unique identifier for this evidence",
           "type": "string"
         },
         "attribute": {
           "title": "Attribute",
-          "descrition": "The attribute of the object indicated with criterion.source for wich the value an exepcted will be considered as an evidence",
+          "descrpption": "The attribute of the object indicated with criterion.source for wich the value an exepcted will be considered as an evidence",
           "type": "string"
         },
         "value": {
           "title": "Value",
-          "descrition": "Value which is expected as an evidence",
+          "description": "Value which is expected as an evidence",
           "type": [
             "string",
             "number",
@@ -3531,19 +3531,19 @@
         },
         "relatesTo": {
           "title": "Relates to",
-          "descrition": "Where several evidences are expected to satisfy this evidence, the related tye of the source has to be specified here",
+          "description": "Where several evidences are expected to satisfy this evidence, the related tye of the source has to be specified here",
           "type": "string"
         },
         "relatedItem": {
           "title": "Related Item ID",
-          "descrition": "Where 'relatesTo' is used, the precise unique id of the source has to be specified here",
+          "description": "Where 'relatesTo' is used, the precise unique id of the source has to be specified here",
           "type": "string"
         }
       }
     },
     "InvitationToAuction": {
       "title": "Invitation",
-      "descrition": "The set data describing the category of the participants of this electronic auction to be invited to specific stage of such auction",
+      "description": "The set data describing the category of the participants of this electronic auction to be invited to specific stage of such auction",
       "type": "",
       "properties": {
         "category": {
@@ -4257,7 +4257,7 @@
                 "mandatory": "",
                 "source": ""
               },
-              "descrition": {
+              "description": {
                 "description": "",
                 "mandatory": "",
                 "source": ""
@@ -4400,7 +4400,7 @@
                 "mandatory": "",
                 "source": ""
               },
-              "descrition": {
+              "description": {
                 "description": "",
                 "mandatory": "",
                 "source": ""
@@ -4728,7 +4728,7 @@
                 "mandatory": "",
                 "source": ""
               },
-              "descrition": {
+              "description": {
                 "description": "",
                 "mandatory": "",
                 "source": ""
@@ -5487,6 +5487,143 @@
       "required": [
         "id"
       ],
+      "doc": {
+        "inheritance": {
+          "fe": {
+            "description": "",
+            "properties": {
+              "id": {
+                "description": "",
+                "mandatory": true,
+                "source": "System"
+              },
+              "description": {
+                "description": "Where contract award notice is unsucclessful - the reason should be sepcified here (based on predefined systems' values)",
+                "mandatory": false,
+                "source": "System"
+              },
+              "status": {
+                "mandatory": true,
+                "source": "System",
+                "description": ""
+              },
+              "statusDetails":{
+                "mandatory": true,
+                "source": "System",
+                "description": ""
+              },
+              "date": {
+                "description": "",
+                "mandatory": "",
+                "defaulValue": "",
+                "source": "System"
+              },
+              "suppliers": {
+                "description": "",
+                "mandatory": "",
+                "defaultValue": "",
+                "source": "System"
+              },
+              "contractPeriod": {
+                "description": "",
+                "mandatory": "",
+                "source": "System"
+              },
+              "documents": {
+                "description": "",
+                "mandatory": "",
+                "source": "Procuring Entity"
+              }
+            }
+          },
+          "po": {
+            "description": "",
+            "properties": {
+              "id": {
+                "description": "",
+                "mandatory": "",
+                "source": "System"
+              },
+              "internalId": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "title": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "description": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "status": {
+                "mandatory": "",
+                "source": "System",
+                "description": "[Codelists#FE statuses]"
+              },
+              "statusDetails":{
+                
+              },
+              "date": {
+                "description": "",
+                "mandatory": "",
+                "defaulValue": "frameworkAgreement",
+                "source": "System"
+              },
+              "value": {
+                "description": "open/selective depending on natur eof this initiation",
+                "mandatory": "",
+                "defaulValue": "",
+                "source": "System"
+              },
+              "suppliers": {
+                "description": "",
+                "mandatory": "",
+                "defaultValue": "frameworkEstablishment",
+                "source": "System"
+              },
+              "items": {
+                "description": "",
+                "mandatory": "",
+                "source": "Procuring Entity"
+              },
+              "contractPeriod": {
+                "description": "",
+                "mandatory": "",
+                "source": "System"
+              },
+              "documents": {
+                "description": "",
+                "mandatory": "",
+                "source": "Procuring Entity"
+              },
+              "relatedLots": {
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              },
+              "requirementResponses": {
+                "description": "",
+                "mandatory": "",
+                "source": "Procuring Entity"
+              },
+              "agreedMetrics": {
+                "description": "",
+                "mandatory": "",
+                "source": "Procuring Entity"
+              },
+              "relatedBid":{
+                "description": "",
+                "mandatory": "",
+                "source": ""
+              }
+            }
+          }
+        }
+      },
       "properties": {
         "id": {
           "title": "Award ID",
@@ -5592,15 +5729,6 @@
             "$ref": "#/definitions/Amendment"
           }
         },
-        "amendment": {
-          "title": "Amendment",
-          "description": "The use of individual amendment objects has been deprecated. From OCDS 1.1 information should be provided in the ammendments array.",
-          "$ref": "#/definitions/Amendment",
-          "deprecated": {
-            "description": "The single amendment object has been deprecated in favour of including amendments in an ammendments (plural) array.",
-            "deprecatedVersion": "1.1"
-          }
-        },
         "relatedLots": {
           "title": "Related lot(s)",
           "description": "If this award relates to one or more specific lots, provide the identifier(s) of the related lot(s) here.",
@@ -5646,6 +5774,14 @@
             "$ref": "#/definitions/Metric"
           },
           "uniqueItems": true
+        },
+        "relatedBid": {
+          "title": "Related Bid",
+          "description": "Where bid details are used, a cross reference to the entry in the bids array to which this award relates. Provide the bid identifier here",
+          "type": [
+            "string",
+            "integer"
+          ]
         }
       }
     },
