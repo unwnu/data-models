@@ -2131,6 +2131,11 @@
                 "mandatory": true,
                 "source": "System"
               },
+              "date": {
+                "description": "",
+                "mandatory": true,
+                "source": "System"
+              },
               "status": {
                 "mandatory": true,
                 "source": "System",
@@ -2140,6 +2145,95 @@
                 "mandatory": true,
                 "source": "System",
                 "description": ""
+              },
+              "tenderers": {
+                "description": "",
+                "mandatory": "",
+                "defaultValue": "",
+                "source": "System"
+              },
+              "documents": {
+                "description": "",
+                "mandatory": "",
+                "source": "Procuring Entity"
+              },
+              "requirementResponses":{}
+            }
+          },
+          "pcr": {
+            "description": "",
+            "properties": {
+              "id": {
+                "description": "",
+                "mandatory": true,
+                "source": "System"
+              },
+              "date": {
+                "description": "",
+                "mandatory": true,
+                "source": "System"
+              },
+              "status": {
+                "mandatory": true,
+                "source": "System",
+                "description": ""
+              },
+              "statusDetails":{
+                "mandatory": true,
+                "source": "System",
+                "description": ""
+              },
+              "tenderers": {
+                "description": "",
+                "mandatory": "",
+                "defaultValue": "",
+                "source": "System"
+              },
+              "documents": {
+                "description": "",
+                "mandatory": "",
+                "source": "Procuring Entity"
+              },
+              "relatedLots": {
+                "description": "",
+                "mandatory": true,
+                "source": "System"
+              },
+              "requirementResponses":{}
+            }
+          },
+          "po": {
+            "description": "",
+            "properties": {
+              "id": {
+                "description": "",
+                "mandatory": true,
+                "source": "System"
+              },
+              "date": {
+                "description": "",
+                "mandatory": true,
+                "source": "System"
+              },
+              "status": {
+                "mandatory": true,
+                "source": "System",
+                "description": ""
+              },
+              "statusDetails":{
+                "mandatory": true,
+                "source": "System",
+                "description": ""
+              },
+              "value": {
+                "description": "",
+                "mandatory": true,
+                "source": "System"
+              },
+              "relatedLots": {
+                "description": "",
+                "mandatory": true,
+                "source": "System"
               },
               "tenderers": {
                 "description": "",
