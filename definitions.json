@@ -4092,6 +4092,25 @@
       "required": [
         "id"
       ],
+      "doc":{
+        "inheritance":{
+          "fe":{
+            "description":"",
+            "properties":{
+              "id":"",
+              "description":"",
+              "status":"",
+              "period":"",
+              "enquiryPeriod":{},
+              "qualificationPeriod":{},
+              "tenderers":{},
+              "rocuringEntity":{},
+              "documents":{},
+              "milestones":{}
+            }
+          }
+        }
+      },
       "properties": {
         "id": {
           "title": "Pre-qualification ID",
@@ -4364,251 +4383,6 @@
                 "description": "",
                 "mandatory": "",
                 "source": "Procuring Entity"
-              },
-              "tenderPeriod": {
-                "description": "",
-                "mandatory": "",
-                "source": "Procuring Entity"
-              },
-              "awardPeriod": {
-                "description": "",
-                "mandatory": "",
-                "source": "Procuring Entity"
-              },
-              "enquiryPeriod": {
-                "description": "",
-                "mandatory": "",
-                "source": "Procuring Entity"
-              }
-            }
-          },
-          "ppq": {
-            "description": "",
-            "properties": {
-              "id": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "internalId": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "title": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "description": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "status": {
-                "mandatory": "",
-                "source": "",
-                "description": "[Codelists#PCR statuses]"
-              },
-              "procurementMethodModalities": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "items": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "value": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "procurementMethod": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "procurementMethodDetails": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "procurementMethodRationale": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "mainProcurementCategory": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "additionalProcurementCategories": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "awardCriteria": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "awardCriteriaDetails": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "submissionMethod": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "submissionMethodDetails": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "tenderPeriod": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "enquiryPeriod": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "hasEnquiries": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "enquiries": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "eligibilityCriteria": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "awardPeriod": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "contractPeriod": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "tenderers": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "procuringEntity": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "documents": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "milestones": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "amendments": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "lots": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "lotDetails": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "lotGroups": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "participationFees": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "criteria": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "classification": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "reviewPeriod": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "standstillPeriod": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "submissionLanguages": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "targets": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "auctionPeriod": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "procurementMethodModalitiesDetails": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "conversions": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "complaints": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "recurrence": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
-              },
-              "coveredBy": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
               }
             }
           },
