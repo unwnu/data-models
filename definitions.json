@@ -5793,6 +5793,112 @@
         "id",
         "awardID"
       ],
+      "doc": {
+        "inheritance": {
+          "fe": {
+            "description": "",
+            "properties": {
+              "id": {
+                "description": "",
+                "mandatory": true,
+                "source": "System"
+              },
+              "internalId": {
+                "description": "",
+                "mandatory": true,
+                "source": "System"
+              },
+              "awardId":{
+                "description": "",
+                "mandatory": true,
+                "source": "System"
+              },
+              "extendsContractID":{
+                "description": "",
+                "mandatory": true,
+                "source": "System"
+              },
+              "description": {
+                "description": "Where contract award notice is unsucclessful - the reason should be sepcified here (based on predefined systems' values)",
+                "mandatory": false,
+                "source": "System"
+              },
+              "status": {
+                "mandatory": true,
+                "source": "System",
+                "description": ""
+              },
+              "statusDetails":{
+                "mandatory": true,
+                "source": "System",
+                "description": ""
+              },
+              "period":{
+                "description": "",
+                "mandatory": true,
+                "source": "System"
+              },
+              "dateSigned":{
+                "description": "",
+                "mandatory": true,
+                "source": "System"
+              },
+              "implementation":{
+                "description": "",
+                "mandatory": true,
+                "source": "System"
+              },
+              "milestones":{
+                "description": "",
+                "mandatory": true,
+                "source": "System"
+              },
+              "date": {
+                "description": "",
+                "mandatory": "",
+                "defaulValue": "",
+                "source": "System"
+              },
+              "suppliers": {
+                "description": "",
+                "mandatory": "",
+                "defaultValue": "",
+                "source": "System"
+              },
+              "documents": {
+                "description": "",
+                "mandatory": "",
+                "source": "Procuring Entity"
+              },
+              "isFrameworkOrDynamic":{},
+              "agreedMetrics":{}
+            }
+          },
+          "po": {
+            "description": "",
+            "properties": {
+              "id":{},
+              "internalId":{},
+              "extendsContractID":{},
+              "description":{},
+              "status":{},
+              "statusDetails":{},
+              "period":{},
+              "value":{},
+              "items":{},
+              "dateSigned":"",
+              "date":"",
+              "documents":{},
+              "implementation":{},
+              "relatedProcesses":{},
+              "milestones":{},
+              "requirementResponses":{},
+              "isFrameworkOrDynamic":{},
+              "agreedMetrics":{}
+            }
+          }
+        }
+      },
       "properties": {
         "id": {
           "title": "Contract ID",
@@ -5858,6 +5964,7 @@
           "codelist": "contractStatus.csv",
           "openCodelist": false
         },
+        "statusDetails":{},
         "period": {
           "title": "Period",
           "description": "The start and end date for the contract.",
@@ -5887,6 +5994,7 @@
           ],
           "format": "date-time"
         },
+        "date":{},
         "documents": {
           "title": "Documents",
           "description": "All documents and attachments related to the contract, including any notices.",
@@ -5926,15 +6034,6 @@
             "$ref": "#/definitions/Amendment"
           }
         },
-        "amendment": {
-          "title": "Amendment",
-          "description": "The use of individual amendment objects has been deprecated. From OCDS 1.1 information should be provided in the ammendments array.",
-          "$ref": "#/definitions/Amendment",
-          "deprecated": {
-            "description": "The single amendment object has been deprecated in favour of including amendments in an ammendments (plural) array.",
-            "deprecatedVersion": "1.1"
-          }
-        },
         "requirementResponses": {
           "type": "array",
           "mergeStrategy": "arrayMergeById",
@@ -5945,32 +6044,6 @@
             "$ref": "#/definitions/RequirementResponse"
           },
           "unqiueItems": true
-        },
-        "countryOfOrigin": {
-          "title": "Country of Origin",
-          "description": "Country of origin of the product or service. Required by EU.",
-          "type": "string"
-        },
-        "lotVariant": {
-          "title": "Lot Variant",
-          "description": "The contract was awarded to a tenderer who submitted a variant for the following lot(s)",
-          "type": [
-            "array",
-            "null"
-          ],
-          "items": {
-            "type": "string",
-            "uniqueItems": true
-          }
-        },
-        "valueBreakdown": {
-          "title": "Value Breakdown",
-          "description": "The breakdown of known and/or estimated values in this contract.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ValueBreakdown"
-          },
-          "uniqueItems": true
         },
         "isFrameworkOrDynamic": {
           "title": "Is Framework Or Dynamic?",
