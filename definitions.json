@@ -2121,6 +2121,42 @@
       "required": [
         "id"
       ],
+      "doc": {
+        "inheritance": {
+          "fe": {
+            "description": "",
+            "properties": {
+              "id": {
+                "description": "",
+                "mandatory": true,
+                "source": "System"
+              },
+              "status": {
+                "mandatory": true,
+                "source": "System",
+                "description": ""
+              },
+              "statusDetails":{
+                "mandatory": true,
+                "source": "System",
+                "description": ""
+              },
+              "tenderers": {
+                "description": "",
+                "mandatory": "",
+                "defaultValue": "",
+                "source": "System"
+              },
+              "documents": {
+                "description": "",
+                "mandatory": "",
+                "source": "Procuring Entity"
+              },
+              "requirementResponses":{}
+            }
+          }
+        }
+      },
       "properties": {
         "id": {
           "title": "ID",
