@@ -213,6 +213,20 @@
         "inheritance": {
           "fe-forecasts": {
             "description": "",
+            "validationRules":{
+              "VR-001-1":{
+                "relatesTo":"relatedItem",
+                "rule":"Specified value found in an array of relevant schema-elements (lots/items)"
+              },
+              "VR-001-2":{
+                "relatesTo":"observations",
+                "rule":"At least one observation described for this metric"
+              },
+              "VR-001-3":{
+                "relatesTo":"relatesTo",
+                "rule":"Specified value is either 'lot' or 'item'"
+              }
+            },
             "properties": {
               "id":{
                 "description": "An identifier for this metric drawn from a codelist",
@@ -227,27 +241,17 @@
               "relatesTo": {
                 "mandatory": false,
                 "source": "Procuring Entity",
-                "description": "The schema element that the metric relates. For example observation may be defined against items or against lot.",
-                "vr":[
-                  "Specified value is either 'lot' or 'item'",
-                  "some new"
-                ]
+                "description": "The schema element that the metric relates. For example observation may be defined against items or against lot."
               },
               "relatedItem": {
                 "description": "This field must be populated with the id of the item in this tender section which the metric relates to",
                 "mandatory": false,
-                "source": "Procuring Entity",
-                "vr":[
-                  "Specified value found in an array of relevant schema-elements (lots/items)"  
-                ]
+                "source": "Procuring Entity"
               },
               "observations": {
                 "description": "An array of [Observation] for this metric",
                 "mandatory": true,
-                "source": "Procuring Entity",
-                "vr":[
-                  "At least one observation described for this metric"  
-                ]
+                "source": "Procuring Entity"
               }
             }
           }
