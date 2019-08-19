@@ -4451,6 +4451,16 @@
         "inheritance": {
           "fe": {
             "description": "",
+            "validationRules":{
+              "VR-Tender.FE-001":{
+                "relatesTo":"awardCriteria",
+                "rule":"Specified value is found in the relevant codelist"
+              },
+              "VR-Tender.FE-002":{
+                "relatesTo":"submissionLanguages",
+                "rule":"Specified value are found in the relevant codelist"
+              }
+            },
             "properties": {
               "id": {
                 "description": "An identifier for this tender process. This may be the same as the ocid, or may be drawn from an internally held identifier for this tender.",
@@ -4484,7 +4494,7 @@
                 "source": "System"
               },
               "procurementMethod": {
-                "description": "'open/selective' depending on natur eof this initiation",
+                "description": "'selective' by default for this initiation",
                 "mandatory": true,
                 "defaulValue": "",
                 "source": "System"
@@ -4552,7 +4562,7 @@
                 "source": "Procuring Entity"
               },
               "criteria": {
-                "description": "Set of exclusion grounds and selection criteria prepared for the selection and evaluation under this initiation. The 'critirea' relates to both Tenderer and his offered goods/services",
+                "description": "Set of exclusion grounds and selection criteria prepared for the selection and evaluation under this initiation. The 'criteria' relates to both Tenderer and his offered goods/services",
                 "mandatory": true,
                 "source": "Procuring Entity"
               },
