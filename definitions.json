@@ -2456,6 +2456,16 @@
           },
           "node": {
             "description": "",
+            "validationRulse":{
+              "VR-Lot.Node-001":{
+                "relatesTo":"title",
+                "rule":"The value for this attribute is specified"
+              },
+              "VR-Lot.Node-002":{
+                "relatesTo":"classification",
+                "rule":"Specified value is covered by 4th digit of general initiations' classification"
+              }
+            },
             "properties": {
               "id": {
                 "description": "",
@@ -2607,6 +2617,23 @@
       "title": "Lot group",
       "description": "Where the buyer reserves the right to combine lots, or wishes to specify the total value for a group of lots, a lot group is used to capture this information.",
       "type": "object",
+      "doc": {
+        "inheritance": {
+          "@": {
+            "description": "",
+            "validationRulse":{
+              "VR-LotGroup.@-001":{
+                "relatesTo":"relatedLots",
+                "rule":"Specified value are found in the list of Lots"
+              },
+              "VR-LotGroup.@-002":{
+                "relatesTo":"maximumValue",
+                "rule":"Specified value is lower or equal than overal value of initiation"
+              }
+            }
+          }
+        }
+      },
       "properties": {
         "id": {
           "title": "Lot group identifier",
@@ -3858,7 +3885,7 @@
                 "source": "Procuring Entity"
               },
               "coefficients": {
-                "description": "A list of [RequirementGroup] for this Criterion.",
+                "description": "A list of [Coefficient] for this Conversion",
                 "mandatory": true,
                 "source": "Procuring Entity"
               }
