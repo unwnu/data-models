@@ -229,7 +229,8 @@
                 "source": "Procuring Entity",
                 "description": "The schema element that the metric relates. For example observation may be defined against items or against lot.",
                 "vr":[
-                  "Specified value is either 'lot' or 'item'"  
+                  "Specified value is either 'lot' or 'item'",
+                  "some new"
                 ]
               },
               "relatedItem": {
