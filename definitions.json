@@ -214,15 +214,15 @@
           "fe-forecasts": {
             "description": "",
             "validationRules":{
-              "VR-001-1":{
+              "VR-Metric.FE-Forecasts-001":{
                 "relatesTo":"relatedItem",
                 "rule":"Specified value found in an array of relevant schema-elements (lots/items)"
               },
-              "VR-001-2":{
+              "VR-Metric.FE-Forecasts-002":{
                 "relatesTo":"observations",
                 "rule":"At least one observation described for this metric"
               },
-              "VR-001-3":{
+              "VR-Metric.FE-Forecasts-003":{
                 "relatesTo":"relatesTo",
                 "rule":"Specified value is either 'lot' or 'item'"
               }
@@ -551,6 +551,27 @@
           "title": "Related Item",
           "description": "",
           "type": "string"
+        }
+      },
+      "doc":{
+        "inheritance":{
+          "@":{
+            "description": "",
+            "validationRules":{
+                "VR-BudgetAllocation.@-001":{
+                  "relatesTo":"relatedItem",
+                  "rule":"Specified value found in an array of relevant schema-element (lots/items) of the containing parent component tender/contract"
+                },
+                "VR-BudgetAllocation.@-002":{
+                  "relatesTo":"budgetBreakdownID",
+                  "rule":"Specified value found in an array of identifiers of related/included BudgetBreakdown elements"
+                },
+                "VR-BudgetAllocation.@-003":{
+                  "relatesTo":"period",
+                  "rule":"Specified range is included into period of validity of related BudgetBreakdown element"
+                }
+              }  
+          }
         }
       }
     },
