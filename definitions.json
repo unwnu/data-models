@@ -232,11 +232,14 @@
               "relatedItem": {
                 "description": "This field must be populated with the id of the item in this tender section which the metric relates to",
                 "mandatory": false,
-                "source": "Procuring Entity"
+                "source": "Procuring Entity",
+                "vr":[
+                  "'relatedItem' in ['tender.lots[*].id]"  
+                ]
               },
               "observations": {
                 "description": "An array of [Observation] for this metric",
-                "mandatory": false,
+                "mandatory": true,
                 "source": "Procuring Entity"
               }
             }
