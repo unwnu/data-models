@@ -4148,24 +4148,28 @@
             "description":"",
             "properties":{
               "budget":{
-                "description": "",
-                "mandatory": "",
-                "source": ""
+                "description": "The aggregated budget with details",
+                "mandatory": true,
+                "source": "Initial needs",
+                "class":"[Budget.FE]"
               },
               "forecasts":{
-                "description": "",
-                "mandatory": "",
-                "source": ""
+                "description": "The general quantative foresact of the scoe of needs. Where quantities are specified within PNs aggregated, such forecast can be extracted and calculated automatically. Otherwise, PE has to specify it",
+                "mandatory": true,
+                "source": "Initial needs / Procuring Entity",
+                "class":"Metric"
               },
               "rationale":{
-                "description": "",
-                "mandatory": "",
-                "source": ""
+                "description": "The general free-text justification for the plan of this initiation",
+                "mandatory": false,
+                "source": "Procuring Entity",
+                "class":""
               },
               "documents":{
-                "description": "",
-                "mandatory": "",
-                "source": ""
+                "description": "Any documents related to the plan of this initiation",
+                "mandatory": false,
+                "source": "Procuring Entity",
+                "class":"Document"
               }
             }
           }
@@ -5428,6 +5432,11 @@
                 "defaultValue": "",
                 "source": "System"
               },
+              "InternalId": {
+                "description": "",
+                "mandatory": "",
+                "source": "System"
+              },
               "contractPeriod": {
                 "description": "",
                 "mandatory": "",
@@ -5774,6 +5783,7 @@
                 "mandatory": "",
                 "source": "Procuring Entity"
               },
+              "requirementResponses":{},
               "isFrameworkOrDynamic":{},
               "agreedMetrics":{}
             }
