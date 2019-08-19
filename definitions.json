@@ -211,7 +211,7 @@
       ],
       "doc":{
         "inheritance": {
-          "fe.forecasts": {
+          "fe-forecasts": {
             "description": "",
             "properties": {
               "id":{
