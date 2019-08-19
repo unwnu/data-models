@@ -4455,143 +4455,126 @@
               "id": {
                 "description": "An identifier for this tender process. This may be the same as the ocid, or may be drawn from an internally held identifier for this tender.",
                 "mandatory": true,
-                "source": "System",
-                "class":""
+                "source": "System"
               },
               "internalId": {
                 "description": "An internal identifier of this tender process drawn from an internally held identifier for this tender.",
                 "mandatory": false,
-                "source": "Procuring Entity",
-                "class":""
+                "source": "Procuring Entity"
               },
               "title": {
-                "description": "",
+                "description": "Title for this initiation",
                 "mandatory": true,
-                "source": "Procuring Entity",
-                "class":""
+                "source": "Procuring Entity"
               },
               "description": {
-                "description": "",
+                "description": "Free-text description for this initiation",
                 "mandatory": false,
-                "source": "Procuring Entity",
-                "class":""
+                "source": "Procuring Entity"
               },
               "status": {
                 "mandatory": true,
                 "source": "System",
-                "description": "[Codelists#FE statuses]",
-                "class":""
+                "description": "Status of the initiation taken from [Codelists#FE statuses] accordig to the statechart diagram"
               },
               "procurementMethodModalities": {
-                "description": "",
+                "description": "The set of modalities applied under this initiation. By default 'frameworkAgreement' is applied",
                 "mandatory": true,
                 "defaulValue": "frameworkAgreement",
-                "source": "System",
-                "class":""
+                "source": "System"
               },
               "procurementMethod": {
-                "description": "open/selective depending on natur eof this initiation",
+                "description": "'open/selective' depending on natur eof this initiation",
                 "mandatory": true,
                 "defaulValue": "",
-                "source": "System",
-                "class":""
+                "source": "System"
               },
               "procurementMethodDetails": {
-                "description": "",
-                "mandatory": "",
+                "description": "Procurement method details taken from codelist. For this type of initiation - 'frameworkEstablishment' as default",
+                "mandatory": true,
                 "defaultValue": "frameworkEstablishment",
                 "source": "System",
                 "class":""
               },
               "procurementMethodRationale": {
-                "description": "",
-                "mandatory": "",
-                "source": "Procuring Entity",
-                "class":""
+                "description": "Free-text justification of procurement method used",
+                "mandatory": false,
+                "source": "Procuring Entity"
               },
               "mainProcurementCategory": {
-                "description": "",
-                "mandatory": "",
-                "source": "System",
-                "class":""
+                "description": "Procurement category, detected automatically on classification of the object of procurement and specified according [Codelists#Procurement categories]",
+                "mandatory": true,
+                "source": "System"
               },
               "awardCriteria": {
-                "description": "",
-                "mandatory": "",
-                "source": "Procuring Entity",
-                "class":""
+                "description": "The award criteria for this initiation against [Codelists#Award criteria]",
+                "mandatory": true,
+                "source": "Procuring Entity"
               },
               "awardCriteriaDetails": {
-                "description": "",
-                "mandatory": "",
-                "source": "Procuring Entity",
-                "class":""
+                "description": "Free-text descrition of applied award criteria",
+                "mandatory": false,
+                "source": "Procuring Entity"
               },
               "submissionMethod": {
-                "description": "",
-                "mandatory": "",
-                "source": "System",
-                "class":""
+                "description": "The method by which bids must be submitted. For this type of initiation - 'electronicSubmission' by default",
+                "mandatory": true,
+                "source": "System"
               },
               "submissionMethodDetails": {
-                "description": "",
+                "description": "Any detailed or further information on the submission method.",
                 "mandatory": false,
-                "source": "Procuring Entity",
-                "class":""
+                "source": "Procuring Entity"
               },
               "eligibilityCriteria": {
-                "description": "",
+                "description": "A description of any eligibility criteria for potential suppliers",
                 "mandatory": false,
-                "source": "Procuring Entity",
-                "class":""
+                "source": "Procuring Entity"
               },
               "procuringEntity": {
-                "description": "",
+                "description": "Reference to the Procuring entitys' profile as an [OrganizationReference]",
                 "mandatory": true,
-                "source": "Procuring Entity",
-                "class":"[OrganizationReference]"
+                "source": "Procuring Entity"
               },
               "documents": {
-                "description": "",
+                "description": "Any documents related to this initiation or it's part as an array of [Document]",
                 "mandatory": false,
-                "source": "Procuring Entity",
-                "class":"[Document]"
+                "source": "Procuring Entity"
               },
               "milestones": {
-                "description": "",
+                "description": "A process schedule for this initiation according to the prescribed flow. The precise dates can be adjust according to whose provided by Procuring Entity",
                 "mandatory": true,
-                "source": "System",
-                "class":"[Milestone]"
+                "source": "System"
               },
               "participationFees": {
-                "description": "",
+                "description": "Information about fees are appplied",
                 "mandatory": false,
                 "source": "Procuring Entity"
               },
               "criteria": {
-                "description": "",
+                "description": "Set of exclusion grounds and selection criteria prepared for the selection and evaluation under this initiation. The 'critirea' relates to both Tenderer and his offered goods/services",
                 "mandatory": true,
                 "source": "Procuring Entity"
               },
               "classification": {
-                "description": "",
-                "mandatory": "",
+                "description": "The primary classification for the initiation taken automatically from the general classification of [Aggregated needs]",
+                "mandatory": true,
                 "source": "System"
               },
               "submissionLanguages": {
-                "description": "",
+                "description": "Language(s) in which tenderers may submit under this initiation",
                 "mandatory": false,
                 "source": "Procuring Entity"
               },
               "conversions": {
-                "description": "",
+                "description": "A list of weightings for the used criteria where non-price factor can be applied",
                 "mandatory": false,
                 "source": "Procuring Entity"
               },
               "coveredBy": {
-                "description": "",
+                "description": "The treaties, laws, regulations or other instruments that the initiation is covered by, extracted automatically against country of jurisdiction",
                 "mandatory": true,
-                "source": "Procuring Entity"
+                "source": "System"
               }
             }
           },
