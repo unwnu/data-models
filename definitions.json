@@ -227,7 +227,10 @@
               "relatesTo": {
                 "mandatory": false,
                 "source": "Procuring Entity",
-                "description": "The schema element that the metric relates. For example observation may be defined against items or against lot."
+                "description": "The schema element that the metric relates. For example observation may be defined against items or against lot.",
+                "vr":[
+                  "Specified value is either 'lot' or 'item'"  
+                ]
               },
               "relatedItem": {
                 "description": "This field must be populated with the id of the item in this tender section which the metric relates to",
