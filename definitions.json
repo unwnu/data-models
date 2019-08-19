@@ -2691,6 +2691,64 @@
       "required": [
         "id"
       ],
+      "doc":{
+        "inheritance": {
+          "@": {
+            "description": "",
+            "validationRules":{
+              "VR-Criterion.@-001":{
+                "relatesTo":"relatedItem",
+                "rule":"Specified value found in an array of relevant schema-elements (lots/items)"
+              },
+              "VR-Criterion.@-002":{
+                "relatesTo":"requirementGroups",
+                "rule":"At least one group described for this criterion"
+              },
+              "VR-Criterion.@-003":{
+                "relatesTo":"relatesTo",
+                "rule":"Specified value is either 'tenderer', 'item' or 'lot'"
+              }
+            },
+            "properties": {
+              "id":{
+                "description": "An identifier for this criterion",
+                "mandatory": true,
+                "source": "System"
+              },
+              "title":{
+                "description": "Criterion title",
+                "mandatory": true,
+                "source": "Procuring Entity"
+              },
+              "description": {
+                "description": "Any free-text description from PE while preparing this metric of forecast",
+                "mandatory": false,
+                "source": "Procuring Entity"
+              },
+              "classification":{
+                "description": "The structured classification of this criterion against applied model (e.g. ESPD)",
+                "mandatory": false,
+                "source": "Procuring Entity"
+              },
+              "relatesTo": {
+                "mandatory": false,
+                "source": "Procuring Entity",
+                "description": "The schema element that the criterion judges, evaluates or assesses."
+              },
+              "relatedItem": {
+                "description": "Where relatesTo = \"item\" this field must be populated with the id of the item in this tender section which the criterion relates to.",
+                "mandatory": false,
+                "source": "Procuring Entity"
+              },
+              "requirementGroups": {
+                "description": "A list of [RequirementGroup] for this Criterion.",
+                "mandatory": true,
+                "source": "Procuring Entity"
+              }
+            }
+          }
+        }
+      },
       "properties": {
         "id": {
           "description": "The identifier for this criterion. It must be unique and cannot change within the Open Contracting Process it is part of (defined by a single ocid).",
@@ -3755,6 +3813,59 @@
       "title": "Conversion",
       "description": "Conversion is used to describe conversions and its coefficients applicable for specific value received for requirement or observation",
       "type": "object",
+      "doc":{
+        "inheritance": {
+          "@": {
+            "description": "",
+            "validationRules":{
+              "VR-Conversion.@-001":{
+                "relatesTo":"relatedItem",
+                "rule":"Specified value found in an array of relevant schema-elements (lots/items)"
+              },
+              "VR-Conversion.@-002":{
+                "relatesTo":"coefficients",
+                "rule":"At least one group described for this conversion"
+              },
+              "VR-Conversion.@-003":{
+                "relatesTo":"relatesTo",
+                "rule":"Specified value is either 'item' or 'lot'"
+              }
+            },
+            "properties": {
+              "id":{
+                "description": "An identifier for this conversion",
+                "mandatory": true,
+                "source": "System"
+              },
+              "rationale":{
+                "description": "The free-text rationale of using of this conversion",
+                "mandatory": false,
+                "source": "Procuring Entity"
+              },
+              "description": {
+                "description": "Any free-text description from PE for this conversion",
+                "mandatory": false,
+                "source": "Procuring Entity"
+              },
+              "relatesTo": {
+                "mandatory": false,
+                "source": "Procuring Entity",
+                "description": "The schema element that the conversion applies. For example, the conversion may be defined against a requirement or against a metric."
+              },
+              "relatedItem": {
+                "description": "Where 'relatesTo' is not empty this field must be populated with the id of the item in this tender section which the conversion relates to.",
+                "mandatory": false,
+                "source": "Procuring Entity"
+              },
+              "coefficients": {
+                "description": "A list of [RequirementGroup] for this Criterion.",
+                "mandatory": true,
+                "source": "Procuring Entity"
+              }
+            }
+          }
+        }
+      },
       "properties": {
         "id": {
           "title": "Identifier",
@@ -3787,7 +3898,7 @@
         },
         "description": {
           "title": "Conversion Details",
-          "description": "Free texrt description of this conversion could be shared here",
+          "description": "Free text description of this conversion could be shared here",
           "type": "string"
         },
         "coefficients": {
