@@ -234,8 +234,23 @@
             "null"
           ]
         },
-        "relatesTo": {},
-        "relatedItem": {},
+        "relatesTo": {
+          "description": "The schema element that the metric relates. For example observation may be defined against items or against lot.",
+          "type": "string",
+          "enum": [
+            "item",
+            "tenderer"
+          ],
+          "mergeStrategy": "ocdsVersion"
+        },
+        "relatedItem": {
+          "description": "This field must be populated with the id of the item in this tender section which the metric relates to",
+          "type": [
+            "string",
+            "null"
+          ],
+          "mergeStrategy": "ocdsVersion"
+        },
         "observations": {
           "type": "array",
           "title": "Observations",
@@ -885,6 +900,7 @@
         "amount": {
           "title": "Amount",
           "description": "The [Value] of the budget line item. A negative value indicates anticipated income to the budget as a result of this contracting process, rather than expenditure.",
+          "type":"object",
           "$ref": "#/definitions/Value"
         },
         "project": {
@@ -4133,29 +4149,11 @@
           "fe":{
             "description":"",
             "properties":{
-              "budget":{
-                "description": "The aggregated budget with details",
-                "mandatory": true,
-                "source": "Initial needs",
-                "class":"[Budget.FE]"
-              },
-              "forecasts":{
-                "description": "The general quantative foresact of the scoe of needs. Where quantities are specified within PNs aggregated, such forecast can be extracted and calculated automatically. Otherwise, PE has to specify it",
-                "mandatory": true,
-                "source": "Initial needs / Procuring Entity",
-                "class":"[Metric]"
-              },
               "rationale":{
                 "description": "The general free-text justification for the plan of this initiation",
                 "mandatory": false,
                 "source": "Procuring Entity",
                 "class":""
-              },
-              "documents":{
-                "description": "Any documents related to the plan of this initiation",
-                "mandatory": false,
-                "source": "Procuring Entity",
-                "class":"[Document]"
               }
             }
           }
@@ -4387,126 +4385,144 @@
             "description": "",
             "properties": {
               "id": {
-                "description": "",
-                "mandatory": "",
-                "source": "System"
+                "description": "An identifier for this tender process. This may be the same as the ocid, or may be drawn from an internally held identifier for this tender.",
+                "mandatory": true,
+                "source": "System",
+                "class":""
               },
               "internalId": {
-                "description": "",
-                "mandatory": "",
-                "source": ""
+                "description": "An internal identifier of this tender process drawn from an internally held identifier for this tender.",
+                "mandatory": false,
+                "source": "Procuring Entity",
+                "class":""
               },
               "title": {
                 "description": "",
-                "mandatory": "",
-                "source": ""
+                "mandatory": true,
+                "source": "Procuring Entity",
+                "class":""
               },
               "description": {
                 "description": "",
-                "mandatory": "",
-                "source": ""
+                "mandatory": false,
+                "source": "Procuring Entity",
+                "class":""
               },
               "status": {
-                "mandatory": "",
+                "mandatory": true,
                 "source": "System",
-                "description": "[Codelists#FE statuses]"
+                "description": "[Codelists#FE statuses]",
+                "class":""
               },
               "procurementMethodModalities": {
                 "description": "",
-                "mandatory": "",
+                "mandatory": true,
                 "defaulValue": "frameworkAgreement",
-                "source": "System"
+                "source": "System",
+                "class":""
               },
               "procurementMethod": {
                 "description": "open/selective depending on natur eof this initiation",
-                "mandatory": "",
+                "mandatory": true,
                 "defaulValue": "",
-                "source": "System"
+                "source": "System",
+                "class":""
               },
               "procurementMethodDetails": {
                 "description": "",
                 "mandatory": "",
                 "defaultValue": "frameworkEstablishment",
-                "source": "System"
+                "source": "System",
+                "class":""
               },
               "procurementMethodRationale": {
                 "description": "",
                 "mandatory": "",
-                "source": "Procuring Entity"
+                "source": "Procuring Entity",
+                "class":""
               },
               "mainProcurementCategory": {
                 "description": "",
                 "mandatory": "",
-                "source": "System"
+                "source": "System",
+                "class":""
               },
               "awardCriteria": {
                 "description": "",
                 "mandatory": "",
-                "source": "Procuring Entity"
+                "source": "Procuring Entity",
+                "class":""
               },
               "awardCriteriaDetails": {
                 "description": "",
                 "mandatory": "",
-                "source": "Procuring Entity"
+                "source": "Procuring Entity",
+                "class":""
               },
               "submissionMethod": {
                 "description": "",
                 "mandatory": "",
-                "source": ""
+                "source": "System",
+                "class":""
               },
               "submissionMethodDetails": {
                 "description": "",
-                "mandatory": "",
-                "source": "Procuring Entity"
+                "mandatory": false,
+                "source": "Procuring Entity",
+                "class":""
               },
               "eligibilityCriteria": {
                 "description": "",
-                "mandatory": "",
-                "source": "Procuring Entity"
+                "mandatory": false,
+                "source": "Procuring Entity",
+                "class":""
               },
               "procuringEntity": {
                 "description": "",
-                "mandatory": "",
-                "source": "Procuring Entity"
+                "mandatory": true,
+                "source": "Procuring Entity",
+                "class":"[OrganizationReference]"
               },
               "documents": {
                 "description": "",
-                "mandatory": "",
-                "source": "Procuring Entity"
+                "mandatory": false,
+                "source": "Procuring Entity",
+                "class":"[Document]"
               },
               "milestones": {
                 "description": "",
-                "mandatory": "",
-                "source": ""
+                "mandatory": true,
+                "source": "System",
+                "class":"[Milestone]"
               },
               "participationFees": {
                 "description": "",
-                "mandatory": "",
+                "mandatory": false,
                 "source": "Procuring Entity"
               },
               "criteria": {
                 "description": "",
-                "mandatory": "",
+                "mandatory": true,
                 "source": "Procuring Entity"
               },
               "classification": {
                 "description": "",
                 "mandatory": "",
-                "source": "Procuring Entity"
+                "source": "System"
               },
               "submissionLanguages": {
                 "description": "",
-                "mandatory": "",
+                "mandatory": false,
                 "source": "Procuring Entity"
               },
               "conversions": {
                 "description": "",
-                "mandatory": "",
+                "mandatory": false,
                 "source": "Procuring Entity"
               },
               "coveredBy": {
                 "description": "",
-                "mandatory": "",
+                "mandatory": true,
                 "source": "Procuring Entity"
               }
             }
@@ -4936,7 +4952,7 @@
       "properties": {
         "id": {
           "title": "Tender ID",
-          "description": "An identifier for this tender process. This may be the same as the ocid, or may be drawn from an internally held identifier for this tender.",
+          "description": "An identifier for this tender process. This may be the same as the ocid",
           "type": [
             "string",
             "integer"
@@ -4944,7 +4960,7 @@
         },
         "internalId": {
           "title": "",
-          "description": "",
+          "description": "An internal identifier of this tender process drawn from an internally held identifier for this tender.",
           "type": [
             "string",
             "integer"
@@ -5968,75 +5984,75 @@
           "uniqueItems": true
         }
       }
-    }
-  },
-  "Project": {
-    "title": "Project information",
-    "description": "A project or programme of work.",
-    "type": "object",
-    "properties": {
-      "id": {
-        "title": "Project identifier",
-        "description": "An externally provided identifier for the project. This might be drawn from a projects register, or may be based on the canonical version of a project name. Project IDs should be unique to a publisher. URIs can be used. ",
-        "type": [
-          "string",
-          "null"
-        ]
-      },
-      "title": {
-        "title": "Project title",
-        "description": "The name of the project to which this contracting process relates. Some organizations maintain a registry of projects, and the data should use the name by which the project is known in that registry. ",
-        "type": [
-          "string",
-          "null"
-        ]
-      },
-      "description": {
-        "title": "Project description",
-        "description": "A short free text description of the project.",
-        "type": [
-          "string",
-          "null"
-        ]
-      },
-      "totalValue": {
-        "title": "Total project value",
-        "description": "The total anticipated value of the project over it's lifetime. ",
-        "$ref": "#/definitions/Value"
-      },
-      "uri": {
-        "title": "Linked project information",
-        "description": "A URI pointing to further information about this project.",
-        "type": [
-          "string",
-          "null"
-        ],
-        "format": "uri"
-      },
-      "sector": {
-        "title": "Project sector",
-        "description": "A high-level categorization of the main sector this procurement process relates to. Use of [UN COFOG codes](https://unstats.un.org/unsd/publications/catalogue?selectID=145), with 'COFOG' as the classification scheme, and the numerical COFOG code is recommended for the primary sector classification.",
-        "$ref": "#/definitions/Classification"
-      },
-      "additionalClassifications": {
-        "title": "Additional sector classifications",
-        "description": "Additional project classification, by other sector classifications, or using other classification schemes (e.g. against a strategic framework).",
-        "type": "array",
-        "items": {
+    },
+    "Project": {
+      "title": "Project information",
+      "description": "A project or programme of work.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "Project identifier",
+          "description": "An externally provided identifier for the project. This might be drawn from a projects register, or may be based on the canonical version of a project name. Project IDs should be unique to a publisher. URIs can be used. ",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "title": {
+          "title": "Project title",
+          "description": "The name of the project to which this contracting process relates. Some organizations maintain a registry of projects, and the data should use the name by which the project is known in that registry. ",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "title": "Project description",
+          "description": "A short free text description of the project.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "totalValue": {
+          "title": "Total project value",
+          "description": "The total anticipated value of the project over it's lifetime. ",
+          "$ref": "#/definitions/Value"
+        },
+        "uri": {
+          "title": "Linked project information",
+          "description": "A URI pointing to further information about this project.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        },
+        "sector": {
+          "title": "Project sector",
+          "description": "A high-level categorization of the main sector this procurement process relates to. Use of [UN COFOG codes](https://unstats.un.org/unsd/publications/catalogue?selectID=145), with 'COFOG' as the classification scheme, and the numerical COFOG code is recommended for the primary sector classification.",
           "$ref": "#/definitions/Classification"
         },
-        "uniqueItems": true,
-        "wholeListMerge": true
-      },
-      "locations": {
-        "title": "Project location",
-        "description": "Information about the location where a project is taking place.",
-        "type": "array",
-        "items": {
-          "$ref": "#/definitions/Location"
+        "additionalClassifications": {
+          "title": "Additional sector classifications",
+          "description": "Additional project classification, by other sector classifications, or using other classification schemes (e.g. against a strategic framework).",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Classification"
+          },
+          "uniqueItems": true,
+          "wholeListMerge": true
         },
-        "uniqueItems": true,
-        "wholeListMerge": true
+        "locations": {
+          "title": "Project location",
+          "description": "Information about the location where a project is taking place.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Location"
+          },
+          "uniqueItems": true,
+          "wholeListMerge": true
+        }
       }
     }
   }
