@@ -938,11 +938,6 @@
                 "description": "Automatically collected array of all budget breakdowns from all aggregated budgets",
                 "mandatory": true,
                 "source": "System"
-              },
-              "budgetAllocation": {
-                "description": "Where known, Procuring Entity can put an allocation of aggregated budget against needed items",
-                "mandatory": false,
-                "source": "Procuring Entity"
               }
             }
           }
