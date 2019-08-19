@@ -235,7 +235,7 @@
                 "source": "Procuring Entity"
               },
               "observations": {
-                "description": "Where known, Procuring Entity can put an allocation of aggregated budget against needed items",
+                "description": "An array of [Observation] for this metric",
                 "mandatory": false,
                 "source": "Procuring Entity"
               }
