@@ -107,6 +107,12 @@
             "$ref": "#/definitions/Metric"
           },
           "uniqueItems": true
+        },
+        "status":{
+          "title":"Implementation status",
+          "descrition":"The current status of the contract implementation based on the implementationStatuscodelist.",
+          "type":"string",
+          "codelist":"https://extensions.open-contracting.org/en/extensions/implementationStatus/master/codelists/"
         }
       }
     },
@@ -829,6 +835,35 @@
       "type": "object",
       "title": "Budget information",
       "description": "This section contain information about the budget line, and associated projects, through which this contracting process is funded. It draws upon data model of the [Fiscal Data Package](http://fiscal.dataprotocols.org/), and should be used to cross-reference to more detailed information held using a Budget Data Package, or, where no linked Budget Data Package is available, to provide enough information to allow a user to manually or automatically cross-reference with another published source of budget and project information.",
+      "doc":{
+        "inheritance": {
+          "fe": {
+            "description": "",
+            "properties": {
+              "description": {
+                "description": "Any free-text description from PE while aggregating budgets",
+                "mandatory": false,
+                "source": "Procuring Entity"
+              },
+              "amount": {
+                "mandatory": true,
+                "source": "System",
+                "description": "Automatically calculated amount of all aggregated budgets"
+              },
+              "budgetBreakdown": {
+                "description": "Automatically collected array of all budget breakdowns from all aggregated budgets",
+                "mandatory": true,
+                "source": "System"
+              },
+              "budgetAllocation": {
+                "description": "Where known, Procuring Entity can put an allocation of aggregated budget against needed items",
+                "mandatory": false,
+                "source": "Procuring Entity"
+              }
+            }
+          }
+        }
+      },
       "properties": {
         "id": {
           "title": "ID",
@@ -878,16 +913,6 @@
           ],
           "format": "uri"
         },
-        "europeanUnionFunding": {
-          "title": "European Union Funded",
-          "description": "Details by [EuropeanUnionFunding] where a procurement has partial or full financing from a European funded project",
-          "$ref": "#/definitions/EuropeanUnionFunding"
-        },
-        "isEuropeanUnionFunded": {
-          "title": "Is European Union Funded",
-          "description": "A True or False field to indicate whether this procurement is related to a project and/or programme financed by European Union funds.",
-          "type": "boolean"
-        },
         "budgetBreakdown": {
           "type": "array",
           "title": "Budget breakdown",
@@ -902,14 +927,6 @@
           "description": "An array of [BudgetAllocation] of the budget",
           "items": {
             "$ref": "#/definitions/BudgetAllocation"
-          }
-        },
-        "budgetSource": {
-          "type": "array",
-          "title": "Budget breakdown",
-          "description": "An array of [BudgetSource] of the budget",
-          "items": {
-            "$ref": "#/definitions/BudgetSource"
           }
         }
       }
@@ -2906,37 +2923,6 @@
         }
       }
     },
-    "EuropeanUnionFunding": {
-      "title": "European Union Funded",
-      "type": "object",
-      "properties": {
-        "projectIdentifier": {
-          "title": "Project Identifier",
-          "description": "National identifier of the EU project providing partial or full funding",
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "projectName": {
-          "title": "Project Name",
-          "description": "Name or other national identification of the project providing full or partial funding.",
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "uri": {
-          "title": "Project uri",
-          "description": "Uri of the project providing full or partial funding.",
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "uri"
-        }
-      }
-    },
     "ValueBreakdown": {
       "title": "Value Breakdown",
       "type": "object",
@@ -4157,7 +4143,7 @@
                 "description": "The general quantative foresact of the scoe of needs. Where quantities are specified within PNs aggregated, such forecast can be extracted and calculated automatically. Otherwise, PE has to specify it",
                 "mandatory": true,
                 "source": "Initial needs / Procuring Entity",
-                "class":"Metric"
+                "class":"[Metric]"
               },
               "rationale":{
                 "description": "The general free-text justification for the plan of this initiation",
@@ -4169,7 +4155,7 @@
                 "description": "Any documents related to the plan of this initiation",
                 "mandatory": false,
                 "source": "Procuring Entity",
-                "class":"Document"
+                "class":"[Document]"
               }
             }
           }
@@ -4216,6 +4202,11 @@
             "$ref": "#/definitions/Metric"
           },
           "uniqueItems": true
+        },
+        "project":{
+          "title":"Project information",
+          "description":"The project section can be used to describe the relationship between this contracting process and a project or programme of work.",
+          "$ref": "#/definitions/Project"
         }
       }
     },
@@ -5976,6 +5967,76 @@
           },
           "uniqueItems": true
         }
+      }
+    }
+  },
+  "Project": {
+    "title": "Project information",
+    "description": "A project or programme of work.",
+    "type": "object",
+    "properties": {
+      "id": {
+        "title": "Project identifier",
+        "description": "An externally provided identifier for the project. This might be drawn from a projects register, or may be based on the canonical version of a project name. Project IDs should be unique to a publisher. URIs can be used. ",
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "title": {
+        "title": "Project title",
+        "description": "The name of the project to which this contracting process relates. Some organizations maintain a registry of projects, and the data should use the name by which the project is known in that registry. ",
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "description": {
+        "title": "Project description",
+        "description": "A short free text description of the project.",
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "totalValue": {
+        "title": "Total project value",
+        "description": "The total anticipated value of the project over it's lifetime. ",
+        "$ref": "#/definitions/Value"
+      },
+      "uri": {
+        "title": "Linked project information",
+        "description": "A URI pointing to further information about this project.",
+        "type": [
+          "string",
+          "null"
+        ],
+        "format": "uri"
+      },
+      "sector": {
+        "title": "Project sector",
+        "description": "A high-level categorization of the main sector this procurement process relates to. Use of [UN COFOG codes](https://unstats.un.org/unsd/publications/catalogue?selectID=145), with 'COFOG' as the classification scheme, and the numerical COFOG code is recommended for the primary sector classification.",
+        "$ref": "#/definitions/Classification"
+      },
+      "additionalClassifications": {
+        "title": "Additional sector classifications",
+        "description": "Additional project classification, by other sector classifications, or using other classification schemes (e.g. against a strategic framework).",
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/Classification"
+        },
+        "uniqueItems": true,
+        "wholeListMerge": true
+      },
+      "locations": {
+        "title": "Project location",
+        "description": "Information about the location where a project is taking place.",
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/Location"
+        },
+        "uniqueItems": true,
+        "wholeListMerge": true
       }
     }
   }
