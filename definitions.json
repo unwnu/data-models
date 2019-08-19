@@ -2630,6 +2630,12 @@
                 "relatesTo":"maximumValue",
                 "rule":"Specified value is lower or equal than overal value of initiation"
               }
+            },
+            "properties":{
+              "id":{},
+              "relatedLots":{},
+              "optionToCombine":{},
+              "maximumValue":{}
             }
           }
         }
