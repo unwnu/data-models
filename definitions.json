@@ -234,13 +234,16 @@
                 "mandatory": false,
                 "source": "Procuring Entity",
                 "vr":[
-                  "'relatedItem' in ['tender.lots[*].id]"  
+                  "Specified value found in an array of relevant schema-elements (lots/items)"  
                 ]
               },
               "observations": {
                 "description": "An array of [Observation] for this metric",
                 "mandatory": true,
-                "source": "Procuring Entity"
+                "source": "Procuring Entity",
+                "vr":[
+                  "At least one observation described for this metric"  
+                ]
               }
             }
           }
