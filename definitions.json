@@ -4584,17 +4584,66 @@
         "inheritance":{
           "fe":{
             "description":"",
+            "validatioRules":{
+              "VR-PreQaulification.FE-001":{
+                "relatesTo":"period",
+                "rule":"Period starts not later than qualificationPeriod start"
+              },
+              "VR-PreQaulification.FE-002":{
+                "relatesTo":"period",
+                "rule":"Period ends not later than qualificationPeriod end"
+              },
+              "VR-PreQaulification.FE-003":{
+                "relatesTo":"enquiryPeriod",
+                "rule":"Period ends not later than period end"
+              }
+            },
             "properties":{
-              "id":{},
-              "description":{},
-              "status":{},
-              "period":{},
-              "enquiryPeriod":{},
-              "qualificationPeriod":{},
-              "tenderers":{},
-              "procuringEntity":{},
-              "documents":{},
-              "milestones":{}
+              "id":{
+                "description":"",
+                "mandatory":true,
+                "source":"System"
+              },
+              "description":{
+                "description":"",
+                "mandatory":false,
+                "source":"Procuring Entity"
+              },
+              "status":{
+                "description":"",
+                "mandatory":true,
+                "source":"System"
+              },
+              "period":{
+                "description":"",
+                "mandatory":true,
+                "source":"Procuring Entity"
+              },
+              "enquiryPeriod":{
+                "description":"",
+                "mandatory":true,
+                "source":"Procuring Entity"
+              },
+              "qualificationPeriod":{
+                "description":"",
+                "mandatory":true,
+                "source":"Procuring Entity"
+              },
+              "procuringEntity":{
+                "description":"",
+                "mandatory":true,
+                "source":"Procuring Entity"
+              },
+              "documents":{
+                "description":"",
+                "mandatory":false,
+                "source":"Procuring Entity"
+              },
+              "milestones":{
+                "description":"",
+                "mandatory":true,
+                "source":"System"
+              }
             }
           }
         }
