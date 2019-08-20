@@ -5246,11 +5246,6 @@
           "position":{
             "description":"Positions - number of specific positions (known in advance), related to one or more profiles described under this PCR and expected to be proposed by invited suppliers with actual unit prices and conditions of delivery by submitting their pre-award catalogues",
             "properties":{
-              "criteria":{
-                "description":"",
-                "mandatory":true,
-                "source":"Procuring Entity"
-              },
               "targets":{
                 "description":"",
                 "mandatory":true,
