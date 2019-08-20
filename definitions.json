@@ -361,6 +361,61 @@
       "required": [
         "id"
       ],
+      "doc":{
+        "inheritance": {
+          "@": {
+            "description": "",
+            "validationRules":{
+              "VR-Observation.@-001":{
+                "relatesTo":"relatedRequirementID",
+                "rule":"Specified value found in an array of relevant schema-elements ('requirements') of this initiation"
+              }
+            },
+            "properties": {
+              "id":{
+                "description": "An identifier for this observation",
+                "mandatory": true,
+                "source": "System"
+              },
+              "period":{
+                "description": "The [Period] over which this observation is measured",
+                "mandatory": false,
+                "source": "Procuring Entity"
+              },
+              "value":{
+                "description": "For financial metrics, the [Value] of this forecast, target or actual observation.",
+                "mandatory": false,
+                "source": "Procuring Entity"
+              },
+              "measure":{
+                "description": "For non-financial metrics, the measure of this forecast, target or actual observation. Measures may be provided as free text or numerical values.",
+                "mandatory": false,
+                "source": "Procuring Entity"
+              },
+              "unit":{
+                "description": "Unit of measure for this observation",
+                "mandatory": false,
+                "source": "Procuring Entity"
+              },
+              "dimensions":{
+                "description": "Any number of dimensions can be recorded within this object. Dimensions names should follow the camelCase conventions of OCDS",
+                "mandatory": false,
+                "source": "Procuring Entity"
+              },
+              "notes":{
+                "description": "Any notes on this observation",
+                "mandatory": false,
+                "source": "Procuring Entity"
+              },
+              "relatedRequirementID":{
+                "description": "The [RequirementReference] of the requirement which the observation is applicable to",
+                "mandatory": false,
+                "source": "Procuring Entity"
+              }
+            }
+          }
+        }
+      },
       "properties": {
         "id": {
           "title": "Identifier",
