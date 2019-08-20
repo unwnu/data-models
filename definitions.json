@@ -1562,6 +1562,51 @@
       "required": [
         "id"
       ],
+      "doc": {
+        "inheritance": {
+          "position": {
+            "description": "",
+            "validationRules":{
+              "VR-Item.Position-001":{
+                "relatesTo":"relatedLots",
+                "rule":"Specified value is found in the list of lots of this initiation"
+              }
+            },
+            "properties": {
+              "id": {
+                "description": "A local identifier to reference and merge the items by.",
+                "mandatory": true,
+                "source": "System"
+              },
+              "internalId": {
+                "description": "An internal identifier of this item",
+                "mandatory": false,
+                "source": "Procuring Entity"
+              },
+              "description": {
+                "description": "Free-text description for this item",
+                "mandatory": true,
+                "source": "Procuring Entity"
+              },
+              "classification": {
+                "description": "Primary classification of this item",
+                "mandatory": true,
+                "source": "Procuring Entity"
+              },
+              "additionalClassifications": {
+                "description": "Secondary classification of this item",
+                "mandatory": false,
+                "source": "Procuring Entity"
+              },
+              "relatedLots": {
+                "description": "Reference to the lot on which this item is related",
+                "mandatory": true,
+                "source": "Procuring Entity"
+              }
+            }
+          }
+        }
+      },
       "properties": {
         "id": {
           "title": "ID",
