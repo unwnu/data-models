@@ -254,6 +254,50 @@
                 "source": "Procuring Entity"
               }
             }
+          },
+          "position": {
+            "description": "",
+            "validationRules":{
+              "VR-Metric.Position-001":{
+                "relatesTo":"relatedItem",
+                "rule":"Specified value found in an array of items from this initiation"
+              },
+              "VR-Metric.Position-002":{
+                "relatesTo":"observations",
+                "rule":"At least one observation described for this metric"
+              },
+              "VR-Metric.Position-003":{
+                "relatesTo":"relatesTo",
+                "rule":"Specified value is 'item'"
+              }
+            },
+            "properties": {
+              "id":{
+                "description": "An identifier for this metric drawn from a codelist",
+                "mandatory": true,
+                "source": "System"
+              },
+              "description": {
+                "description": "Any free-text description from PE while preparing this target for the item",
+                "mandatory": false,
+                "source": "Procuring Entity"
+              },
+              "relatesTo": {
+                "mandatory": false,
+                "source": "Procuring Entity",
+                "description": "The schema element that the target relates. For this class - 'item' by default"
+              },
+              "relatedItem": {
+                "description": "This field must be populated with the id of the item in this tender section which the target relates to",
+                "mandatory": false,
+                "source": "Procuring Entity"
+              },
+              "observations": {
+                "description": "An array of [Observation] for this target",
+                "mandatory": true,
+                "source": "Procuring Entity"
+              }
+            }
           }
         }
       },
