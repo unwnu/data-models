@@ -4584,7 +4584,7 @@
         "inheritance":{
           "fe":{
             "description":"",
-            "validatioRules":{
+            "validationRules":{
               "VR-PreQaulification.FE-001":{
                 "relatesTo":"period",
                 "rule":"Period starts not later than qualificationPeriod start"
