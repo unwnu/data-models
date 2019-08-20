@@ -2784,6 +2784,10 @@
               "VR-Criterion.@-003":{
                 "relatesTo":"relatesTo",
                 "rule":"Specified value is either 'tenderer', 'item' or 'lot'"
+              },
+              "VR-Criterion.@-004":{
+                "relatesTo":"source",
+                "rule":"Specified value is found in the relevant codelist"
               }
             },
             "properties": {
@@ -2798,7 +2802,7 @@
                 "source": "Procuring Entity"
               },
               "description": {
-                "description": "Any free-text description from PE while preparing this metric of forecast",
+                "description": "Any free-text description from PE while preparing this criterion",
                 "mandatory": false,
                 "source": "Procuring Entity"
               },
@@ -2806,6 +2810,11 @@
                 "description": "The structured classification of this criterion against applied model (e.g. ESPD)",
                 "mandatory": false,
                 "source": "Procuring Entity"
+              },
+              "source":{
+                "mandatory": false,
+                "source": "Procuring Entity",
+                "description": "Source of response to the requirements specificed in the criterion"
               },
               "relatesTo": {
                 "mandatory": false,
@@ -4393,7 +4402,7 @@
             "properties":{
               "budget":{
                 "description": "The aggregated budget with details",
-                "mandatory": true,
+                "mandatory": false,
                 "source": "Initial needs"
               },
               "forecasts":{
@@ -5114,27 +5123,23 @@
             "properties":{
               "lotDetails":{
                 "description":"",
-                "mandatory":"",
-                "source":"",
-                "class":""
+                "mandatory":false,
+                "source":"Procuring Entity"
               },
               "lotGroups":{
                 "description":"",
-                "mandatory":"",
-                "source":"",
-                "class":""
+                "mandatory":false,
+                "source":"Procuring Entity"
               },
               "lots":{
                 "description":"",
-                "mandatory":"",
-                "source":"",
-                "class":"[Lot.Node]"
+                "mandatory":true,
+                "source":"Procuring Entity"
               },
               "documents":{
-                "description":"",
-                "mandatory":"",
-                "source":"",
-                "class":""
+                "description":"Any documents related to nodes",
+                "mandatory":false,
+                "source":"Procuring Entity"
               } 
             }
           },
@@ -5143,21 +5148,18 @@
             "properties":{
               "criteria":{
                 "description":"",
-                "mandatory":"",
-                "source":"",
-                "class":""
+                "mandatory":true,
+                "source":"Procuring Entity"
               },
               "targets":{
                 "description":"",
-                "mandatory":"",
-                "source":"",
-                "class":""
+                "mandatory":true,
+                "source":"Procuring Entity"
               },
               "items":{
                 "description":"",
-                "mandatory":"",
-                "source":"",
-                "class":""
+                "mandatory":true,
+                "source":"Procuring Entity"
               }
             }
           },
@@ -5167,32 +5169,27 @@
               "criteria":{
                 "description":"",
                 "mandatory":"",
-                "source":"",
-                "class":""
+                "source":""
               },
               "lotDetails":{
                 "description":"",
                 "mandatory":"",
-                "source":"",
-                "class":""
+                "source":""
               },
               "lotGroups":{
                 "description":"",
                 "mandatory":"",
-                "source":"",
-                "class":""
+                "source":""
               },
               "lots":{
                 "description":"",
                 "mandatory":"",
-                "source":"",
-                "class":""
+                "source":""
               },
               "targets":{
                 "description":"",
                 "mandatory":"",
-                "source":"",
-                "class":""
+                "source":""
               }
             }
           }
