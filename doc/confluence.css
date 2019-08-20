@@ -1,0 +1,8 @@
+h2 {margin:20px 0 0 0; font-size:1.5em;  font-weight:600;}
+h3 {margin:15px 0 0 0; font-size:1.35em; font-weight:600;}
+h4 {margin:15px 0 0 0; font-size:14px; font-weight:600;}
+div+p, p+p{display: none;}
+body.page-gadget #main{width:100%}
+body.page-gadget {padding-top:0}
+div.expand-content {margin-left:0px;}
+.expand-control{margin-top:10px; margin-bottom:0px;}
