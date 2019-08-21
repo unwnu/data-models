@@ -2636,6 +2636,11 @@
                 "description": "The primary classification for this node established as 6th level of CPV the relevant CPV class",
                 "mandatory": true,
                 "source": "ProcuringEntity"
+              },
+              "variants":{
+                "description": "Where precise positions are applied by Procuring Entity on the establishment level, this attribute will indicate if it is will be permitted to offer alternatives",
+                "mandatory": true,
+                "source": "ProcuringEntity"
               }
             }
           }
@@ -2765,10 +2770,6 @@
               "VR-LotGroup.@-001":{
                 "relatesTo":"relatedLots",
                 "rule":"Specified value are found in the list of Lots"
-              },
-              "VR-LotGroup.@-002":{
-                "relatesTo":"maximumValue",
-                "rule":"Specified value is lower or equal than overal value of initiation"
               }
             },
             "properties":{
@@ -4513,7 +4514,7 @@
                 "source": "Initial needs"
               },
               "forecasts":{
-                "description": "The general quantitive forecast of the scope of needs. Where quantities are specified within PNs aggregated, such forecast can be extracted and calculated automatically. Otherwise, PE has to specify it",
+                "description": "The general quantitive forecast of the scope of needs, established against nodes (lots) of this establishment",
                 "mandatory": true,
                 "source": "Procuring Entity"
               },
@@ -5306,7 +5307,12 @@
                 "description":"",
                 "mandatory":true,
                 "source":"Procuring Entity"
-              }
+              },
+              "documents":{
+                "description":"Any documents related to item",
+                "mandatory":false,
+                "source":"Procuring Entity"
+              } 
             }
           },
           "profile":{
