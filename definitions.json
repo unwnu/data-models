@@ -2772,10 +2772,21 @@
               }
             },
             "properties":{
-              "id":{},
-              "relatedLots":{},
-              "optionToCombine":{},
-              "maximumValue":{}
+              "id":{
+                "description": "Unique identifier of this lots group",
+                "mandatory": true,
+                "source": "System"
+              },
+              "relatedLots":{
+                "description": "A list of the identifiers of the lots that form this group",
+                "mandatory": true,
+                "source": "Procuring Entity"
+              },
+              "optionToCombine":{
+                "description": "The Procuring Entity reserves the right to combine the lots in this group",
+                "mandatory": true,
+                "source": "System"
+              }
             }
           }
         }
