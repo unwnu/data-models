@@ -1625,6 +1625,10 @@
               "VR-Item.Position-001":{
                 "relatesTo":"relatedLots",
                 "rule":"Specified value is found in the list of lots of this initiation"
+              },
+              "VR-Item.Position-002":{
+                "relatesTo":"classification",
+                "rule":"Specified value matches the parent node classification with first 4 digits"
               }
             },
             "properties": {
