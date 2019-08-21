@@ -4504,7 +4504,7 @@
               "forecasts":{
                 "description": "The general quantitive forecast of the scope of needs. Where quantities are specified within PNs aggregated, such forecast can be extracted and calculated automatically. Otherwise, PE has to specify it",
                 "mandatory": true,
-                "source": "Initial needs / Procuring Entity"
+                "source": "Procuring Entity"
               },
               "rationale":{
                 "description": "The general free-text justification for the plan of this initiation",
@@ -4915,11 +4915,6 @@
               },
               "submissionLanguages": {
                 "description": "Language(s) in which tenderers may submit under this initiation",
-                "mandatory": false,
-                "source": "Procuring Entity"
-              },
-              "conversions": {
-                "description": "A list of weightings for the used criteria where non-price factor can be applied",
                 "mandatory": false,
                 "source": "Procuring Entity"
               },
