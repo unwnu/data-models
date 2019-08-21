@@ -2602,10 +2602,6 @@
             "description": "",
             "validationRules":{
               "VR-Lot.Node-001":{
-                "relatesTo":"title",
-                "rule":"The value for this attribute is specified"
-              },
-              "VR-Lot.Node-002":{
                 "relatesTo":"classification",
                 "rule":"Specified value is covered by 4th digit of general initiations' classification"
               }
@@ -5271,17 +5267,17 @@
             "description":"Nodes are certain groups of goods described by Procuring Entity under particular category, classified with 6th digit of CPV",
             "properties":{
               "lotDetails":{
-                "description":"",
+                "description":"Any free-text details of any criteria that apply to bidding on these lots",
                 "mandatory":false,
                 "source":"Procuring Entity"
               },
               "lotGroups":{
-                "description":"",
+                "description":"Where Procuring Entity reserves the right to combine lots a lot group is used to capture this information.",
                 "mandatory":false,
                 "source":"Procuring Entity"
               },
               "lots":{
-                "description":"",
+                "description":"The set of certain groups of goods to be procured",
                 "mandatory":true,
                 "source":"Procuring Entity"
               },
