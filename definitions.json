@@ -2603,7 +2603,7 @@
             "validationRules":{
               "VR-Lot.Node-001":{
                 "relatesTo":"classification",
-                "rule":"Specified value is covered by 4th digit of general initiations' classification"
+                "rule":"Specified value matches the general initiations' classification with first 4 digits"
               }
             },
             "properties": {
@@ -2613,27 +2613,27 @@
                 "source": "System"
               },
               "internalId": {
-                "description": "",
+                "description": "An internal identifier of this node by Procuring Entity",
                 "mandatory": false,
                 "source": "Procuring Entity"
               },
               "title": {
-                "description": "",
+                "description": "Node name",
                 "mandatory": true,
                 "source": "Procuring Entity"
               },
               "description": {
-                "description": "",
+                "description": "Free-text description for this node",
                 "mandatory": false,
                 "source": "Procuring Entity"
               },
               "status": {
-                "description": "",
+                "description": "Node status according to the codelist",
                 "mandatory": true,
                 "source": "System"
               },
               "classification": {
-                "description": "",
+                "description": "The primary classification for this node established as 6th level of CPV the relevant CPV class",
                 "mandatory": true,
                 "source": "ProcuringEntity"
               }
