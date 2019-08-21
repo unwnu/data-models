@@ -2639,7 +2639,7 @@
               },
               "variants":{
                 "description": "Where precise positions are applied by Procuring Entity on the establishment level, this attribute will indicate if it is will be permitted to offer alternatives",
-                "mandatory": true,
+                "mandatory": false,
                 "source": "ProcuringEntity"
               }
             }
@@ -4813,6 +4813,10 @@
               "VR-Tender.FE-002":{
                 "relatesTo":"submissionLanguages",
                 "rule":"Specified value are found in the relevant codelist"
+              },
+              "VR-Tender.FE-003":{
+                "relatesTo":"classification",
+                "rule":"Specified value matches general classification of all the aggregated needs (relatedProcesses[*].relationship:\"planning\")  with first 4 digits"
               }
             },
             "properties": {
