@@ -53,17 +53,17 @@
         "targetsAchieved": {
           "title": "Targets achieved",
           "description": "The [Action] prescribed for the case if targets of this stage of the electronic auction where acheived",
-          "$ref": "#/definition/Action"
+          "$ref": "#/definitions/Action"
         },
         "targetsNotAchieved": {
           "title": "Targets not achieved",
           "description": "The [Action] prescribed for the case if targets of this stage of the electronic auction where not acheived",
-          "$ref": "#/definition/Action"
+          "$ref": "#/definitions/Action"
         },
         "groupCancelled": {
           "title": "Group cancelled",
           "description": "The [Action] prescribed for the case if this stage of the electronic auction was cancelled do to requirements of the conditions to start",
-          "$ref": "#/definition/Action"
+          "$ref": "#/definitions/Action"
         }
       }
     },
@@ -297,7 +297,7 @@
           "description": "The [ActionTriggers] for this stage of the electronic auction",
           "type": "array",
           "items": {
-            "$ref": "#/definition/ActionTriggers"
+            "$ref": "#/definitions/ActionTriggers"
           }
         },
         "invitedTenderers": {
@@ -305,7 +305,7 @@
           "description": "The set of the groups of the invited particiapnts described using as [InvitationToAuction]",
           "type": "array",
           "items": {
-            "$ref": "#/definition/InvitationToAuction"
+            "$ref": "#/definitions/InvitationToAuction"
           }
         },
         "rounds": {
@@ -3931,7 +3931,7 @@
           "type": "object",
           "title": "Unit",
           "description": "Unit",
-          "$ref":"#/Definitions/Unit"
+          "$ref":"#/definitions/Unit"
         },
         "dimensions": {
           "type": "object",
@@ -4164,9 +4164,9 @@
           }
         },
         "legalForm": {
-          "description": "Information about [Classificarion] of the legal form of the organization",
+          "description": "Information about [Classification] of the legal form of the organization",
           "type": "object",
-          "$ref": "#/definitions/Classificarion"
+          "$ref": "#/definitions/Classification"
         },
         "permits": {
           "description": "Information about set of [Permit] and licenses issued for the organization",
@@ -5183,7 +5183,7 @@
           "description": "Any [Evidance] that will be accepted as a proof of sasisfaction of sepcific requirement ",
           "type": "array",
           "items": {
-            "$ref": "#/definition/Evidence"
+            "$ref": "#/definitions/Evidence"
           }
         }
       }
@@ -6493,7 +6493,7 @@
               "description": "The prescribed presets of settings and adjustments available for the electronic auction as one one of the procurement methods modalities applied under this contracting process",
               "type": "array",
               "items": {
-                "$ref": "#/definitions/electronicAuctionModalities"
+                "$ref": "#/definitions/ElectronicAuctionModalities"
               }
             }
           }
@@ -7173,7 +7173,7 @@
             "source": "Procuring Entity",
             "type":"array",
             "items":{
-              "$ref":"#/inheritances/Observation/"
+              "$ref":"#/inheritances/Observation"
             }
           }
         },
@@ -7483,7 +7483,7 @@
             "mandatory":true,
             "type":"array",
             "items":{
-              "$ref": "#/inheritances/Requirement/"
+              "$ref": "#/inheritances/Requirement"
             }
           }
         }
@@ -7563,7 +7563,7 @@
             "description":"",
             "mandatory": true,
             "type": "object",
-            "$ref": "#/inheritance/Classification/@"
+            "$ref": "#/inheritances/Classification/@"
           },
           "jointProcurement": {
             "description":"",
@@ -7786,7 +7786,7 @@
             "mergeStrategy":"arrayMergeByIndex",
             "type":"array",
             "items":{
-              "$ref":"#/inheritances/Criterion/"
+              "$ref":"#/inheritances/Criterion"
             }
           },
           "conversions":[]
@@ -7881,7 +7881,7 @@
                   "$ref":"#/inheritances/Tender/awardingMethodology"
                 },
                 {
-                  "$ref":"#/inheritances/Tender/procurementMethodModModalities"
+                  "$ref":"#/inheritances/Tender/procurementMethodModalities"
                 },
                 {
                   "$ref":"#/inheritances/SecondStage/@"
@@ -7890,7 +7890,7 @@
                   "$ref":"#/inheritances/Tender/tenderPositions"
                 },
                 {
-                  "$ref":"#inheritances/Tender/tenderNodes"
+                  "$ref":"#/inheritances/Tender/tenderNodes"
                 }
               ],
               "subProperties":{
@@ -7904,7 +7904,7 @@
             "preQualification":{
               "allOff":[
                 {
-                  "$ref":"#/inheritances/Prequalification/PreQualificationSetUp"
+                  "$ref":"#/inheritances/PreQualification/preQualificationSetUp"
                 }
               ],
               "subProperties":{
