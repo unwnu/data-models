@@ -3901,61 +3901,6 @@
       "required": [
         "id"
       ],
-      "doc":{
-        "inheritance": {
-          "@": {
-            "description": "",
-            "validationRules":{
-              "VR-Observation.@-001":{
-                "relatesTo":"relatedRequirementID",
-                "rule":"Specified value found in an array of relevant schema-elements ('requirements') of this initiation"
-              }
-            },
-            "properties": {
-              "id":{
-                "description": "An identifier for this observation",
-                "mandatory": true,
-                "source": "System"
-              },
-              "period":{
-                "description": "The [Period] over which this observation is measured",
-                "mandatory": false,
-                "source": "Procuring Entity"
-              },
-              "value":{
-                "description": "For financial metrics, the [Value] of this forecast, target or actual observation.",
-                "mandatory": false,
-                "source": "Procuring Entity"
-              },
-              "measure":{
-                "description": "For non-financial metrics, the measure of this forecast, target or actual observation. Measures may be provided as free text or numerical values.",
-                "mandatory": false,
-                "source": "Procuring Entity"
-              },
-              "unit":{
-                "description": "Unit of measure for this observation",
-                "mandatory": false,
-                "source": "Procuring Entity"
-              },
-              "dimensions":{
-                "description": "Any number of dimensions can be recorded within this object. Dimensions names should follow the camelCase conventions of OCDS",
-                "mandatory": false,
-                "source": "Procuring Entity"
-              },
-              "notes":{
-                "description": "Any notes on this observation",
-                "mandatory": false,
-                "source": "Procuring Entity"
-              },
-              "relatedRequirementID":{
-                "description": "The [RequirementReference] of the requirement which the observation is applicable to",
-                "mandatory": false,
-                "source": "Procuring Entity"
-              }
-            }
-          }
-        }
-      },
       "properties": {
         "id": {
           "title": "Identifier",
@@ -3986,43 +3931,7 @@
           "type": "object",
           "title": "Unit",
           "description": "Unit",
-          "properties": {
-            "name": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "title": "Unit name",
-              "description": "The name of the unit."
-            },
-            "scheme": {
-              "title": "Scheme",
-              "description": "The list from which units of measure identifiers are taken. This should be an entry in the unitClassificationScheme codelist. Use of the scheme 'UNCEFACT' for the UN/CEFACT Recommendation 20 list of 'Codes for Units of Measure Used in International Trade' is recommended.   ",
-              "type": [
-                "string",
-                "null"
-              ],
-              "codelist": "unitClassificationScheme.csv",
-              "openCodelist": true
-            },
-            "id": {
-              "title": "ID",
-              "description": "The identifier from the codelist referenced in the schema property. For example, with UNCEFACT, this is the value of the 'Common Code' column. From this identifier, applications can look-up the human readable name or symbol for this unit of measure. ",
-              "type": [
-                "string",
-                "null"
-              ]
-            },
-            "uri": {
-              "title": "URI",
-              "description": "If the scheme used provide a machine-readable URI for this unit of measure, this can be given.",
-              "type": [
-                "string",
-                "null"
-              ],
-              "format": "uri"
-            }
-          }
+          "$ref":"#/Definitions/Unit"
         },
         "dimensions": {
           "type": "object",
@@ -4039,7 +3948,7 @@
         },
         "relatedImplementationMilestone": {
           "title": "Related implementation milestone",
-          "description": "A [MilestoneReference] to the milestone in the implementation section of OCDS to which this forecast, target or actual observation relates.",
+          "description": "A MilestoneReference to the milestone in the implementation section of OCDS to which this forecast, target or actual observation is related.",
           "$ref": "#/definitions/MilestoneReference"
         },
         "relatedRequirementID": {
@@ -4408,13 +4317,13 @@
       "properties": {
         "startDate": {
           "title": "Start date",
-          "description": "The start date for the period.",
+          "description": "The start date for the period",
           "type": "string",
           "format": "date-time"
         },
         "endDate": {
           "title": "End date",
-          "description": "The end date for the period.",
+          "description": "The end date for the period",
           "type": "string",
           "format": "date-time"
         },
@@ -6817,20 +6726,6 @@
     }
   },
   "inheritances":{
-    "Evidence":{
-      "@":{
-        "title":"",
-        "description":"",
-        "validationRules":[],
-        "properties":{
-          "id":{},
-          "attribute":{},
-          "value":{},
-          "relatesTo":{},
-          "relatedItem":{}
-        }
-      }
-    },
     "Classification":{
       "@":{
         "title":"Classification.@",
@@ -6840,14 +6735,14 @@
             "title": "Scheme",
             "description": "An classification should be drawn from an existing scheme or list of codes. This field is used to indicate the scheme/codelist from which the classification is drawn.",
             "type": "string",
-            "source":"",
+            "source":"Contributor",
             "mandatory":false
           },
           "id": {
             "title": "ID",
             "description": "The classification code drawn from the selected scheme.",
             "type": "string",
-            "source":"Procuring Entity",
+            "source":"Contributor",
             "mandatory":true
           },
           "description": {
@@ -6861,7 +6756,7 @@
             "title": "URI",
             "description": "A URI to identify the code. In the event individual URIs are not available for items in the identifier scheme this value should be left blank.",
             "type":  "string",
-            "source":"Procuring Entity",
+            "source":"System",
             "mandatory": false
           }
         },
@@ -7186,6 +7081,55 @@
         }
       }
     },
+    "Evidence":{
+      "@":{
+        "title":"",
+        "description":"",
+        "validationRules":[],
+        "properties":{
+          "id":{},
+          "attribute":{},
+          "value":{},
+          "relatesTo":{},
+          "relatedItem":{}
+        }
+      }
+    },
+    "ExchangeRate":{
+      "@":{
+        "properties": {
+          "rate": {
+            "title": "Currency conversion rate",
+            "description": "The rate to use in converting amount to the alternative currency. Amount x Rate = Alternative Currency Amount.",
+            "type": "number",
+            "source":"Procuring Entity"
+          },
+          "currency": {
+            "title": "Currency",
+            "description": "The destination currency for conversion of amount. Currency should always be specified using the uppercase 3-letter currency code from ISO4217.",
+            "type":  "string",
+            "source":"Procuring Entity"
+          },
+          "date": {
+            "title": "Exchange rate date",
+            "description": "The date at which this exchange rate was current.",
+            "type": "string",
+            "source":"Procuring Entity"
+          },
+          "source": {
+            "title": "Exchange rate source",
+            "description": "The source used to provide the value of the exchange rate, taken from the exchangeRateSource codelist.",
+            "type": "string",
+            "enum": [
+              "contract",
+              "market",
+              "application"
+            ],
+            "source":"Procuring Entity"
+          }
+        }
+      }
+    },
     "JointProcurement":{
       "@":{
         "title":"",
@@ -7226,7 +7170,11 @@
           "observations": {
             "description": "An array of [Observation] for this target",
             "mandatory": true,
-            "source": "Procuring Entity"
+            "source": "Procuring Entity",
+            "type":"array",
+            "items":{
+              "$ref":"#/inheritances/Observation/"
+            }
           }
         },
         "validationRules":{
@@ -7243,6 +7191,67 @@
               "rule":"At least one observation described for this metric"
             }
           ]
+        }
+      }
+    },
+    "Observation":{
+      "@": {
+        "title":"Observation.@",
+        "description": "",
+        "properties": {
+          "id":{
+            "description": "An identifier for this observation",
+            "mandatory": true,
+            "type":"string",
+            "source": "System"
+          },
+          "period":{
+            "description": "The period over which this observation is measured",
+            "mandatory": false,
+            "type":"object",
+            "$ref":"#/inheritances/Period/periodByPE",
+            "source": "Procuring Entity"
+          },
+          "value":{
+            "description": "For financial metrics, the value of this forecast, target or observation.",
+            "mandatory": false,
+            "type":"object",
+            "$ref":"#/inheritances/Value/@"
+          },
+          "measure":{
+            "description": "For non-financial metrics, the measure of this forecast, target or actual observation. Measures may be provided as free text or numerical values.",
+            "mandatory": false,
+            "type":"string",
+            "source": "Procuring Entity"
+          },
+          "unit":{
+            "description": "Unit of measure for this observation",
+            "mandatory": false,
+            "type":"object",
+            "$ref":"#/inheritances/Unit/@"
+          },
+          "dimensions":{
+            "description": "Any number of dimensions can be recorded within this object. Dimensions names should follow the camelCase conventions of OCDS",
+            "mandatory": false,
+            "source": "Procuring Entity"
+          },
+          "notes":{
+            "description": "Any notes on this observation",
+            "mandatory": false,
+            "source": "Procuring Entity",
+            "type":"string"
+          },
+          "relatedRequirementID":{
+            "description": "The reference of the requirement to which the observation is applicable to",
+            "mandatory": false,
+            "source": "Contributor"
+          }
+        },
+        "validationRules":{
+          "VR-Observation.@-001":{
+            "relatesTo":"relatedRequirementID",
+            "rule":"Specified value found in an array of relevant schema-elements ('requirements') of this initiation"
+          }
         }
       }
     },
@@ -7321,9 +7330,45 @@
         },
         "validationRules":[]
       },
-      "periodStart":{
-        "title":"",
-        "description":"",
+      "definedWithEndPeriod":{
+        "title":"Period.BySystem",
+        "description":"The period of time sepcified automatically based on received endDate by PE",
+        "properties": {
+          "startDate": {
+            "description": "The start date for the period set by the system according to the prescribed busiess process",
+            "type": "string",
+            "mandatory":true,
+            "suorce":"System"
+          },
+          "endDate": {
+            "description": "The end date for the period.",
+            "type": "string",
+            "mandatory": true,
+            "suorce":"Procuring Entity"
+          },
+          "maxExtentDate": {
+            "description": "The period cannot be extended beyond this date.",
+            "type": "string",
+            "mandatory":false,
+            "suorce":"System"
+          },
+          "durationInDays": {
+            "description": "The maximum duration of this period in days. Where a start and end date are given, this field is optional, and should reflect the difference between those two days.",
+            "type": "integer",
+            "mandatory": false,
+            "suorce":"System"
+          },
+          "duration":{
+            "description": "The duration of the period reflected in ISO format",
+            "type": "string",
+            "mandatory": false,
+            "suorce":"System"
+          }
+        },
+        "validationRules":[]
+      },
+      "periodStartByPE":{
+        "description":"The start date for the certain period set automatically ",
         "properties":{
           "startDate":{
             "description":"",
@@ -7333,15 +7378,59 @@
           }
         }
       },
-      "periodEnd":{
-        "title":"",
-        "description":"",
+      "periodEndbyPE":{
+        "description":"The end date for the certain period requested by Procuring Entity",
         "properties":{
           "endDate":{
             "description":"",
             "source": "Procuring Entity",
             "mandatory": true,
             "type": "string"
+          }
+        }
+      },
+      "periodStartBySystem":{
+        "description":"The start date for the certain period set automatically ",
+        "properties":{
+          "startDate":{
+            "description":"",
+            "source":"System",
+            "mandatory":true,
+            "type":"string"
+          }
+        }
+      },
+      "periodEndbySystem":{
+        "description":"The end date for the certain period requested by Procuring Entity",
+        "properties":{
+          "endDate":{
+            "description":"",
+            "source": "Procuring Entity",
+            "mandatory": true,
+            "type": "string"
+          }
+        }
+      }
+    },
+    "PreQualification":{
+      "preQualificationSetUp":{
+        "title":"",
+        "description":"",
+        "properties":{
+          "id":{
+            "description":"",
+            "mandatory":true,
+            "source":"System"
+          },
+          "status":{
+            "description":"",
+            "mandatory":true,
+            "source":"System"
+          },
+          "description":{
+            "description":"",
+            "mandatory":false,
+            "source":"Procuring Entity"
           }
         }
       }
@@ -7400,11 +7489,33 @@
         }
       }
     },
+    "SecondStage":{
+      "@":{
+        "title":"",
+        "description":"",
+        "properties":{
+          "minimumCandidates": {},
+          "maximumCandidates":{},
+          "noNegotiationNecessary":{},
+          "successiveReduction":{},
+          "invitationDate":{}
+        },
+        "validationRules":[
+          {
+            "id":"VR-Tender.secondStageDescription-001",
+            "context":"minimumCandidates",
+            "rule":"Cannot be higher than 'maximumCandidates'",
+            "dependsOn":"maximumCandidates",
+            "dependency":"IF @dependsOn != null"
+          }
+        ]
+      }
+    },
     "Tender":{
       "contractingProcess":{},
       "contractNotice":{
         "title":"Tender.ContractNotice",
-        "description":"Common inheritance of the 'Tender' definition applicable for any competitive part of the contracting process",
+        "description":"General common attributes of any typpe of the procurement procedure",
         "properties":{
           "id": {
             "description": "An identifier for this tender process. This may be the same as the ocid, or may be drawn from an internally held identifier for this tender.",
@@ -7443,19 +7554,62 @@
             "description": "Status details of the initiation taken from [Tender statusDetails codelist] according to the state-chart diagram"
             
           },
-          "awardCriteria": {
+          "procurementMethod": {},
+          "procurementMethodDetails": {},
+          "mainProcurementCategory": {},
+          "additionalProcurementCategories":{},
+          "procuringEntity": {},
+          "classification": {
+            "description":"",
             "mandatory": true,
-            "source": "Procuring Entity",
-            "type":"string",
-            "description": "Awarding methodoligy of the initiation taken from [Award criteria codelist] according to the state-chart diagram"
-            
+            "type": "object",
+            "$ref": "#/inheritance/Classification/@"
           },
-          "awardCriteriaDetails": {
-            "mandatory": true,
-            "source": "Procuring Entity",
-            "type":"string",
-            "description": "Awarding methodoligy details of the initiation taken from [Award criteria details codelist] according to the state-chart diagram"
+          "jointProcurement": {
+            "description":"",
+            "mandatory":"true",
+            "source":"Procuring Entity",
+            "type":"object",
+            "$ref":"#/inheritances/JointProcurement/@"
           },
+          "legalBasis": {
+            "description":"",
+            "mandatory":true,
+            "type":"string",
+            "source":"System"
+          },
+          "documents":{
+            "description":"Any documents related to announcement on a root-level",
+            "mandatory":false,
+            "source":"Procuring Entity",
+            "type":"array",
+            "items":{
+              "$ref":"#/inheritances/Document/@"
+            }
+          }
+        },
+        "validationRules":[
+          {
+            "id":"VR-Tender.contractNotice-001",
+            "context":"",
+            "rule":""
+          },
+          {
+            "id":"VR-Tender.contractNotice-002",
+            "context":"",
+            "rule":""
+          },
+          {
+            "id":"VR-Tender.contractNotice-003",
+            "context":"",
+            "rule":""
+          }
+        ]
+      },
+      "procurementMethodModalities":{
+        "title":"Tender.ProcurementMethodModalities",
+        "description":"",
+        "properties":{
           "requiresElectronicCatalogue": {
             "mandatory": true,
             "source": "Procuring Entity",
@@ -7486,41 +7640,27 @@
             "source": "System",
             "description": "",
             "type":"string"
-          },
-          "procurementMethod": {},
-          "procurementMethodDetails": {},
-          "mainProcurementCategory": {},
-          "additionalProcurementCategories":{},
-          "eligibilityCriteria": {},
-          "procuringEntity": {},
-          "classification": {
-            "description":"",
+          }
+        }
+      },
+      "awardingMethodology":{
+        "title":"Tender.AwardingMethodology",
+        "description":"General common attributes of any typpe of the procurement procedure",
+        "properties":{
+          "awardCriteria": {
             "mandatory": true,
-            "type": "object",
-            "$ref": "#/inheritance/Classification/@"
-          },
-          "jointProcurement": {
-            "description":"",
-            "mandatory":"true",
-            "source":"Procuring Entity",
-            "type":"object",
-            "$ref":"#/inheritances/JointProcurement/@"
-          },
-          "legalBasis": {
-            "description":"",
-            "mandatory":true,
+            "source": "Procuring Entity",
             "type":"string",
-            "source":"System"
+            "description": "Awarding methodoligy of the initiation taken from [Award criteria codelist] according to the state-chart diagram"
+            
           },
-          "documents":{
-            "description":"Any documents related to announcement on a root-level",
-            "mandatory":false,
-            "source":"Procuring Entity",
-            "type":"array",
-            "items":{
-              "$ref":"#/inheritances/Document/@"
-            }
+          "awardCriteriaDetails": {
+            "mandatory": true,
+            "source": "Procuring Entity",
+            "type":"string",
+            "description": "Awarding methodoligy details of the initiation taken from [Award criteria details codelist] according to the state-chart diagram"
           },
+          "eligibilityCriteria": {},
           "criteria":{
             "title":"",
             "description":"",
@@ -7551,23 +7691,7 @@
             }
           }
         },
-        "validationRules":[
-          {
-            "id":"VR-Tender.contractNotice-001",
-            "context":"",
-            "rule":""
-          },
-          {
-            "id":"VR-Tender.contractNotice-002",
-            "context":"",
-            "rule":""
-          },
-          {
-            "id":"VR-Tender.contractNotice-003",
-            "context":"",
-            "rule":""
-          }
-        ]
+        "validationRules":[]
       },
       "tenderNodes":{
         "title":"Tender.Nodes",
@@ -7580,7 +7704,7 @@
             "type":"array",
             "margeStrategy":"objectMerge",
             "items":{
-              "$ref":"#/definitions/LotGroup/doc/inheritance/@"
+              "$ref":"#/inheritances/LotGroup/@"
             }
           },
           "lots":{
@@ -7590,7 +7714,7 @@
             "type":"array",
             "margeStrategy":"objectMerge",
             "items":{
-              "$ref":"#/definitions/Lot/doc/inheritance/node"
+              "$ref":""
             }
           },
           "lotDetails":{
@@ -7618,12 +7742,14 @@
               "$ref":"#/inheritances/Metric/metricTender"
             }
           },
-          "criteria":{}
-        }
+          "criteria":{},
+          "conversions":{}
+        },
+        "validationRules":[]
       },
       "tenderPositions":{
         "title":"Tender.Positions",
-        "description":"Positions - number of specific positions (known in advance), related to one or more profiles described under this PCR and expected to be proposed by invited suppliers with actual unit prices and conditions of delivery by submitting their pre-award catalogues",
+        "description":"",
         "properties":{
           "targets":{
             "description":"An array of targets related to specific item and capture its specification as SKU",
@@ -7636,7 +7762,7 @@
             }
           },
           "items":{
-            "description":"Each described position is an item with a included attributes",
+            "description":"",
             "mandatory":true,
             "source":"Procuring Entity",
             "type":"array",
@@ -7663,510 +7789,166 @@
               "$ref":"#/inheritances/Criterion/"
             }
           },
-          "validationRules":{
-            "rules":[
-              {
-                
-              }
-            ]
-          }
-        }
-      },
-      "tenderPeriod":{
-        "title":"",
-        "description":"",
-        "properties":{
-          "startDate": {
-            "title":"",
-            "description":"",
-            "$ref":"#/inheritance/Period/periodStart"
-          },
-          "endDate":{
-            "title":"",
-            "description":"",
-            "$ref":"#/inheritance/Period/periodEnd"
-          }
-        }
-      },
-      "enquiryPeriod":{
-        "title":"",
-        "description":"",
-        "properties":{
-          "enquiryPeriod": {}  
-        }
-      },
-      "auctionPeriod":{
-        "title":"",
-        "description":"",
-        "properties":{
-          "auctionPeriod": {}  
-        }
-      },
-      "secondStageDescription":{
-        "title":"",
-        "description":"",
-        "properties":{
-          "minimumCandidates": {},
-          "maximumCandidates":{},
-          "noNegotiationNecessary":{},
-          "successiveReduction":{},
-          "invitationDate":{}
+          "conversions":[]
         },
-        "validationRules":{
-          "title":"General validation for any entity of 'Tender'",
-          "rules":[
-            {
-              "id":"VR-Tender.secondStageDescription-001",
-              "context":"minimumCandidates",
-              "rule":"Cannot be higher than 'maximumCandidates'",
-              "dependsOn":"maximumCandidates",
-              "dependency":"IF @dependsOn != null"
+        "validationRules":[]
+      }
+    },
+    "Unit":{
+      "@":{
+        "properties": {
+          "name": {
+            "title": "Name",
+            "description": "Name of the unit",
+            "type": "string",
+            "source":"System"
+          },
+          "value": {
+            "title": "Value",
+            "description": "The monetary value of a single unit.",
+            "$ref": "#/definitions/Value"
+          },
+          "scheme": {
+            "title": "Scheme",
+            "description": "The list from which units of measure identifiers are taken. Use of the scheme 'UNCEFACT' for the UN/CEFACT Recommendation 20 list of 'Codes for Units of Measure Used in International Trade' is recommended.",
+            "type": "string",
+            "source":"Contributor"
+          },
+          "id": {
+            "title": "ID",
+            "description": "The identifier from the codelist referenced in the scheme property. For example, with UNCEFACT, this is the value of the 'Common Code' column. From this identifier, applications can look-up the human readable name or symbol for this unit of measure. ",
+            "type":  "string",
+            "source":"Contributor"
+          },
+          "uri": {
+            "title": "URI",
+            "description": "If the scheme used provide a machine-readable URI for this unit of measure, this can be given.",
+            "type": "string",
+            "source": "System"
+          }
+        }
+      }
+    },
+    "Value":{
+      "@":{
+        "properties": {
+          "amount": {
+            "title": "Amount",
+            "description": "Amount as a number.",
+            "type": "number"
+          },
+          "currency": {
+            "title": "Currency",
+            "description": "The currency for each amount should always be specified using the uppercase 3-letter currency code from ISO4217.",
+            "type": "string"
+          },
+          "exchangeRates": {
+            "title": "Exchange rates",
+            "description": "Used to specify any [ExchangeRate] used, or to be used, to convert from amount to an alternative currency. To include alternative currency values within the data itself, add an 'amount_CODE' property alongside amount (e.g. amount_USD). See the extension documentation for more details.  ",
+            "type":"array",
+            "items": {
+              "$ref": "#/inheritances/ExchangeRate/@"
             }
-          ]
-        }
-      }
-    },
-    "Prequalification":{
-      "preQualificationSetUp":{
-        "title":"",
-        "description":"",
-        "properties":{
-          "id":{
-            "description":"",
-            "mandatory":true,
-            "source":"System"
           },
-          "description":{
-            "description":"",
-            "mandatory":false,
-            "source":"Procuring Entity"
-          },
-          "status":{
-            "description":"",
-            "mandatory":true,
-            "source":"System"
+          "valueAddedTaxIncluded": {
+            "title": "A true/false field to indicate whether the value tax was included",
+            "type": "boolean"
           }
         }
-      },
-      "period":{
-        "title":"",
-        "description":"",
-        "properties":{
-          "startDate": {
-            "title":"",
-            "description":"",
-            "$ref":"#/inheritance/Period/periodStart"
-          },
-          "endDate":{
-            "title":"",
-            "description":"",
-            "$ref":"#/inheritance/Period/periodEnd"
-          }
-        }
-      },
-      "qualificationPeriodStart":{
-        "title":"",
-        "description":"",
-        "properties":{
-          "startDate": {
-            "title":"",
-            "description":"",
-            "$ref":"#/inheritance/Period/periodStart"
-          }
-        }
-      },
-      "qualificationPeriodEnd":{
-        "title":"",
-        "description":"",
-        "properties":{
-          "endDate": {
-            "title":"",
-            "description":"",
-            "$ref":"#/inheritance/Period/periodEnd"
-          }
-        }
-      }
-    }
-  },
-  "components":{
-    "AggregatedNeeds":{
-      "title":"Aggregated planning",
-      "description": "Aggregation of needs forms 'Planning' section of the OCDS.Release for aggregated procedure based on the [Planning.aggregatedNeeds] inheritance of standard definition",
-      "type":"object",
-      "$ref": "#/definitios/Planning/doc/inheritance/aggregatedNeeds"   
-    },
-    "Establishment":{
-      "title":"Establishment",
-      "description":"Establishment forms 'Tender' section of the OCDS.Release for aggregated procedure based on the [Tender.frameworkEstablishment] inheritance of standard definition",
-      "type":"object",
-      "$ref": "#/definitios/Tender/doc/inheritance/frameworkEstablishment",
-      "doc":{
-        "businessRequirements":[
-          {
-            "title":"Metadata",
-            "requirements":[
-              {
-                "id":"BR-Establishment-001",
-                "classification":{
-                  "schema":"CEN/BII/3",
-                  "id":"tbr105-001"
-                },
-                "rule":"The Call for tenders shall contain a unique ID, the issue date and the identification of the procurement project",
-                "type":"fatal",
-                "context":".id"
-              },
-              {
-                "id":"BR-Establishment-002",
-                "classification":{
-                  "schema":"CEN/BII/3",
-                  "id":"tbr105-005"
-                },
-                "rule":"The call for tenders may include information about contacts to obtain additional information. Email or internet address at which the procurement documents shall be available for unrestricted and full direct access, free of charge.",
-                "type":"fatal",
-                "context":".id"
-              },
-              {
-                "id":"BR-Establishment-003",
-                "classification":{
-                  "schema":"CEN/BII/3",
-                  "id":"tbr105-007"
-                },
-                "rule":"The Call for tenders shall contain Procedure type",
-                "type":"fatal",
-                "context":".procurementMethodDetails"
-              },
-              {
-                "id":"BR-Establishment-004",
-                "classification":{
-                  "schema":"CEN/BII/3",
-                  "id":"tbr105-007"
-                },
-                "rule":"The Call for tenders shall contain a procedure type",
-                "type":"fatal",
-                "context":".procurementMethodDetails"
-              },
-              {
-                "id":"BR-Establishment-005",
-                "classification":{
-                  "schema":"CEN/BII/3",
-                  "id":"tbr105-007"
-                },
-                "rule":"The Call for tenders shall contain a deadline to submit offer (date, time, timezone)",
-                "type":"fatal",
-                "context":".tenderPeriod.endDate"
-              }
-            ]
-          }
-        ],
-        "cenProfile":{
-          "schema":"CEN/BII/3",
-          "id":"CWA3456-104",
-          "description":"Advanced Call for tenders with Pre-award Catalogue Request"
-        }
-      }
-    },
-    "Criteria":{
-      "title":"Criteria",
-      "description": "Set of exclusion grounds and selection criteria prepared for the selection and evaluation under this initiation. The 'criteria' relates to both Tenderer and his offered goods/services",
-      "mandatory": true,
-      "source": "Procuring Entity",
-      "type":"array",
-      "items":{
-        "$ref":"#/definitions/Criterion/doc/inheritance/@"
-      },
-      "doc":{
-        "businessRequirements":[
-          {
-            "title":"Metadata",
-            "requirementGroup":[
-              {
-                "id":"BR-Establishment-001",
-                "classification":{
-                  "schema":"CEN/BII/3",
-                  "id":"tbr105-001"
-                },
-                "rule":"The Call for tenders shall contain a unique ID, the issue date and the identification of the procurement project",
-                "type":"fatal",
-                "context":".id"
-              },
-              {
-                "id":"BR-Establishment-002",
-                "classification":{
-                  "schema":"CEN/BII/3",
-                  "id":"tbr105-005"
-                },
-                "rule":"The call for tenders may include information about contacts to obtain additional information. Email or internet address at which the procurement documents shall be available for unrestricted and full direct access, free of charge.",
-                "type":"fatal",
-                "context":".id"
-              },
-              {
-                "id":"BR-Establishment-003",
-                "classification":{
-                  "schema":"CEN/BII/3",
-                  "id":"tbr105-007"
-                },
-                "rule":"The Call for tenders shall contain Procedure type",
-                "type":"fatal",
-                "context":".procurementMethodDetails"
-              },
-              {
-                "id":"BR-Establishment-004",
-                "classification":{
-                  "schema":"CEN/BII/3",
-                  "id":"tbr105-007"
-                },
-                "rule":"The Call for tenders shall contain a procedure type",
-                "type":"fatal",
-                "context":".procurementMethodDetails"
-              },
-              {
-                "id":"BR-Establishment-005",
-                "classification":{
-                  "schema":"CEN/BII/3",
-                  "id":"tbr105-007"
-                },
-                "rule":"The Call for tenders shall contain a deadline to submit offer (date, time, timezone)",
-                "type":"fatal",
-                "context":".tenderPeriod.endDate"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "Conversions":{},
-    "Nodes":{
-      "title":"Nodes",
-      "description":"Nodes is a combination of attributes of the 'Tender' section of the OCDS.Release for the aggregated procedure according to the [Tender.nodes] inheritance of standard definition, where required set of an attributes described for each specific node separately",
-      "$ref": "#/definitios/Tender/doc/inheritance/nodes"
-    },
-    "Positions":{
-      "title":"Positions",
-      "description":"Positions is a combination of attributes of the 'Tender' section of the OCDS.Release for the aggregated procedure according to the [Tender.positions] inheritane of the standard definition, where required set of an attributes described for each sepcific position separately",
-      "$ref": "#/definitios/Tender/doc/inheritance/positions"
-    },
-    "PreQualification":{
-      "title":"PreQualification",
-      "description":"",
-      "$ref": "#/definitios/PreQualification/doc/inheritance/selectionUnderFE"
-    },
-    "ExpressionsOfInterest":{
-      "title":"Bids",
-      "description":"",
-      "type":"array",
-      "items":{
-        "type":"object",
-        "$ref": "#/definitios/Bid/doc/inheritance/eoi"  
-      }
-    },
-    "FaAwardNotice":{
-      "title":"Framework Agreement Award Notice",
-      "description":"",
-      "type":"array",
-      "items":{
-        "$ref": "#/definitios/Award/doc/inheritance/faAwardNotice"
-      }
-    },
-    "FrameworkAgreement":{
-      "title":"Framework Agreements",
-      "description":"",
-      "type":"array",
-      "items":{
-        "$ref": "#/definitios/Contract/doc/inheritance/frameworkAgreement"
-      }
-    },
-    "SpecificContracts":{
-      "title":"Specific contracts under Framework Agreements",
-      "description":"",
-      "type":"array",
-      "items":{
-        "$ref": "#/definitios/Contract/doc/inheritance/specificContract"
       }
     }
   },
   "dataModels":{
-    "ContractingProcess":{},
-    "RestrictedTender-ContractNotice":{
-      "title":"",
-      "description":"",
-      "properties":{
-        "purposeOfNotice": {
-          "isACallForCompetition": true
-        },
-        "tender": {
-          "title":"Contract Notice",
-          "description":"",
-          "$ref":"#/inheritances/Tender/contractNotice",
-          "specificValidationRules":[
-            {
-              "id":"SVR-RestrictedTender-ContractNotice.Tender.contractNotice-001",
-              "context":"tender.classification.id",
-              "rule":"MUST be equal with relatedProcesses.[relationship:x_exepnditureItem].tender.classification.id with first 3 digits"
-            },
-            {
-              "id":"SVR-RestrictedTender-ContractNotice-002",
-              "context":"tender.criteria[*].relatesTo",
-              "rule":"The value MUST be specified as 'tenderer'"
-            }
+    "RestrictedProcedure":{
+      "title":"Restricted Procedure",
+      "description":"Single stage procedure with a preliminary round for qualification of the candidates to be invited",
+      "lifecycle":{
+        "RestrictedTenderPublication":{
+          "title":"Publication of the Restricted Procedure",
+          "description":"Contract Notice for the single stage restricted procedure with preliminary round for qualification of the candidates to be invited",
+          "modelTags":[
+            "tender", 
+            "announcement"
           ],
-          "subproperties":{
-            "secondStage":{
-              "title":"Second Stage Description",
-              "description":"",
-              "$ref":"#/inheritances/Tender/secondStageDescription"
-            },
-            "enquryPeriod":{
-              "title":"Enquiry Period",
-              "description":"",
-              "$ref":"#/inheritances/Tender/enquiryPeriod"
-            },
-            "items":{
-              "title":"Object of procurement",
-              "description":"",
-              "$ref":"#/inheritances/Tender/positions"
-            }
-          }
-        },
-        "preQualification":{
-          "title":"PreQualification general set up",
-          "description":"",
-          "$ref":"#/inheritances/Prequalification/preQualificationSetUp",
-          "specificValidationRules":[],
-          "subproperties":{
-            "period":{
-              "title":"",
-              "description":"",
-              "$ref":"#/inheritances/Prequalification/period",
-              "specificValidationRules":[]
-            }
-          }
-        },
-        "parties":{},
-        "relatedProcesses":{}
-      },
-      "subproperties":{
-        "allOf":[
-          {
-            "title":"Parts of object of procurement",
-            "description":"",
-            "$ref":"#/inheritances/Tender/tenderNodes"
-          }
-          
-        ]
-      },
-      "validationRules":[],
-      "businessRequirements":[]
-    },
-    "PreQualificationPeriod":{
-      "title":"",
-      "description":"",
-      "properties":{
-        "preQualification":{
-          
-        }
-      }
-    },
-    "callForTenders":{
-      "title":"",
-      "description":"",
-      "properties":{
-        "tender":{
-          "title":"Tender Period",
-          "description":"",
-          "$ref":"#/inheritances/Tender/tenderPeriod"
-        }
-      }
-    },
-    "DPSEstablishment":{
-      "title":"Initiation of the procedure",
-      "description":"From OCDS point of view, DPS - is a stand-alone OCDS.Record where all the data presented as releases. Within DPS OCDS.Release preparation, the following logical blocks should be prepared via actions taken",
-      "properties":{
-        "planning":{
-          "title":"Aggregation of needs",
-          "description": "In order to understand, what should be the classification and scope of the future DPS, Procuring Entity needs to provide an aggregation of needs (his own or his clients, in case of CPB). Such initial aggregation of needs of one or several buyers extracts an indicative scope of procurement, together with general forecast, initial targets and parameters of such needs.",
-          "$ref": "#/components/AggregatedNeeds"
-        },
-        "tender":{
-          "title":"DPS announcement",
-          "description":"In order to describe the details of the initiation of DPS establishment together with all applied techniques and other required details, while preparing a DPS, Procuring Entity fulfills a Contract Notice for this DPS",
-          "type":"object",
-          "allOf":[
-            { 
-              "title":"Establishment",
-              "description":"In order to describe the details of the initiation of DPS establishment together with all applied techniques and other required details, while preparing a DPS, Procuring Entity fulfills a Contract Notice for this DPS.",
-              "$ref":"#/components/Establishment"
-            },
-            {
-              "title":"Nodes",
-              "descrition":"In order to disclose an indicative scope and details of needs, while preparing a DPS, Procuring Entity provides an high-level requisition of the object of procurement, being requested from selected suppliers at the latest stages of this initiation by provided nodes - certain groups of goods classified with 6th digit of CPV.",
-              "$ref":"#/components/Nodes"
-            },
-            {
-              "title":"Positions",
-              "description":"In case if Procuring Entity has a knowledges about precise SKUs required under aggregated needs or wants to put a set of precise SKUs according to his understanding of the market (or any other reason), he can include a positions to complete requisition of the DPS on the establishment level. Therefore, positions - a number of specific items (known in advance), expected to be proposed by invited suppliers with actual unit prices and conditions of delivery by submitting their pre-award catalogues when requested",
-              "$ref":"#/components/Positions"
-            },
-            {
-              "title":"Criteria",
-              "description":"",
-              "$ref":"#/comopnents/Criteria"
-            }
-          ]
-        },
-        "preQualification":{
-          "title":"Selection under specific category",
-          "description":"",
-          "$ref":"#/components/PreQualification"
-        },
-        "bids":{
+          "businessRequirements":[],
           "properties":{
-            "title":"",
-            "description":"",
-            "details":{
-              "title":"Expressions of Interest",
-              "description":"",
-              "$ref":"#/components/ExpressionsOfInterest"
-            }
-          }
-        },
-        "generalAndSpecificAgreement":{
-          "title":"Conclusion of the General Agreement ",
-          "description":"",
-          "properties":{
-            "awards":{
-              "title":"General Agreement Award Notice",
-              "description":"Not later than 30 days after the conclusion of a framework agreement, following the decision to award or conclude it, contracting authorities shall send a contract award notice on the results of the procurement procedure.",
-              "$ref":"#/components/FaAwardNotice"
-            },
-            "contracts":{
-              "title":"Set of contracts",
-              "description":"",
-              "mergeStrategy":"arrayMergeByIndex",
+            "tender":{
               "allOf":[
                 {
-                  "title":"General Agreement",
-                  "description":"",
-                  "$ref":"#/components/FrameworkAgreement"
+                  "$ref":"#/inheritances/Tender/contractNotice"
                 },
                 {
-                  "title":"Specific contract under FE",
-                  "description":"",
-                  "$ref":"#/components/SpecificContracts"
+                  "$ref":"#/inheritances/Tender/awardingMethodology"
+                },
+                {
+                  "$ref":"#/inheritances/Tender/procurementMethodModModalities"
+                },
+                {
+                  "$ref":"#/inheritances/SecondStage/@"
+                },
+                {
+                  "$ref":"#/inheritances/Tender/tenderPositions"
+                },
+                {
+                  "$ref":"#inheritances/Tender/tenderNodes"
                 }
-              ]
+              ],
+              "subProperties":{
+                "enquiryPeriod":{
+                  "title":"Call for enquiries",
+                  "description":"",
+                  "$ref":"#/inheritances/Period/definedWithEndPeriod"
+                }
+              }
+            },
+            "preQualification":{
+              "allOff":[
+                {
+                  "$ref":"#/inheritances/Prequalification/PreQualificationSetUp"
+                }
+              ],
+              "subProperties":{
+                "period":{
+                  "title":"Call for EoI",
+                  "descrition":"Period for submission of exressions of interest",
+                  "$ref":"#/inheritances/Period/definedWithEndPeriod"
+                } 
+              }
             }
           }
         },
-        "parties":{
-          "title":"",
-          "description":"",
-          "allOf":[
-            {
-              "title":"buyers",
-              "description":"All the buyers who's Indicative Notices were aggregated for this establishment should be indicated as a parties of this process in a relevant Parties building block with a relevant role - buyer"
-            }
-          ]
+        "RestrictedTenderPrequalification":{
+          "properties":{
+            "preQualification":{
+              "allOf":[
+                {
+                  "$ref":"#/components/PreQualificationPeriod" 
+                },
+                {
+                  "$ref":"#/compopnents/Submissions"
+                }
+              ]  
+            },
+            "submissions":{},
+            "qualifications":{}
+          }
         }
+      }
+    },
+    "OpenTenderPublication":{
+      "title":"Publication of the Open Procedure",
+      "description":"Contract Notice for the single stage open procedure",
+      "businessRequirements":[],
+      "properties":{
+        "allOf":[ ]
+      }
+    },
+    "FrameworkAgreementEsablishment":{
+      "title":"Publication of the Framework Agreement",
+      "description":"",
+      "businessRequirements":[],
+      "properties":{
+        "allOf":[ ]
       }
     }
   }
