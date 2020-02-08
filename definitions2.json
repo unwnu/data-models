@@ -49,7 +49,7 @@
       "title": "",
       "description": "The prescribed set of actions that has to be taken depending on whether targets of this stage of the electroic auction achieved or not or stage was cancelled due to conditions of start",
       "type": "object",
-      "proeprties": {
+      "properties": {
         "targetsAchieved": {
           "title": "Targets achieved",
           "description": "The [Action] prescribed for the case if targets of this stage of the electronic auction where acheived",
@@ -114,7 +114,6 @@
         },
         "addressDetails": {
           "description": "[AddressDetails] for machine proceeding",
-          "type": "object",
           "$ref": "#/definitions/AddressDetails"
         }
       }
@@ -125,17 +124,14 @@
       "properties": {
         "countryDetails": {
           "description": "Country code [Classification] according to 'iso-alpha2' classifier",
-          "type": "object",
           "$ref": "#/definitions/Classification"
         },
         "regionDetails": {
           "description": "Region code [Classification] according to 'iso-alpha2' classifier",
-          "type": "object",
           "$ref": "#/definitions/Classification"
         },
         "localityDetails": {
           "description": "Locality code [Classification] according to either 'UN/LOCDE' or any applicable local classifier",
-          "type": "object",
           "$ref": "#/definitions/Classification"
         },
         "NUTSCode": {
@@ -319,7 +315,7 @@
         "auctionProgress": {
           "type": "array",
           "items": {
-            "#ref": "#/definitions/AuctionRoundProgress"
+            "$ref": "#/definitions/AuctionRoundProgress"
           }
         }
       }
@@ -342,7 +338,7 @@
         "auctionThreshold": {
           "title": "",
           "description": "",
-          "type": "",
+          "type": "string",
           "openCodelist": false,
           "codelist": "codelists/auctionThreshold.csv",
           "enum": [
@@ -404,8 +400,7 @@
         "roundPeriod": {
           "title": "",
           "description": "The [Period] for this round",
-          "type": "object",
-          "#ref": "#/definitions/Period"
+          "$ref": "#/definitions/Period"
         },
         "bids": {
           "title": "",
@@ -509,9 +504,7 @@
                 "source": "System",
                 "description": "[Codelists#FE statuses]"
               },
-              "statusDetails":{
-                
-              },
+              "statusDetails":{},
               "date": {
                 "description": "",
                 "mandatory": "",
@@ -761,7 +754,6 @@
         "accountIdentification": {
           "title": "",
           "description": "Account number as [Classification]",
-          "type": "object",
           "$ref": "#/definitions/Classification"
         },
         "additionalAccountIndentifiers": {
@@ -1144,6 +1136,7 @@
       }
     },
     "BudgetBreakdown": {
+      "type": "object",
       "properties": {
         "id": {
           "title": "Identifier",
@@ -1202,6 +1195,7 @@
       }
     },
     "BudgetAllocation": {
+      "type": "object",
       "properties": {
         "budgetBreakdownID": {
           "title": "Budget Breakdown Identifier",
@@ -1246,6 +1240,7 @@
       }
     },
     "BudgetSource": {
+      "type": "object",
       "properties": {
         "budgetBreakdownID": {
           "title": "Budget Breakdown Identifier",
@@ -1269,6 +1264,7 @@
       }
     },
     "BusinessFunction": {
+      "type": "object",
       "properties": {
         "type": {
           "description": "Business function type accodring to the [Codelists#Business function types]",
@@ -1288,11 +1284,9 @@
         "documents": {
           "type": "array",
           "descriptiopn": "[Document] with docType:regulatoryDocument",
-          "items": [
-            {
+          "items": {
               "$ref": "#/definitions/Document"
             }
-          ]
         }
       }
     },
@@ -1610,6 +1604,7 @@
         },
         "email": {
           "title": "Email",
+          "format": "email",
           "type": [
             "string",
             "null"
@@ -2854,7 +2849,7 @@
     "InvitationToAuction": {
       "title": "Invitation",
       "description": "The set data describing the category of the participants of this electronic auction to be invited to specific stage of such auction",
-      "type": "",
+      "type": "object",
       "properties": {
         "category": {
           "title": "Particiapnts catogory",
@@ -3095,7 +3090,6 @@
         "unit": {
           "title": "Unit",
           "description": "A description of the [Unit] in which the supplies, services or works are provided ",
-          "type": "object",
           "$ref": "#/definitions/Unit"
         },
         "relatedLots": {
@@ -3161,13 +3155,11 @@
           ]
         },
         "geometry": {
-          "type": "object",
           "title": "Geometry",
           "description": "[geometry] of this location",
           "$ref": "#/definitions/Geometry"
         },
         "gazetteer": {
-          "type": "object",
           "title": "Gazetteer",
           "description": "A [Gazetteer] of this location",
           "#ref": "#/definitions/Gazetter"
@@ -3178,7 +3170,8 @@
             "null"
           ],
           "title": "URI",
-          "description": "A URI to a further description of the activity location. This may be a human readable document with information on the location, or a machine-readable description of the location."
+          "description": "A URI to a further description of the activity location. This may be a human readable document with information on the location, or a machine-readable description of the location.",
+          "format": "uri"
         }
       }
     },
@@ -3856,6 +3849,7 @@
       }
     },
     "ObjectionResponse": {
+      "type": "object",
       "properties": {
         "id": {
           "title": "Identifier",
@@ -3928,7 +3922,6 @@
           ]
         },
         "unit": {
-          "type": "object",
           "title": "Unit",
           "description": "Unit",
           "$ref":"#/definitions/Unit"
@@ -4021,7 +4014,6 @@
         },
         "contactPoint": {
           "description": "[Contact point] details that can be used for this party",
-          "type": "object",
           "$ref": "#/definitions/ContactPoint"
         },
         "additionalContactPoints": {
@@ -4120,7 +4112,6 @@
         },
         "typeOfSupplier": {
           "descriptiopn": "Specifing whether this Entity is 'personel' or 'company' as [Classification]",
-          "type": "object",
           "$ref": "#/definitions/Classification"
         },
         "mainGeneralActivity": {
@@ -4165,7 +4156,6 @@
         },
         "legalForm": {
           "description": "Information about [Classification] of the legal form of the organization",
-          "type": "object",
           "$ref": "#/definitions/Classification"
         },
         "permits": {
@@ -4263,11 +4253,14 @@
         "period": {
           "title": "Performance failure [Period]",
           "description": "The reporting period for these performance failures.",
-          "type": [
-            "object",
-            "null"
-          ],
-          "$ref": "#/definitions/Period"
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/Period"
+            }
+          ]
         },
         "category": {
           "title": "Performance failure category",
@@ -4367,7 +4360,8 @@
         },
         "uri": {
           "description": "A URI to identify the permit/license",
-          "type": "string"
+          "type": "string",
+          "format": "uri"
         },
         "permitDetails": {
           "description": "[PermitDetails] about permit/license",
@@ -4381,17 +4375,14 @@
       "properties": {
         "issuedBy": {
           "description": "[OrganizationReference] on Entity who issued this permit/license",
-          "type": "object",
           "$ref": "#/definitions/OrganizationReference"
         },
         "validityPeriod": {
           "description": "[Period] of validity of this permit/license. It could be any attributes of 'Period'",
-          "type": "object",
           "$ref": "#/definitions/Period"
         },
         "issuedThought": {
           "description": "[EconomicActivityReference] to a activity (described in 'mainEconomicActivities') which is covered by this permit/license",
-          "type": "object",
           "$ref": "#/definitions/EconomicActivityReference"
         }
       }
@@ -4413,7 +4404,8 @@
         },
         "email": {
           "description": "The e-mail address of the contact point/person.",
-          "type": "string"
+          "type": "string",
+          "format": "email"
         },
         "telephone": {
           "description": "The telephone number of the contact point/person. This should include the international dialling code.",
@@ -4426,18 +4418,15 @@
         },
         "identifier": {
           "description": "The legal [Identifier] of this person according to local identification scheme",
-          "type": "object",
           "$ref": "#/definitions/Identifier"
         },
-        "businessFunctions": [
-          {
-            "description": "A set of persones' [BusinessFunction]",
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/BusinessFunction"
-            }
+        "businessFunctions": {
+          "description": "A set of persones' [BusinessFunction]",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BusinessFunction"
           }
-        ]
+        }
       }
     },
     "PlaceOfPerformance": {
@@ -5280,7 +5269,8 @@
         },
         "relatedItem": {
           "title": "Related Item",
-          "description": "Where this requirement response relates to an item and is provided by the buyer or procuring entity this field should be used to reference the id in the items' section for the item the response relates to."
+          "description": "Where this requirement response relates to an item and is provided by the buyer or procuring entity this field should be used to reference the id in the items' section for the item the response relates to.",
+          "type": "string"
         }
       }
     },
@@ -6172,7 +6162,10 @@
             "optionallyNegotiated",
             "staged"
           ],
-          "openCodelist": true
+          "openCodelist": true,
+          "items": {
+            "type": "string"
+          }
         },
         "items": {
           "title": "Items to be procured",
@@ -6238,7 +6231,10 @@
             "goods",
             "works",
             "services"
-          ]
+          ],
+          "items": {
+            "type": "string"
+          }
         },
         "awardCriteria": {
           "title": "Award criteria",
